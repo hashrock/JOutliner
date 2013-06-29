@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<root selection_mode="1" start_at_top="true" wrap_around="true" selection_only="false" include_read_only="false" path="" include_sub_dirs="false" make_backups="false" file_filter_include="" file_filter_include_ignore_case="false" file_filter_exclude="" file_filter_exclude_ignore_case="false" dir_filter_include="" dir_filter_include_ignore_case="false" dir_filter_exclude="" dir_filter_exclude_ignore_case="false">
+<item name="Default" find="" replace="" ignore_case="false" regexp="false"/>
+<item name="example" find="a(.*)b" replace="foo$1bar" ignore_case="false" regexp="true"/>
+<item name="example2" find="&lt;br>" replace="&lt;br />" ignore_case="true" regexp="false"/>
+</root>

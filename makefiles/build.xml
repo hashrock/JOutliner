@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="../" default="all" name="JOE - Java Outline Editor">
+	<!-- initialize -->
+		<!-- Set properties for this build -->
+			<property name="src" value="src"/>
+			<property name="src-outliner" value="${src}/com/organic/maynard/outliner"/>
+			<property name="src-maynard" value="${src}/com/organic/maynard"/>
+			<property name="src-webfilephp" value="${src}/com/yearahead"/>
+			<property name="src-wikiff" value="${src}/com/psm/wiki"/>
+			<property name="lib" value="lib"/>
+			<property name="doc" value="doc"/>
+			<property name="doc-api" value="${doc}/api"/>
+			<property name="path-release" value="release"/>
+			<property name="path-release-dist" value="release/outliner"/>
+			<property name="dist" value="outliner-1.8.10.6"/>
+			<property name="jar_libpath" value="."/>
+			<property name="jar_modulepath" value="../modules"/>
+		<target name="init">
+			<tstamp/>
+		</target>
+	<!-- GLOBAL TARGETS -->
+		<target name="jar" depends="init" description="Cleans, compiles, and jars everything for JOE.">
+			<antcall target="jar-maynard"/>
+			<antcall target="jar-outliner"/>
+			<antcall target="jar-webfilephp"/>
+			<antcall target="jar-wikiff"/>
+		</target>
+		<target name="clean" depends="init" description="Cleans calls clean for each sub-project.">
+			<antcall target="clean-maynard"/>
+			<antcall target="clean-outliner"/>
+			<antcall target="clean-webfilephp"/>
+			<antcall target="clean-wikiff"/>
+		</target>
+		<target name="javadoc" depends="init" description="Generates source code documentation in the javadoc format.">
+			<delete dir="${doc-api}"/>
+			<mkdir  dir="${doc-api}"/>
+			<javadoc packagenames="com.*, gui.*"
+				sourcepath="src"
+				destdir="${doc-api}"
+				author="true"
+				version="true"
+				use="true"
+				windowtitle="Java Outline Editor (JOE) API"
+			>
+				<classpath>
+					<pathelement path="${lib}/bsh.jar"/>
+					<pathelement path="${lib}/com.organic.maynard.jar"/>
+					<pathelement path="${lib}/com.yearahead.io.webfile.jar"/>
+					<pathelement path="${lib}/xmlrpc.jar"/>
+					<pathelement path="${lib}/jakarta-oro.jar"/>
+					<pathelement path="${lib}/xp.jar"/>
+					<pathelement path="${lib}/jazzy-core.jar"/>
+				</classpath>
+			</javadoc>
+		</target>
+	<!-- webfilephp TARGETS -->
+		<target name="compile-webfilephp" depends="init, clean-webfilephp" description="Compiles all class files for the webfilephp src tree.">
+			<javac debug="false" optimize="true" deprecation="true" srcdir="${src-webfilephp}">
+				<classpath>
+					<pathelement path="${lib}/com.organic.maynard.jar"/>
+					<pathelement path="${lib}/outliner.jar"/>
+				</classpath>
+			</javac>
+		</target>
+		<target name="jar-webfilephp" depends="compile-webfilephp" description="Creates com.yearahead.io.webfile.jar">
+			<jar basedir="${src}" compress="true" index="true" jarfile="${lib}/com.yearahead.io.webfile.jar">
+				<include name="com/yearahead/**"/>
+				<exclude name="**/*.java"/>
+			</jar>
+		</target>
+		<target name="clean-webfilephp" description="Removes all .class files for the webfilephp src tree.">
+			<delete>
+				<fileset dir="${src-webfilephp}">
+					<include name="**/*.class"/>
+				</fileset>
+			</delete>
+		</target>
+	<!-- wikiff TARGETS -->
+		<target name="compile-wikiff" depends="init, clean-wikiff" description="Compiles all class files for the wikiff src tree.">
+			<javac debug="false" optimize="true" deprecation="true" srcdir="${src-wikiff}">
+				<classpath>
+					<pathelement path="${lib}/com.organic.maynard.jar"/>
+					<pathelement path="${lib}/outliner.jar"/>
+				</classpath>
+			</javac>
+		</target>
+		<target name="jar-wikiff" depends="compile-wikiff" description="Creates com.psm.wiki.jar">
+			<jar basedir="${src}" compress="true" index="true" jarfile="${lib}/com.psm.wiki.jar">
+				<include name="com/psm/wiki/**"/>
+				<exclude name="**/*.java"/>
+			</jar>
+		</target>
+		<target name="clean-wikiff" description="Removes all .class files for the wikiff src tree.">
+			<delete>
+				<fileset dir="${src-wikiff}">
+					<include name="**/*.class"/>
+				</fileset>
+			</delete>
+		</target>
+	<!-- maynard TARGETS -->
+		<target name="compile-maynard" depends="init, clean-maynard" description="Compiles all class files for the maynard src tree.">
+			<javac debug="false" optimize="true" deprecation="true" srcdir="${src-maynard}">
+				<classpath>
+					<pathelement path="${lib}/jakarta-oro.jar"/>
+				</classpath>
+				<exclude name="outliner/**"/>
+			</javac>
+		</target>
+		<target name="jar-maynard" depends="compile-maynard" description="Creates com.organic.maynard.jar">
+			<jar basedir="${src}" compress="true" index="true" jarfile="${lib}/com.organic.maynard.jar">
+				<exclude name="com/psm/**"/>
+				<exclude name="com/wiki/**"/>
+				<exclude name="com/yearahead/**"/>
+				<exclude name="com/organic/maynard/outliner/**"/>
+				<exclude name="**/*.java"/>
+				<exclude name="graphics/**"/>
+				<exclude name="rsrc/**"/>
+				<exclude name="setup/**"/>
+			</jar>
+		</target>
+		<target name="clean-maynard" description="Removes all .class files for the maynard src tree.">
+			<delete>
+				<fileset dir="${src-maynard}">
+					<exclude name="outliner/**"/>
+					<include name="**/*.class"/>
+				</fileset>
+			</delete>
+		</target>
+	<!-- outliner TARGETS -->
+		<target name="compile-outliner" depends="init, clean-outliner" description="Compiles all class files for the outliner src tree.">
+			<javac debug="true" optimize="true" deprecation="true" srcdir="${src-outliner}">
+				<classpath>
+					<pathelement path="${lib}/bsh.jar"/>
+					<pathelement path="${lib}/com.organic.maynard.jar"/>
+					<pathelement path="${lib}/com.yearahead.io.webfile.jar"/>
+					<pathelement path="${lib}/xmlrpc.jar"/>
+					<pathelement path="${lib}/jakarta-oro.jar"/>
+					<pathelement path="${lib}/xp.jar"/>
+					<pathelement path="${lib}/jazzy-core.jar"/>
+				</classpath>
+			</javac>
+		</target>
+		<target name="jar-outliner" depends="compile-outliner" description="Creates outliner.jar">
+			<jar basedir="${src}" compress="true" index="true" jarfile="${lib}/outliner.jar">
+				<include name="com/organic/maynard/outliner/**" />
+				<include name="graphics/**" />
+				<include name="rsrc/**" />
+				<exclude name="**/*.java"/>
+				<manifest>
+				<attribute name="Main-Class" value="com.organic.maynard.outliner.Outliner"/>
+				<attribute name="Class-Path" value="${jar_libpath}/com.organic.maynard.jar ${jar_libpath}/com.yearahead.io.webfile.jar ${jar_libpath}/com.psm.wiki.jar ${jar_libpath}/xp.jar ${jar_libpath}/xmlrpc.jar ${jar_libpath}/bsh.jar ${jar_libpath}/jakarta-oro.jar ${jar_libpath}/jazzy-core.jar"/>
+				</manifest>
+			</jar>
+		</target>
+		<target name="clean-outliner" description="Removes all .class files for the outliner src tree.">
+			<delete>
+				<fileset dir="${src-outliner}">
+					<include name="**/*.class"/>
+				</fileset>
+			</delete>
+		</target>
+	<!-- RELEASE TARGET -->
+		<target name="release" depends="init" description="Creates a release.">
+			<antcall target="jar"/>
+			<antcall target="clean"/>
+			<delete dir="${path-release}"/>
+			<mkdir  dir="${path-release-dist}"/>
+			<antcall target="release-copy"/>
+			<antcall target="release-compress"/>
+		</target>
+		<target name="release-copy" depends="init" description="Copies file for a release.">
+			<copy todir="${path-release-dist}/extras">
+				<fileset dir="extras" excludes="CVS"/>
+			</copy>
+			<copy todir="${path-release-dist}/lib">
+				<fileset dir="lib">
+					<exclude name="CVS"/>
+					<exclude name="license-xerces.txt"/>
+					<exclude name="xerces.jar"/>
+					<exclude name="sax.jar"/>
+				</fileset>
+			</copy>
+			<copy todir="${path-release-dist}/makefiles">
+				<fileset dir="makefiles" excludes="CVS"/>
+			</copy>
+			<copy todir="${path-release-dist}/prefs">
+				<fileset dir="prefs" excludes="CVS"/>
+			</copy>
+			<copy todir="${path-release-dist}/src">
+				<fileset dir="src" excludes="CVS"/>
+			</copy>
+			<copy file="installation.txt" tofile="${path-release-dist}/installation.txt"/>
+			<copy file="license.txt" tofile="${path-release-dist}/license.txt"/>
+			<copy file="run.bat" tofile="${path-release-dist}/run.bat"/>
+			<copy file="run_joe.sh" tofile="${path-release-dist}/run_joe.sh"/>
+			<copy file="sendto.bat" tofile="${path-release-dist}/sendto.bat"/>
+		</target>
+		<target name="release-compress" depends="init" description="Tar and Gzips the release.">
+			<tar tarfile="${path-release}/${dist}.tar" basedir="${path-release}"/>
+			<gzip zipfile="${path-release}/${dist}.tar.gz" src="${path-release}/${dist}.tar"/>
+			<delete file="${path-release}/${dist}.tar"/>
+		</target>
+</project>

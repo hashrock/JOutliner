@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<script>if ((nodeRangePair.startIndex != -1) &amp;&amp; (nodeRangePair.endIndex != -1)) {
+	String text = node.getValue();
+	String firstChunk = text.substring(0, nodeRangePair.startIndex);
+	String lastChunk = text.substring(nodeRangePair.endIndex, text.length());
+	text = text.substring(nodeRangePair.startIndex, nodeRangePair.endIndex);
+	text = text.toLowerCase();
+
+	node.setValue(firstChunk + text + lastChunk);
+
+	return;
+} else {
+	ArrayList nodes = new ArrayList();
+	nodes.add(node);
+
+	for (int i = 0; i &lt; nodes.size(); i++) {
+		Node currentNode = (Node) nodes.get(i);
+		String text = currentNode.getValue();
+		currentNode.setValue(text.toLowerCase());
+
+		for (int j = 0; j &lt; currentNode.numOfChildren(); j++) {
+			nodes.add(currentNode.getChild(j));
+		}
+	}
+}
+
+</script>

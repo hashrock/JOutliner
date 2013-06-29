@@ -1,0 +1,3 @@
+script|Autosave Agent.txt|com.organic.maynard.outliner.scripting.macro.BSHMacro|false|false
+script|Autosave Agent with Backup.txt|com.organic.maynard.outliner.scripting.macro.BSHMacro|false|false
+script|Render Image Manifests.txt|com.organic.maynard.outliner.scripting.macro.BSHMacro|false|false

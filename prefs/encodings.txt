@@ -1,0 +1,14 @@
+set|encoding|UTF-8
+set|encoding|ISO-8859-1
+set|encoding|ISO-8859-2
+set|encoding|ISO-8859-3
+set|encoding|ISO-8859-5
+set|encoding|ISO-8859-6
+set|encoding|ISO-8859-7
+set|encoding|ISO-8859-9
+set|encoding|SJIS
+set|encoding|Big5
+set|encoding|UnicodeBig
+set|encoding|UnicodeLittle
+set|encoding|UnicodeBigUnmarked
+set|encoding|UnicodeLittleUnmarked

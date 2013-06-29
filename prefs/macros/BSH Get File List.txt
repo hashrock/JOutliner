@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<script>// Description: This script interprets the currently selected node as a filepath. It then
+// proceeds to crawl the directory structure creating a node for every file it finds. The
+// text of the node is the name of the file.
+
+// Method Delcaration
+addNodesRecursively(Node parent, String path) {
+	File file = new File(path);
+	File[] files = file.listFiles();
+	for (int i = 0; i &lt; files.length; i++) {
+		File fileToAdd = files[i];
+
+		Node newNode = new NodeImpl(node.getTree(), fileToAdd.getName());
+		parent.appendChild(newNode);
+
+		if (fileToAdd.isDirectory()) {
+			newNode.setValue(newNode.getValue() + "/");
+			addNodesRecursively(newNode, fileToAdd.toString());
+		} 
+	}
+}
+
+// Do it
+addNodesRecursively(node, node.getValue());
+</script>

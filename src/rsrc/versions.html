@@ -1,0 +1,177 @@
+<html>
+	<head>
+		<title>3rd Party Libraries</title>
+	</head>
+	<body>
+		<h2>The following 3rd party libraries are used by JOE</h2>
+		<table border="0" cellpadding="4" cellspacing="0">
+			<tr valign="top" bgcolor="#aaaaaa">
+				<td><nobr><b>Library Name</b></nobr></td>
+				<td><nobr><b>JAR File</b></nobr></td>
+				<td><nobr><b>Version</b></nobr></td>
+				<td><nobr><b>License</b></nobr></td>
+				<td><nobr><b>Comments</b></nobr></td>
+			</tr>
+			<tr valign="top" bgcolor="#cccccc">
+				<td>BeanShell</td>
+				<td>bsh.jar</td>
+				<td>1.3</td>
+				<td><a href="#bsh_license">License</a></td>
+				<td>Provides scripting support.</td>
+			</tr>
+			<tr valign="top">
+				<td>Jakarta ORO</td>
+				<td>jakarta-oro.jar</td>
+				<td>2.0.8</td>
+				<td><a href="#oro_license">License</a></td>
+				<td>Provides regular expression support.</td>
+			</tr>
+			<tr valign="top" bgcolor="#cccccc">
+				<td>Helma XML-RPC</td>
+				<td>xmlrpc.jar</td>
+				<td>1.1</td>
+				<td>
+					<a href="#helma_license">License</a><br>
+					Additional Sub-licenses: <a href="#sax_license">SAX</a>, <a href="#minml_license">MINML</a>
+				</td>
+				<td>Provides XML-RPC client and server support. Minor modifications specific to JOE have been made to the XmlRpcClient class.</td>
+			</tr>
+			<tr valign="top">
+				<td>XP</td>
+				<td>xp.jar</td>
+				<td>0.5</td>
+				<td><a href="#xp_license">License</a></td>
+				<td>Provides XML parsing support.</td>
+			</tr>
+			<tr valign="top" bgcolor="#cccccc">
+				<td>Jazzy</td>
+				<td>jazzy-core.jar</td>
+				<td>0.5</td>
+				<td>Jazzy is licensed under the LGPL (Lesser Gnu Public License)</td>
+				<td>Provides spell checking support. Has minor modifications.</td>
+			</tr>
+		</table>
+		<hr>
+		<h2>3rd Party Licenses</h2>
+		<a name="bsh_license"><b>BSH License</b></a><br>
+			This file is part of the BeanShell Java Scripting distribution. Documentation and updates may be found at http://www.beanshell.org/<br>
+			<br>
+			Sun Public License Notice:<br>
+			<br>
+			The contents of this file are subject to the Sun Public License Version 1.0 (the "License"); you may not use this file except in compliance with the License. A copy of the License is available at http://www.sun.com<br>
+			<br>
+			The Original Code is BeanShell. The Initial Developer of the Original Code is Pat Niemeyer. Portions created by Pat Niemeyer are Copyright (C) 2000.  All Rights Reserved.<br>
+			<br>
+			GNU Public License Notice:<br>
+			<br>
+			Alternatively, the contents of this file may be used under the terms of the GNU Lesser General Public License (the "LGPL"), in which case the provisions of LGPL are applicable instead of those above. If you wish to allow use of your version of this file only under the  terms of the LGPL and not to allow others to use your version of this file under the SPL, indicate your decision by deleting the provisions above and replace them with the notice and other provisions required by the LGPL.  If you do not delete the provisions above, a recipient may use your version of this file under either the SPL or the LGPL.<br>
+			<br>
+			Patrick Niemeyer (pat@pat.net)<br>
+			Author of Learning Java, O'Reilly &amp; Associates<br>
+			http://www.pat.net/~pat/<br>
+			<br>
+		<a name="oro_license"><b>ORO License</b></a><br>
+			 The Apache Software License, Version 1.1<br>
+			 <br>
+			 Copyright (c) 2000 The Apache Software Foundation.  All rights reserved.<br>
+			 <br>
+			 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br>
+			 <br>
+			 <ol>
+				 <li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+				 <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+				 <li>The end-user documentation included with the redistribution, if any, must include the following acknowledgment: "This product includes software developed by the Apache Software Foundation (http://www.apache.org/)." Alternately, this acknowledgment may appear in the software itself, if and wherever such third-party acknowledgments normally appear.</li>
+				 <li>The names "Apache" and "Apache Software Foundation", "Jakarta-Oro" must not be used to endorse or promote products derived from this software without prior written permission. For written permission, please contact apache@apache.org.</li>
+				 <li>Products derived from this software may not be called "Apache" or "Jakarta-Oro", nor may "Apache" or "Jakarta-Oro" appear in thei name, without prior written permission of the Apache Software Foundation.</li>
+			 </ol>
+			 <br>
+			 THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br>
+			 ====================================================================<br>
+			 <br>
+			 This software consists of voluntary contributions made by many individuals on behalf of the Apache Software Foundation.  For more information on the Apache Software Foundation, please see <a href="http://www.apache.org/">http://www.apache.org/</a>.<br>
+			 <br>
+			 Portions of this software are based upon software originally written by Daniel F. Savarese. We appreciate his contributions.<br>
+			 <br>
+		<a name="helma_license"><b>Helma License</b></a><br>
+			Copyright (c) 1999-2001, Hannes Walln�fer (hannes@helma.at).<br>
+			All rights reserved.<br>
+			<br>
+			Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br>
+			<br>
+			Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br>
+			<br>
+			Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.<br>
+			<br>
+			Neither the name of Helma nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.<br>
+			<br>
+			THIS SOFTWARE IS PROVIDED BY HANNES WALLN�FER "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL HANNES WALLN�FER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br>
+			<br>
+		<a name="xp_license"><b>XP License</b></a><br>
+			Copyright (c) 1997, 1998 James Clark<br>
+			<br>
+			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ``Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:<br>
+			<br>
+			The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br>
+			<br>
+			THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL JAMES CLARK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br>
+			<br>
+			Except as contained in this notice, the name of James Clark shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization from James Clark.<br>
+			<br>
+		<a name="minml_license"><b>MINML License</b></a><br>
+			Copyright (c) 1999, John Wilson (tug@wilson.co.uk).<br>
+			All rights reserved.<br>
+			<br>
+			Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br>
+			<br>
+			Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br>
+			<br>
+			Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.<br>
+			<br>
+			All advertising materials mentioning features or use of this software must display the following acknowledgement:<br>
+			<br>
+			This product includes software developed by John Wilson. The name of John Wilson may not be used to endorse or promote products derived from this software without specific prior written permission.<br>
+			<br>
+			THIS SOFTWARE IS PROVIDED BY JOHN WILSON ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JOHN WILSON BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE<br>
+			<br>
+		<a name="sax_license"><b>SAX License</b></a><br>
+			<div align="center">SAX COPYRIGHT STATUS</div>
+			<br>
+			Version 1.0 of the Simple API for XML (SAX), created collectively by
+			the membership of the XML-DEV mailing list, is hereby released into
+			the public domain.<br>
+			<br>
+			No one owns SAX: you may use it freely in both commercial and
+			non-commercial applications, bundle it with your software
+			distribution, include it on a CD-ROM, list the source code in a book,
+			mirror the documentation at your own web site, or use it in any other
+			way you see fit.<br>
+			<br>
+			<br>
+			<div align="center">NO WARRANTY</div>
+			<br>
+			Because SAX is released to the public domain, there is no warranty for
+			the design or for the software implementation, to the extent permitted
+			by applicable law.  Except when otherwise stated in writing the
+			copyright holders and/or other parties provide SAX "as is" without
+			warranty of any kind, either expressed or implied, including, but not
+			limited to, the implied warranties of merchantability and fitness for
+			a particular purpose.  The entire risk as to the quality and
+			performance of SAX is with you.  Should SAX prove defective, you
+			assume the cost of all necessary servicing, repair or correction.<br>
+			<br>
+			In no event unless required by applicable law or agreed to in writing
+			will any copyright holder, or any other party who may modify and/or
+			redistribute SAX, be liable to you for damages, including any general,
+			special, incidental or consequential damages arising out of the use or
+			inability to use SAX (including but not limited to loss of data or
+			data being rendered inaccurate or losses sustained by you or third
+			parties or a failure of the SAX to operate with any other programs),
+			even if such holder or other party has been advised of the possibility
+			of such damages.<br>
+			<br>
+			<br>
+			David Megginson &lt;sax@megginson.com&gt;<br>
+			1998-05-11<br>
+			<br>
+	</body>
+</html>

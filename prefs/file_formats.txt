@@ -1,0 +1,15 @@
+file_format|open|com.organic.maynard.outliner.io.formats.AutoDetectFileFormat|Auto-Detect|
+file_format|save_default|com.organic.maynard.outliner.io.formats.SimpleFileFormat|Plaintext|txt htm html xml xsl
+file_format|open_default|com.organic.maynard.outliner.io.formats.SimpleFileFormat|Plaintext|txt htm html xml xsl
+file_format|save|com.organic.maynard.outliner.io.formats.OPMLFileFormat|OPML|opml opm
+file_format|open|com.organic.maynard.outliner.io.formats.OPMLFileFormat|OPML|opml opm
+file_format|save|com.organic.maynard.outliner.io.formats.OMLFileFormat|OML|oml
+file_format|open|com.organic.maynard.outliner.io.formats.OMLFileFormat|OML|oml
+file_format|save|com.psm.wiki.WikiFileFormat|Wiki|wiki
+file_format|open|com.psm.wiki.WikiFileFormat|Wiki|wiki
+file_format|export|com.organic.maynard.outliner.io.formats.HTMLExportFileFormat|HTML|htm html
+file_format|export|com.organic.maynard.outliner.io.formats.JustifiedPlaintextExportFileFormat|Justified Plaintext|txt
+file_format|import|com.organic.maynard.outliner.io.formats.PdbBFImportFileFormat|Brain Forest Palm pdb|pdb
+file_format|import|com.organic.maynard.outliner.io.formats.PdbSPImportFileFormat|Shadow Plan Palm pdb|pdb
+file_format|import|com.organic.maynard.outliner.io.formats.PdbTMImportFileFormat|Thought Manager Palm pdb|pdb
+file_protocol|com.organic.maynard.outliner.io.protocols.LocalFileSystemFileProtocol|Local File System

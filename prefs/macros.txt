@@ -1,0 +1,15 @@
+macro|Alpha-Numeric.txt|com.organic.maynard.outliner.scripting.macro.SortMacro
+macro|Alphabetical.txt|com.organic.maynard.outliner.scripting.macro.SortMacro
+macro|BSH Get File List.txt|com.organic.maynard.outliner.scripting.macro.BSHMacro
+macro|BSH Get Image Dimensions.txt|com.organic.maynard.outliner.scripting.macro.BSHMacro
+macro|BSH Lower Case.txt|com.organic.maynard.outliner.scripting.macro.BSHMacro
+macro|BSH Upper Case.txt|com.organic.maynard.outliner.scripting.macro.BSHMacro
+macro|By Text Length.txt|com.organic.maynard.outliner.scripting.macro.SortMacro
+macro|HTML Bold.txt|com.organic.maynard.outliner.scripting.macro.TextMacro
+macro|HTML Escape.txt|com.organic.maynard.outliner.scripting.macro.HTMLEscapeMacro
+macro|HTML Un-Escape.txt|com.organic.maynard.outliner.scripting.macro.HTMLEscapeMacro
+macro|URL Decode.txt|com.organic.maynard.outliner.scripting.macro.URLEncodeMacro
+macro|URL Encode.txt|com.organic.maynard.outliner.scripting.macro.URLEncodeMacro
+macro|XML-RPC StuffedDog Speller.txt|com.organic.maynard.outliner.scripting.macro.XMLRPCMacro
+macro|XSL text disable.txt|com.organic.maynard.outliner.scripting.macro.TextMacro
+macro|XSL value-of disable.txt|com.organic.maynard.outliner.scripting.macro.TextMacro

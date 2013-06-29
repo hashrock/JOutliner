@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<script>import com.organic.maynard.outliner.util.preferences.Preferences;
+
+while (true) {
+	int freq = Preferences.getPreferenceInt("autosave_frequency").cur * 1000;
+	Thread.sleep(freq);
+
+	for (int i = 0; i &lt; Outliner.documents.openDocumentCount(); i++) {
+		OutlinerDocument doc = Outliner.documents.getDocument(i);
+		if (!doc.getFileName().equals("") &amp;&amp; doc.isModified()) {
+			System.out.println("Auto-Saving: " + doc.getFileName());
+			SaveFileMenuItem.saveOutlinerDocument(doc);
+		}
+	}
+}</script>

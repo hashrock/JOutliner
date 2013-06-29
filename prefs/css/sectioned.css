@@ -1,0 +1,122 @@
+{!max_style_depth:1}<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd\">
+<html>
+<head>
+<title>{$title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset="{$encoding}">
+<style type="text/css">
+
+body {
+	background-color: {$panel_background_color}; 
+	color: {$textarea_foreground_color}; 
+	font: {$font_size}pt {$font_face}, Verdana, Geneva, Arial, Helvetica, sans-serif;
+} 
+
+.normal{
+	color: {$textarea_foreground_color}; 
+	font: 11pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.leaf0 {
+	margin-left: 0pt;
+	margin-top: 20pt;
+	margin-bottom: 0pt;
+	font: bold 14pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.branch0 {
+	margin-left: 0pt;
+	margin-top: 20pt;
+	margin-bottom: 0pt;
+	font: bold 14pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.leafcomment0 {
+	margin-left: 0pt;
+	margin-top: 20pt;
+	margin-bottom: 0pt;
+	font: bold 14pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #ff3300;
+}
+
+.branchcomment0 {
+	margin-left: 0pt;
+	margin-top: 20pt;
+	margin-bottom: 0pt;
+	font: bold 14pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #ff3300;
+}
+
+.leaf1 {
+	margin-left: 15pt;
+	margin-top: 10pt;
+	margin-bottom: 0pt;
+	font: italic 12pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #993300;
+}
+
+.branch1 {
+	margin-left: 15pt;
+	margin-top: 10pt;
+	margin-bottom: 0pt;
+	font: italic 12pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #993300;
+}
+
+.leafcomment1 {
+	margin-left: 15pt;
+	margin-top: 10pt;
+	margin-bottom: 0pt;
+	font: italic 12pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #ff3300;
+}
+
+.branchcomment1 {
+	margin-left: 15pt;
+	margin-top: 10pt;
+	margin-bottom: 0pt;
+	font: italic 12pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #ff3300;
+}
+
+.leaf {
+	margin-left: 15pt;
+	margin-top: 3pt;
+	margin-bottom: 0pt;
+	color: {$textarea_foreground_color}; 
+	font: 9pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.branch {
+	margin-left: 15pt;
+	margin-top: 3pt;
+	margin-bottom: 0pt;
+	color: {$textarea_foreground_color}; 
+	font: 9pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.leafcomment {
+	margin-left: 15pt;
+	margin-top: 3pt;
+	margin-bottom: 0pt;
+	color: {$textarea_comment_color}; 
+	font: 9pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.branchcomment {
+	margin-left: 15pt;
+	margin-top: 3pt;
+	margin-bottom: 0pt;
+	color: {$textarea_comment_color}; 
+	font: 9pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+</style>
+</head>
+
+<body>
+{$outline}
+</body>
+
+</html>
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<xmlrpc>
+<url>http://www.stuffeddog.com/speller/speller-rpc.cgi</url>
+<xmlrpc_call>&lt;methodCall>
+	&lt;methodName>speller.spellCheck&lt;/methodName>
+	&lt;params>
+		&lt;param>&lt;value>&lt;![CDATA[{$value}]]&gt;&lt;/value>&lt;/param>
+		&lt;param>&lt;value>&lt;struct>&lt;/struct>&lt;/value>&lt;/param>
+	&lt;/params>
+&lt;/methodCall></xmlrpc_call>
+<replace>true</replace>
+</xmlrpc>

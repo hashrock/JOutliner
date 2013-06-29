@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<pattern>&lt;xsl:text disable-output-escaping="yes"&gt;{$value}&lt;/xsl:text&gt;</pattern>

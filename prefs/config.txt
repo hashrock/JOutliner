@@ -1,0 +1,76 @@
+set|desktop_background_color|-16777216
+set|line_number_selected_color|-2960686
+set|line_number_color|-1315861
+set|textarea_foreground_color|-16777216
+set|line_number_selected_child_color|-2302756
+set|textarea_comment_color|-65536
+set|panel_background_color|-1
+set|selected_child_color|-10987432
+set|textarea_background_color|-986896
+set|font_size|12
+set|font_face|Courier New
+set|indent|15
+set|vertical_spacing|2
+set|top_margin|5
+set|left_margin|5
+set|bottom_margin|5
+set|right_margin|5
+set|main_window_x_offset|50
+set|main_window_y_offset|50
+set|main_window_width|600
+set|main_window_height|500
+set|file_protocol|Local File System
+set|open_format|Auto-Detect
+set|import_format|BrainForest Palm pdb
+set|export_format|Plaintext
+set|save_format|Plaintext
+set|open_encoding|UTF-8
+set|save_encoding|UTF-8
+set|export_encoding|UTF-8
+set|import_encoding|UTF-8
+set|save_line_end|Windows
+set|justified_plaintext_col_width|80
+set|justified_plaintext_draw_lines|true
+set|justified_plaintext_number|false
+set|most_recent_open_dir|
+set|most_recent_save_dir|
+set|show_indicators|false
+set|show_attributes|false
+set|show_line_numbers|true
+set|apply_font_style_for_editability|true
+set|apply_font_style_for_comments|true
+set|apply_font_style_for_moveability|true
+set|line_wrap|words
+set|autosave_frequency|30
+set|undo_queue_size|1000
+set|frame_info_list_size|200
+set|renderer_widgit_cache_size|40
+set|owner_name|
+set|owner_email|
+set|document_titles_name_form|Full Pathname
+set|recent_files_list_size|15
+set|recent_files_name_form|Full Pathname
+set|recent_files_ordering|Chronological
+set|recent_files_direction|Top to Bottom
+set|single_click_expand|false
+set|ignore_digit_words|false
+set|ignore_sentence_cap|false
+set|ignore_inetadd|true
+set|ignore_multiple_words|true
+set|ignore_mixed_case|false
+set|ignore_upper_case|false
+set|print_environment|false
+set|is_maximized|true
+set|mouse_wheel_scroll_speed|1
+set|new_doc_on_startup|false
+set|use_create_mod_dates|false
+set|create_mod_dates_format|EEE, d MMM yyyy hh:mm:ss z
+set|time_zone_for_saving_dates|GMT
+set|web_file_url|http://localhost/outliner.php
+set|web_file_password|
+set|web_file_user|
+set|developer_guide_path|dox/JOE Developer Guide.en.opml
+set|user_guide_path|dox/JOE User Guide.en.opml
+set|bookmarks_path|usr\\Default User\\My JOE Bookmarks.opml
+set|tutorials_path|dox/JOE Tutorials.en.opml
+set|about_path|dox/About JOE.en.opml

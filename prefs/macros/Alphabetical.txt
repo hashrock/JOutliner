@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<comparator>String sA = nodeA.getValue();
+String sB = nodeB.getValue();
+
+int retVal = sA.getUpperCase().compareTo(sB.getUpperCase());</comparator>

@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<pattern>&lt;xsl:value-of select="{$value}" disable-output-escaping="yes"/&gt;</pattern>

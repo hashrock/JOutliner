@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<script>if ((nodeRangePair.startIndex != -1) &amp;&amp; (nodeRangePair.endIndex != -1)) {
+	return;
+} else {
+	// Get the String value of the node
+	StringBuffer buf = new StringBuffer();
+	node.depthPaddedValue(buf, "\n");
+	chars = buf.toString().toCharArray();
+
+	// Format it
+	markupFormatter = new com.organic.maynard.util.format.Markup();
+	StringBuffer out = markupFormatter.format(chars);
+
+	// Turn the formatted string back into a node heirarchy
+	while(!node.isLeaf()) {
+		Node child = node.getChild(0);
+		node.removeChild(child,0);
+	}
+
+	PadSelection.pad(out.toString(), node.getTree(), node.getDepth() + 1, "\n", node);
+}</script>

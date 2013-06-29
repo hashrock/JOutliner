@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<script>// Here is a modified AutosaveAgent (beanShell script) that increases safety from editing 
+// accidents by making a backup file with a dated filename. The backup file is made only 
+// once per calendar day and only if the outline is modified that day. The regular autosave 
+// behavior is unchanged.
+//
+// Script provided by: pbaclace (Paul E. Baclace) 
+// Original Source at: http://sourceforge.net/forum/forum.php?thread_id=697832&amp;forum_id=45896
+
+import com.organic.maynard.outliner.util.preferences.Preferences;
+import com.organic.maynard.outliner.io.FileProtocol;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+SimpleDateFormat sdf_ = new SimpleDateFormat("yyyyMMdd");
+
+while (true) {
+	int freq = Preferences.getPreferenceInt("autosave_frequency").cur * 1000;
+	Thread.sleep(freq);
+
+	for (int i = 0; i &lt; Outliner.documents.openDocumentCount(); i++) {
+		OutlinerDocument doc = Outliner.documents.getDocument(i);
+		if (!doc.getDocumentInfo().isImported()) {
+			if (!doc.getDocumentInfo().isHelpFile()) {
+				if (!doc.getFileName().equals("") &amp;&amp; doc.isModified()) {
+					System.out.println("Auto-Saving: " + doc.getFileName());
+					String backupFilename = doc.getFileName() + "." + sdf_.format(new Date());
+					if (!(new File(backupFilename)).exists()) {
+						FileProtocol protocol = Outliner.fileProtocolManager.getProtocol(doc.getDocumentInfo().getProtocolName());
+						if (protocol == null) {
+							protocol = Outliner.fileProtocolManager.getDefault();
+						}
+						System.out.println("Auto-Backup: " + backupFilename);
+						FileMenu.exportFile(backupFilename, doc, protocol);
+					}
+					SaveFileMenuItem.saveOutlinerDocument(doc);
+				}
+			}
+		}
+	}
+}</script>

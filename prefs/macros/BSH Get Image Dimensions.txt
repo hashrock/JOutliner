@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<script>// Description: This script interprets the currently selected node as a filepath. It then
+// proceeds to crawl the directory structure creating a node for every gif or jpg it finds. The
+// text of the node is the name of the file and the width and height.
+
+import java.io.File;
+import javax.swing.ImageIcon;
+
+int pathLength = -1;
+// Method Delcaration
+addNodesRecursively(Node parent, String path) {
+	File file = new File(path);
+	File[] files = file.listFiles();
+	for (int i = 0; i &lt; files.length; i++) {
+		File fileToAdd = files[i];
+
+		if (fileToAdd.getName().endsWith(".gif") || fileToAdd.getName().endsWith(".jpg")) {
+
+			ImageIcon image = new ImageIcon(fileToAdd.getPath());
+
+			int width = image.getIconWidth();
+			int height = image.getIconHeight();
+
+			String src = fileToAdd.getPath().substring(pathLength, fileToAdd.getPath().length());
+			String value =  "&lt;img src=\"" + src + "\" width=\"" + width + "\" height=\"" + height + "\" border=\"0\" alt=\"\">";
+			value = value.replace('\\','/');
+			Node newNode = new NodeImpl(node.getTree(),value);
+			parent.appendChild(newNode);
+
+		} else if (fileToAdd.isDirectory()) {
+			Node newNode = new NodeImpl(node.getTree(), fileToAdd.getName());
+			parent.appendChild(newNode);
+			newNode.setValue(newNode.getValue() + "/");
+			addNodesRecursively(newNode, fileToAdd.toString());
+		} 
+	}
+}
+
+// Do it
+pathLength = node.getValue().length();
+addNodesRecursively(node, node.getValue());</script>

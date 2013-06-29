@@ -1,0 +1,728 @@
+<html>
+	<head>
+		<title>JOE Release Notes</title>
+	</head>
+	<body>
+		<h2>JOE Release Notes</h2>
+		<hr>
+		<a name="release_notes"></a>
+		<h2>1.8.10.6 - 6/03/04</h2>
+			<b>Bug Fixes:</b>
+			<ol>
+				<li>Fixed a bug where I was not assuming object reuse by XML parsers which caused node attribute to not get parsed correctly and thus resulted in mangled data when opening an OPML and OML document.</li>
+				<li>Fixed bug with file revert where it was resizing and re-positioning the document when it should not have been.</li>
+			</ol>
+			<b>Feature Enhancements:</b>
+			<ol>
+				<li>The merge menu items now enable and disable themselves when they may be used.</li>
+			</ol>
+		<h2>1.8.10.5 - 5/18/04</h2>
+			<b>Bug Fixes:</b>
+			<ol>
+				<li>Fixed a bug in the way character data is accessed in the XMLProcessor base 
+				class which was causing document attributes to not get saved correctly in OPML and 
+				OML files when an &amp; character appeared in them. This should also fix situations
+				where multiple attributes where being created when they should not have been on opening
+				an OPML or OML file.</li>
+			</ol>
+		<h2>1.8.10.4 - 5/17/04</h2>
+			<b>Bug Fixes:</b>
+			<ol>
+				<li>Fixed a bug in Find/Replace where doing a "start from top" where the length of the last line in the document was less than the current cursor position within the current node would cause an out of bounds exception.</li>
+				<li>Fixed a bug in Find/Replace where the use of the '/' character in a regular expression was being escaped where it shouldn't have been causing character patterns such as /s, /w, etc. to not work correctly.</li>
+				<li>Fixed a bug where the backspace was not being consumed correctly in german locales, and possible other non-english locales. The patch was provided by Hans-Ulrich Teufel.</li>
+				<li>Fixed various text chunks that were not setup for internationalization.</li>
+				<li>Fixed a minor bug where the "Save As" file chooser was not being set to the most recent save directory for untitled documents.</li>
+				<li>Fixed a bug where the "Merge with Spaces" action was not applying the spaces to descendant nodes.</li>
+			</ol>
+			<b>New Features:</b>
+			<ol>
+				<li>Documents that were open when you last closed JOE will reopen themselves automatically the next time you open JOE. This behaviour can be enabled/disabled via a new preference called "Reopen documents on startup" on the "misc" preferences panel.</li>
+			</ol>
+			<b>Feature Enhancements:</b>
+			<ol>
+				<li>Added tabs to the Find/Replace frame for the three search scope. Generally cleaned up the layout of this screen and it's associated dialogs.</li>
+				<li>Changed "Merge with Spaces" to "Merge with Delimiter" and added preferences to the "Misc" panel for setting the delimiter, enabling/disabling trimming of whitespace, and enabling/disabling the inclusion of empty nodes.</li>
+			</ol>
+			<b>Other Changes:</b>
+			<ol>
+				<li>We've got a more extensive and correct german translation file thanks to Hans-Ulrich Teufel.</li>
+				<li>We've got a more extensive and correct japanese translation file thanks to ka2hiro.</li>
+			</ol>
+		<h2>1.8.10.3 - 02/23/04</h2>
+			<b>Bug Fixes:</b>
+			<ol>
+				<li>Fixed the line endings in run_joe.sh so that they are unix rather than windows.</li>
+				<li>Fixed a bug where the menu item used to toggle attribute display was not staying in sync with the state of the current document as a user changed from one document to another.</li>
+				<li>In the process of reworking the recent files list I believe I fixed the problems with window maximization and preservation of size and position both when opening from the recent files list and OPML.</li>
+			</ol>
+			<b>Feature Enhancements:</b>
+			<ol>
+				<li>Rewrote the interface for spell checking. Added support for adding words to the dictionary. Added a "cancel" button. Changed from a combobox to a textfield and list model for selecting replacements. Added tooltips for buttons. Fixed minor bugs as well.</li>
+				<li>Incorporated a patch provided by Axel Rauschmayer which makes the accelerator keys more platform independent, and which enables the top-level menubar in Mac OS X.</li>
+			</ol>
+			<b>Other Changes:</b>
+			<ol>
+				<li>Updated BeanShell to version 1.3.0 from version 1.2b7.</li>
+				<li>Updated jakarta-oro (Perl regular expression support) to version 2.0.8 from version 2.0.6.</li>
+				<li>Updated Jazzy spell checker to version 0.5 from version 0.4.</li>
+				<li>Reworked parts of the package structure which were annoying me and added more extensive java docs.</li>
+				<li>Reworked the recent files list to use an XML config file rather than a serialized java file. This should be the last release that causes recent files lists to become invalid after an upgrade.</li>
+				<li>Updated the default configuration to use UTF-8 as an encoding type and turned off some of the less commonly used features. Basically I setup the default configuration to be more like the way I configure JOE myself.</li>
+				<li>Finally added a release target for ANT and some release instructions, so doing releases should be a little less time consuming.</li>
+			</ol>
+		<h2>1.8.10.2 - 10/12/03</h2>
+			It's been a while since I did a release, and I haven't really been tracking my changes. However, there really haven't been many that I can think of, so it shouldn't matter much. Anyhow, the main purpose of this release is that it should fix the delete node problem listed in the bug fixes below.<br>
+			<br>
+			<b>Bug Fixes:</b>
+			<ol>
+				<li>Fixed <a href="http://sourceforge.net/tracker/index.php?func=detail&aid=731325&group_id=14510&atid=114510">bug #731325</a> concerning garbage characters being introduced when deleting nodes.</li>
+			</ol>
+			<b>New Features:</b>
+			<ol>
+				<li>Added support for an OML file format. That's right, OML, not OPML. For more information see <a href="http://oml.sourceforge.net/cgi-bin/blosxom.cgi/news">http://oml.sourceforge.net</a>.</li>
+			</ol>
+			<b>Other Changes:</b>
+			<ol>
+				<li>Added additional information about spaces not being allowed in attribute names to the error message that occurs when trying to add them.</li>
+				<li>Replaced the user and developer guides with instructions to use the discussion forums since these guides were horribly out of date, incomplete and inaccurate.</li>
+			</ol>
+		<h2>1.8.10.1 - 02/17/03</h2>
+			<b>Bug Fixes:</b>
+			<ol>
+				<li>The Bean Shell console wasn't working so I upgraded to the latest version and it now works.</li>
+			</ol>
+			<b>Other Changes:</b>
+			<ol>
+				<li>The preferred language is now taken from the default locale rather than a value passed in as an arg.</li>
+				<li>Extended support for mnemonics to menu items. Previously only menus were supported. Implemented menu items mnemonics for english language version of the gui.xml file.</li>
+				<li>Converted the release notes, about JOE, and other help docs to HTML and built an HTML based help viewer into JOE.</li>
+				<li>Removed some extraneous directories.</li>
+				<li>Rewrote the installation instructions.</li>
+				<li>Fixed some problems with the ANT buildfile.</li>
+			</ol>
+		<h2>1.8.10 - 12/22/02</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Added Spell Checking using Jazzy version 0.4.</li>
+					<li>Added an "Auto-Detect" file format for open and import. When selecting this format JOE will find an open or import format based on the file's extension. If no appropriate format is found then a default (as defined by file_formats.txt, not the user's preference) will be used.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Document Attributes Panel is now non-modal so you can leave it open and it updates as you change from document to document.</li>
+					<li>The arrow icons now use the text and foreground colors rather than always using black, white.</li>
+					<li>Document attribute changes are now undoable.</li>
+					<li>Find/Replace results now opens files as needed when you click on a result.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug where the horizontal position of each line was incorrect as a result of updating the preferences relating to "line numbers" and "indicators".</li>
+					<li>Fixed a bug where changing between docs in maximized mode under jdk1.4.0+ does not resize doc correctly the first time. Also fixed related issues where focus was getting lost when adding or removing new documents until the user clicked on the window.</li>
+					<li>Fixed a bug where 'delete' and 'backspace' were not updating the attributes panel as they were being typed. The only way this was visible was if "Automatically generate node attributes" was turned on for the document and the attributes panel was visible.</li>
+					<li>Fixed a bug where the first time the "Document Preferences" were edited the changes wouldn't stick.</li>
+					<li>Fixed a bug where ctrl-q, ctrl-n, etc. wouldn't work when the last open document was closed because focus was being lost.</li>
+					<li>Modified the tab behaviour in the find panel since it was breaking keyboard accessibility.</li>
+					<li>Fixed an issue where doing a sendto where the filename had spaces in it would fail because I wasn't appending together the args caused by the presence of the spaces.</li>
+					<li>Reverting a file now correctly reverts the document attributes.</li>
+					<li>Reverting a file now correctly reverts the document preferences.</li>
+					<li>Now showing an error dialog when the file path is invalid when doing a file system find/replace.</li>
+				</ol>
+			<b>Other Changes:</b>
+				<ol>
+					<li>Added built in scrollwheel support for jdk1.4.0. Removed use of jmousewheel for scrollwheel support.</li>
+				</ol>
+		<h2>1.8.9.2 - 09/01/02</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Added text actions for moving the current selection. Ctrl-Right Arrow will move the current selection to the right one character, or down to the next line if the selection is at the end of the current text area. Left Arrow works similarly.</li>
+					<li>Added text actions for expanding a selection within a text area with the keyboard. Shift-Up Arrow Selects to the start of the text area. Shift-Down Arrow selects to the end of the text area.</li>
+					<li>Added text actions for expanding a selection within a text area with the keyboard. Right Arrow expands one character to the right. Ctrl-Shift-Right Arrow expands to the next work boundary. Left Arrow works similarly. This functionality existed prior to the addition of the Action code so this is sort of a bug fix as well.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Undo/Redo now displays informative text in the MenuItems about what you are undoing and redoing.</li>
+					<li>Undo All/Redo All now displays your current location within the undo queue, as well as the maximum size of the undo queue.</li>
+					<li>Resizing the max undo queue size no longer clears out the redoables unless unless it proves necessary.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug with JDK1.4 where focus wouldn't change to the hidden component, causing the cursor to track with you as you scroll, rather than staying with the node you were editing.</li>
+					<li>Fixed a bug introduced in 1.8.9.1 where the default text action wasn't working in JTextAreas. This made it impossible to enter text in various places, such as find/replace and some of the preferences panels.</li>
+					<li>Fixed some StackOverflow issues with demoting thousands of nodes at the same time, by unwinding more of the recursive methods in NodeImpl.</li>
+					<li>Fixed an obscure bug with CompoundUndoableReplace where deleting the first node in the tree when it is expanded could cause an exception when you did a "redo" where the previous redo selected a node.</li>
+					<li>Fixed a bug where adjusting the max size of the undo cache to a smaller number than the current undo cache size would leave an extra redo hanging around thus causing an exception if you redid it.</li>
+					<li>Fixed a bug where redoing a Node Attribute modification would cause it to become read only.</li>
+					<li>XML-RPC Macros now remove the last line ending for the {$value} replacement when a node is selected. Fix for bug #601682.</li>
+				</ol>
+		<h2>1.8.9.1 - 08/24/02</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Added a splash screen that displays at startup, giving a user a bit more feedback that something is happening while they wait for the GUI to set itself up.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Added a node number preference to the JustifiedPlainText format. This will number nodes like 1, 1.1, 1.2, 2, 2.1, 2.2, 2.2.1, etc.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed bug where doing an export could cause saving to stop working because the default file format would get set incorrectly.</li>
+					<li>Fixed bugs where many of the menu items under "edit" and "outline" would not work and throw a StackOverflow error.</li>
+					<li>Fixed a bug where if you typed really fast and did carriage returns at the same time, characters would appear but then get cleared. This fix was part of the conversion to Actions mentioned below.</li>
+					<li>Fixed a bug where Java Version numbers that contained _ characters would throw an exception.</li>
+					<li>Fixed a bug where doing a merge on a selection that contains a mix of editable and read-only nodes could cause the read-only nodes to wink out of existence.</li>
+				</ol>
+			<b>Other Changes:</b>
+				<ol>
+					<li>Image resources are now stored in com.organic.maynard.jar.</li>
+					<li>Moved much of the KeyListener code to Action code. This should make things work a little better under JDK 1.4.</li>
+				</ol>
+		<h2>1.8.9 - 08/12/02</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Feature Request #548169. Added the following two editing actions:
+						<ol>
+							<li>Shift-doubleclick on an expanded node now collapses the node without collapsing the node's children. When you expand the node with a regular doubleclick the children's expansion state is preserved.</li>
+							<li>Shift-doubleclick on a collapsed node now works like the existing menu item, "Expand All Subnodes".</li>
+							<li>Shift-pagedown now toggles the expansion state with the same behaviour mentioned above.</li>
+						</ol>
+					</li>
+					<li>Added a new Editor preference for single click expand/collapse for nodes. This is by default turned off since that is the pre-existing functionality. When turned on, clicking on a node will cause it to expand/collapse rather than having to double-click it as in the past.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Dramatically sped up document closing times by doing the object destruction in a separate thread after after the window has been closed.</li>
+					<li>Moderately sped up application launch time by more pervasive use of lazy instantiation. I also eliminated most of the startup spew which may or may not be a good thing, but I was in the mood.</li>
+					<li>When changing the format in the Save or Export file system view, the file extension is automatically updated to the default for that format.</li>
+					<li>Implemented feature request #579791. Added menu mnemonics for each of the main menus. This will only work correctly under jdk 1.4.0 because of Swing bug #4309156, and the necessary work around, which exists in previous versions of the jdk.</li>
+				</ol>
+			<b>Other Changes:</b>
+				<ol>
+					<li>Updated jar for BeanShell from 1.2b1 to 1.2b6.</li>
+					<li>Updated jar for Jakarata ORO from 2.0.4 to 2.0.6.</li>
+					<li>Updated the xmlrpc library from the old helma code to xml.apache.orgs xmlrpc version 1.1. Apache's code is the latest version of the helma code since they turned it over to apache.</li>
+					<li>Began moving code into a more structured package hierarchy. Java docs are marginally better as well.</li>
+					<li>Preliminary support for "modules". Modules are sets of menus, preferences and java code that can be installed into the "modules" directory allowing extended functionality without cluttering up the base JOE build. I'll be releasing an XML module soon.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug where "insert new node above" and "split current node and insert above" would throw an exception when you tried to undo them if the new node was the very first node in the document.</li>
+					<li>Fixed bug where the warning for doing a "Save As"/"Export" over an existing file didn't work. Now the warning shows up as it should. The warning for "Open"/"Import" of a non-existent file is also fixed.</li>
+					<li>The uniqueness check which prevents opening two files with the same path has been fixed. Previously it was only working for the recent files list.</li>
+				</ol>
+		<h2>1.8.8 - 04/18/02</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Automatic node level created/modified dates. If turned on via application or document level preferences, node attributes for creation and modification dates will be generated. By default this feature is turned off.</li>
+					<li>Read-only property for node and document attributes. Note: node level settings take precedence, so if the node itself is read-only, you won't be able to adjust attribute level settings.</li>
+					<li>New Selection key commands. You can now use the keyboard to make selections. It is possible to create disconnected selections from the keyboard by using the left and right arrow commands described below.<br>
+						<br>
+						The following is a list of the key commands added.
+							<ol>
+								<li>shift-up: extends the selection up.</li>
+								<li>shift-down: extends the selection down.</li>
+								<li>ctrl-shift-up: reduces the selection from below.</li>
+								<li>ctrl-shift-down: reduces the selection from above.</li>
+								<li>shift-left: deselects the current youngest selected node and extends the selection up.</li>
+								<li>shift-right: deselects the current oldest selected node and extends the selection down.</li>
+								<li>ctrl-shift-left: deselects the current oldest selected node and reduces the selection from below.</li>
+								<li>ctrl-shift-right: deselects the current youngest selected node and reduces the selection from above.</li>
+							</ol>
+						To make room for the shift commands, the move commands from previous versions had to be re-mapped. The following is a list of the new move keyboard commands:
+							<ol>
+								<li>ctrl-up: Moves current selection up but stays at the current depth.</li>
+								<li>ctrl-down: Moves current selection down but stays at the current depth.</li>
+								<li>ctrl-left: Moves current selection up, adjusts depth as needed.</li>
+								<li>ctrl-right: Moves current selection down, adjusts depth as needed.</li>
+							</ol>
+					</li>
+					<li>Find/Replace has had a major rewrite. It now support searching over the current document, all open documents, or the file system. The file system find/replace supports file and directory level glob filtering for both inclusion and exclusion (Now I won't mess up my CVS entries when doing a replace). Results are also displayed in a results dialog that lets you jump to the matched text in any of the open document. Currently the filesystem results are displayed, but don't automatically open the file from the file system. The file system find/replace functionality also makes use of a progress dialog that allows you to cancel a find/replace in progress. One caveat, large find/replace operation may cause out of memory errors. Recovery from this is graceful since you can just close the progress dialog and the current results will be displayed. By large I mean 50,000+ matches on searches over 10,000+ files. From what I've seen, the size of the result set is what causes the out of memory error due to the large number of objects created.</li>
+					<li>Added more new key commands.
+						<ol>
+							<li>shift-return: insert new node above. </li>
+							<li>shift-ctrl-return: Split current node at cursor and insert above.</li>
+						</ol>
+					</li>
+					<li>New BSH Macro, "Format Markup". This macro will reformat XML/HTML markup into a nice clean hierarchy of nodes. Still a bit rough, but worth a try if you've got markup to format.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Script and Macro editor now have save commands so you don't have to close the script editor to save the script.</li>
+					<li>Inserting a new node when nodes are selected now always puts the new node as the next older sibling of the oldest selected node. Inserting a new node when in text selection mode and the current node is an open branch node still inserts the new node as the first child of the current node rather than as an older sibling.</li>
+					<li>Pasting now works the way inserting new nodes do. See #2 above for more detail.</li>
+					<li>File Export/Save has been modified so that File Formats can throw up there own dialog after the user has gone through the file chooser stage. By returning a null for bytes[] the save/export can be aborted, so user's may cancel at this point if the FileFormat code is written to support it. The updated HTMLExportFileFormat is an example of this.</li>
+					<li>The Export HTML file format has been rewritten to support document templates stored on disk. Now the user is prompted to select a style to use when they export. The templates are stored in prefs/css/.</li>
+					<li>The "Render Image Manifests" script now outputs image aspect ratios and will provided width x height for each image normalized to a fixed area.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug where cancelling an "Export" would cause the next save to fail. Same bug also fixed in "Export Selection" where cancelling would also cause you to lose the document tree except for what was selected.</li>
+					<li>Fixed bug where text selection would be lost whenever the user moused over the "Recent Files" menu.</li>
+					<li>Fixed bug where the "inconsistent hierarchy" message was blank.</li>
+					<li>Fixed bug where File Exporters weren't getting all the "meta" data they should have from the DocumentInfo object. This was the result of creating a new DocumentInfo Object rather than cloning the existing one.</li>
+					<li>Fixed bug where the "export selection" menu item was not being disabled after a save when there was no selection.</li>
+					<li>The "Hoist" menu item now gets enabled only when you can actually use it.</li>
+					<li>Fixed a bug where doing a delete that merges into the previous line would cause cursor focus to be lost on a subsequent scroll action. This was an error in UndoableEdit so this may have fixed problems elsewhere as well.</li>
+					<li>Pasting into other apps now will not have extra indenting.</li>
+					<li>Fixed bug #527137 where help docs wouldn't load on linux. Thanks to sjakob for the fix.</li>
+					<li>Fixed bug where document level attributes with an empty value would not get loaded for an OPML document.</li>
+					<li>Fixed some bugs in the way application and document level settings were working.</li>
+					<li>Updated run_joe.sh, provided by Gary Benson (dirtyrat), so that it now handles paths more sensibly, so you can invoke it as: run_joe ../../file.opml.</li>
+				</ol>
+		<h2>1.8.7 - 02/04/02</h2>
+			<b>License Change:</b>
+				<ol>
+					<li>Switched to a BSD license.</li>
+					<li>We are now building our own jmousewheel.jar library. Code separation is much cleaner so that there is now only a "uses" relationship between outliner.jar and jmousewheel.jar. This should make things compatible between the use of a BSD license for outliner.jar and the LGPL for jmousewheel.jar.</li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>Support for multiple File Protocols added.
+						<ol>
+							<li>Implemented LocalFileSystemFileProtocol for opening/saving/exporting to the local filesystem.</li>
+							<li>Implemented WebFilePHPFileProtocol for opening/saving/exporting to Steven Spencer's PHP based remote file storage system. The WebFile code is now contained in it's own jar: com.yearahead.io.webfile.jar.</li>
+						</ol>
+					</li>
+					<li>Added display options for document window titles. User can now set outline document window titles to show a file's full pathname, a truncated version of the full pathname, or just the file name. Setting is done via a Document Titles widget at the bottom of the Application Preferences Look & Feel panel.</li>
+					<li>Added file import functionality
+						<ol>
+							<li>Added new File menu submenu, Import. Import opens up a format that JOE can read but not write.</li>
+							<li>Added import format Brain Forest Palm pdb. Import reads node and note text, ignores other data.</li>
+							<li>Added import format Shadow Plan Palm pdb. Import reads node and note text, ignores other data.</li>
+							<li>Added import format Thought Manager Palm pdb. Import reads node and note text, ignores other data.</li>
+						</ol>
+					</li>
+					<li>Added Maximize:Horizontal/Vertical commands to Windows menu. These commands resize the topmost window so that it is made as large as fits within JOE along the specified axis. The window size does not change along the other axis.</li>
+					<li>Added Tile Horizontal/Vertical/Grid commands to Windows menu. Each command tiles all non-iconified document windows. The axis tilings maximize the windows along the specified axis. The grid tiling seeks a balanced arrangement.</li>
+				</ol>
+			<b>Enhanced Features:</b>
+				<ol>
+					<li>Autosave agent frequency can now be set from the misc panel.</li>
+					<li>Added a "ding" when a search/replace finds no matches.</li>
+					<li>Andreas Hochsteger (highstick) has provided a German translation of the gui_tree file so that JOE can be run with a German Text in the interface.</li>
+					<li>Enhancements to Recent Files list user interface. Users can now set four user-interface properties: list size, ordering, direction, and name form. Setting is done via a Recent Files panel within the Application Preferences Open & Save folder.</li>
+					<li>Enhancements to Application Preferences Open & Save panel. New widgets let users specify Default Encoding and Default Format separately for Open, Import, Save, and Export operations.</li>
+					<li>Added sub-containers to preference panels so that prefs can be grouped more intelligently.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug where new documents would often have the text area hidden until the next redraw.</li>
+					<li>Fixed a bug where open Help files killed the Autosave Agent script.</li>
+					<li>Fixed a null pointer bug in the class OutlinerCellRendererImpl.</li>
+					<li>Fixed a null pointer bug in the method StringTools.replace()</li>
+					<li>Fixed several out-of-range string index bugs in the class TextKeyListener</li>
+				</ol>
+			<b>Notes:</b>
+				<ol>
+					<li>If you have a previous version of JOE on your system you will probably need to manually copy the updated autosave agent script from "<install_dir>/prefs/scripts/Autosave Agent.txt" to "<user_home>/outliner/scripts/Autosave Agent.txt". If you don't do this it just means the autosave agent won't work.</li>
+					<li>The sources for com.organic.maynard.jar have been put in CVS. Xerces.jar is required to compile com.organic.maynard.jar, but I'm leaving it out of the builds because it is very large (1.7M) and is not used by JOE. I will check in the license and a copy the copy of xerces.jar I'm currently using, so you can download it from CVS or instead get it directly from Apache: http://xml.apache.org/xerces-j/index.html. I'm currently using xerces 1.4.3, but any recent release should be fine.</li>
+					<li>We've updated the way the recent files list works, so your current recent files will get blown away if you use the new version.</li>
+					<li>We're now using Ant to build.</li>
+				</ol>
+		<h2>1.8.6.1 - 10/20/01</h2>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed bug #472934, where macros applied to node selections were not working.</li>
+				</ol>
+		<h2>1.8.6 - 10/19/01</h2>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed bug #465943 where windows would scroll to the top when the window was resized, loses focus, etc.</li>
+					<li>It's no longer possible to cause the main outliner window to be loaded offscreen by manually editing config.txt and setting large or negative values.</li>
+					<li>Added a PlatformCompatibility class which wraps platform/java version specific code. This fixes the issue with OutlinerScrollBarUI causing startup to barf on MacOSX.</li>
+					<li>Re-fixed bug #458868 which was about text selection not being registered for macro use.</li>
+					<li>Fixed the way preference panels are loaded so that a tree hierarchy of panels can be created.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Added a new preference for mouse wheel speed to the misc preferences panel. Now you can scroll faster if you need more speed in your life.</li>
+					<li>Added file export functionality.
+						<ol>
+							<li>Added export a selection.</li>
+							<li>Added a simple HTML export as an example of how these might work.</li>
+							<li>Added a justified plaintext export format. These release notes are now output using this format. Added prefs to control the column width and if lines are drawn.</li>
+						</ol>
+					</li>
+				</ol>
+			<b>Notes:</b>
+				<ol>
+					<li>Added a shell script for Unix, run_joe.sh. Thanks to tswoam for providing the script.</li>
+				</ol>
+		<h2>1.8.5 - 09/21/01</h2>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>If you select the first child node and then select another sibling node, doing a select all wouldn't work right. Now it does.</li>
+					<li>Fixed bug #458868 where double clicking to select a word wouldn't actually get recorded internal to the app, even though visually it looked OK. This would cause macros not to apply themselves to the correct selection.</li>
+					<li>Fixed bug with go to line where the view wasn't jumping to a node that was not currently on screen.</li>
+					<li>Fixed a Stack Overflow issue with line numbers. The moral, recursive methods elegant, but bad if they're going to recurse thousands of times.</li>
+					<li>Fixed a bug with delete where the current node to draw from would not get hidden initially when you deleted the current node to draw from.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Performance improvements.</li>
+					<li>Added Scripts Manager. You can now create scripts and run them in their own thread of execution. Basic facilities for monitoring and managing these threads is also included. I implemented an auto-save agent as an example script. Scripts can also be designated as startup or shutdown scripts.</li>
+					<li>Added mouse wheel support for windows. Thanks to the JMouseWheel project on SourceForge: http://sourceforge.net/projects/jmousewheel/.</li>
+				</ol>
+			<b>Notes:</b>
+				<ol>
+					<li>The windows mousewheel code also apparently relies on a MSVCP60.dll file. This seems to be included by default under Win2k, but isn't for 95/98/NT. You can download this dll off the net. It's about 393k. You'll know you need it if you get a windows dialog at startup bitching about not being able to find this. If you choose not to get the dll things will still work ok, but you won't have the mousewheel support, and you'll have to deal with the annoying dialog's on startup. I'll post the dll at http://outliner.sourceforge.net/MSVCP60.dll so you don't need to hunt for it.</li>
+				</ol>
+		<h2>1.8.4 - 09/04/01</h2>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug where changing the name of a macro during an "update macro" operation would not delete the old macro from the file system.</li>
+					<li>When you had a set of nodes selected and you typed a few characters quickly they would not all get sent to the youngest node in the selection. This was a result of the youngest node not being set as the current editing node.</li>
+					<li>Added alpha-numeric validation to attribute key in the new attribute dialog. If a non XML compliant key was used it would make the OPML unparseable and thus unreadable.</li>
+					<li>Fixed a bug where doing a find/replace with start at top selected would not search over the descendants of the last child of root.</li>
+					<li>The installation code now copies macros files one by one. If an existing macros.txt file exists then lines for any new macros are now appended. Prior to this, people who were installing over old builds wouldn't get any new macros that were added unless they copied them manually.</li>
+					<li>Added validation for macro names so that a user can't create a name that would be an invalid filename. Prior to this you could get an exception and then your macros.txt file would be out of sync with the filesystem.</li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>Added sorting macros. These show up in the macro popup under "sort". These are implemented in BSH so you can easily roll your own.</li>
+					<li>Added document attributes. Now you can store arbitrary document level data via attributes. These will be saved/loaded when you use OPML as your file format.</li>
+					<li>Added regular expression support to Find/Replace via Apache's jakarta-oro package.</li>
+					<li>You can now save Find/Replace items.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>The XML-RPC Macro now uses a single URL rather than server and port. This will allow for more flexibility in connecting to a server. However, this breaks any existing XML-RPC Macros. You will need to update any existing macros with the appropriate URL before using them.</li>
+					<li>More enhancements to the XML-RPC macro. Now you can put the body of the XML-RPC call within the macro. The current selection can be passed in and will substitute itself for {$value}. Inline replacement is improved. Return values now convey the correct hierarchy of <struct> and <array>.</li>
+					<li>Finished pulling out all the text from the GUI into the gui_tree.xml file. Now it is possible to do the multiple language thing in a more comprehensive manner.</li>
+					<li>Made the macro popup menu only work if you click on a selected node or the current node you're editing. This should make it's behaviour a little more intuitive.</li>
+				</ol>
+		<h2>1.8.3 - 08/21/01</h2>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug where if you set the undo queue size to zero documents would no longer change their file modified state when you edited them.</li>
+					<li>It was possible by double-clicking to launch the color chooser twice when picking new colors from the look and feel prefs panel. This is now blocked in a hacky way, but it's better than nothing.</li>
+					<li>Fixed a bug where the indicators where not hidden for new docs even though the prefs indicated that they should be. This also fixed a similar problem with line number visibility.</li>
+					<li>Fixed a bug where the first level nodes where not exported to the system clipboard when doing copy/cut.</li>
+					<li>Fixed a bug where copy/cut wouldn't export anything to the system clipboard under Java 1.3.1. Note: copy/paste of objects internally had to be turned off to make the export stuff work. If both object copy/paste and system clipboard support are important to you then I recommend using Java 1.3.0 which doesn't seem to have this problem.</li>
+					<li>Fixed a bug that could cause the document window to jump upwards unexpectedly when you clicked on a node at or near the bottom of the view.</li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>Added BeanShell (BSH) macro support.</li>
+					<li>Also added a new "script" menu. The macros editor now lives under it as well as a few new commands, "Run as Bean Shell Script", and "Bean Shell Console".</li>
+					<li>Added 3 new prefs to both the global and document level prefs. These are "apply font style for comments", "apply font style for editability" and "apply font style for moveability". This will allow you to create a document that is read-only/locked, etc. but looks like a normal doc, thus making it easier to read.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Made the children ArrayList of NodeImpl use lazy instantiation. This saves memory and makes a pretty big difference for large sparse outlines. After the change I was able to open a 250,000 line outliner where before I could only open about 150,000 lines.</li>
+					<li>Document Preferences now displays the creation and modification dates for a document. The document level prefs are now in a JScrollPane and the JDialog is resizeable.</li>
+					<li>OPMLs now indent the outline elements. The comment/editable/moveable attributes are now only stored for the key nodes where inheritance changes. This reduces the size of the OPML doc when it's saved.</li>
+					<li>Turned several windows into JDialogs and made them minimally configurable from gui_tree.xml. The windows include: MacroManager, Application Preferences, Document Preferences, Find/Replace, MacroEditor, Document Statistics. Also, these all have a common base class so behaviour can be managed more consistently.</li>
+					<li>Added a read-only node option to Find/Replace and in the process reconfigured the GUI layout. Also fixed the focus when you find a match.</li>
+					<li>Rewrote the "goto" dialog. It now supports column numbers as well as line numbers.</li>
+				</ol>
+			<b>Notes:</b>
+				<ol>
+					<li>The xmlrpc.jar file has been replaced with helma.xmlrpc.jar file. This is a much newer code base for the helma.xmlrpc package. I was also able to incorporate the changes from MyXmlRpcClient.jar directly into the package since I built it from the src.</li>
+					<li>Changed the frame icon so that JOE is easier to tell apart from other apps in the taskbar.</li>
+				</ol>
+		<h2>1.8.2 - 08/13/01</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Comments have been completely re-written.</li>
+					<li>Read-Only node support added.</li>
+					<li>Immoveable node support added.</li>
+					<li>Help Menu added.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug that could cause the find/macro/prefs internal frames to be inaccessible when in maximized mode. Now all internal frame windows will move to your current viewport location if they are completely outside the current viewport when you activate them.</li>
+					<li>Fixed bug #448976 where copy/paste between outliner docs was broken.</li>
+					<li>Fixed a bug where line numbers would get out of sync. This was caused by the cloneClean method of NodeImpl. Apparently the parent of the cloned node was being set to the old uncloned parent causing the counts to be off.</li>
+					<li>Fixed a node drag and drop bug, where it was possible to make a node the first child of itself which makes no sense, so would cause an infinite loop and a hard crash.</li>
+				</ol>
+			<b>Feature Enhancements:</b>
+				<ol>
+					<li>Made the Preferences Frame an InternalFrame.</li>
+					<li>Made sure DocumentSettings JDialog, New Attribute JDialog and Statistics JDialog are centered on the Outliner window.</li>
+				</ol>
+			<b>Notes:</b>
+				<ol>
+					<li>The gui_tree.es.xml and gui_tree.ja.xml are no longer in sync with the gui_tree.en.xml. This WILL cause the app not to run if you try to startup with the spanish or Japanese gui tree.</li>
+					<li>Commented state is no longer stored for recent files. This is now totally reliant on the file format supporting comments.</li>
+				</ol>
+		<h2>1.8.1 - 08/04/01</h2>
+			<b>Enhanced Features:</b>
+				<ol>
+					<li>Now the GUI tree also does the labels, textfields, combo boxes, etc. in the preference panels.</li>
+					<li>Cleaned up the startup console spewage a bit.</li>
+					<li>The main window now remembers it's size and location between sessions.</li>
+					<li>Copy/Cut/Paste now supports objects internally while still maintaining StringSelection compatibility with the outside world. This allows attributes to be pasted along with the node when nodes are copied or cut. This also preserves comment state as well.</li>
+					<li>Added supportsAttributes() method to SaveFileFormat interface. Now the user is warned if the file format does not support saving attributes.</li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>Added the first visible beginnings of multiple language support. The command line now takes a language arg which controls which gui_tree.xml file is loaded. For Japanese it is also important to set the locale. This has been REMed out in the batch files, but is there as an example. </li>
+						The gui_tree.en.xml is the version I will make sure is kept up to date. I added a gui_tree.en.xml (Spanish) with a few babelfish translations to make sure it works. 
+						I also added a gui_tree.ja.xml to see if I could get Japanese working. It too has a few babelfish translations just to see that it works. 
+						Apparently there are issues with win2k and CJK support as it relates to java. From what I've read on the bug parade it seems that if you set the current and default locales in your system settings you will be able to edit text, otherwise the IME text entry thingy doesn't work. I've been able to copy and paste in though so in principal it works. Also, I've got a Unicode font that supports CJK so that I can see the Japanese in the editor.
+					<li>Some of the icons for displaying node state are now generated programatically. A prototype icon, (closed_node.gif) is loaded, and then the other icons are generated by running image filters on them. It's pretty damn fast since the images are small, so there's almost no hit on startup.</li>
+				</ol>
+			<b>Notes:</b>
+				<ol>
+					<li>A "dox" directory is now included. This holds the OPML based documentation that Stanley has been working on.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed bug where changing the font face/size would not effect new documents.</li>
+					<li>Somehow I forgot the code that made it possible to add new attributes. This may or may not have been messed up in the last build, but it was definitely messed up in CVS, but now it's fixed.</li>
+				</ol>
+		<h2>1.8.0 - 07/26/01</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Feature Request #443665. Implemented "Select None" for nodes and textareas.</li>
+					<li>Feature Request #443665. Implemented "Select Inverse" for nodes.</li>
+				</ol>
+			<b>Enhanced Features:</b>
+				<ol>
+					<li>Modified backspace/delete for node selections to work consistently as per Stanley Krute's suggestions. Backspace/delete no longer tries to stay in the current node set, but instead works closer to what you would expect in a standard text editor.</li>
+					<li>You can now add and remove attributes from nodes.</li>
+					<li>Feature Request #444519. Renamed menus and window titles.</li>
+					<li>Feature Request #444531. Added a "delete" menuitem.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed the split pane in the Preferences Panel so that the tree won't get squeezed out. Also made sure that extra space goes to the right panel by default. Also increased the minimum and initial height of the frame by 5 pixels so that the scrollbar will not be necessary.</li>
+					<li>Added catch in preferences config file parsing. Now if you have a preference that is no longer used it won't barf and die.</li>
+					<li>The "copy", "paste" and "select inverse" menu items are now correctly activated/deactived when changing between documents.</li>
+					<li>Fixed a bug where focus would not always be set correctly when a draw up had just occurred. This would occur when a user clicked on a nodes button to select it.</li>
+					<li>I finally realized why I implemented the custom ScrollBarUI. My custom UI lets me update the thumb even when it's being dragged. This stops the jitters that occur with unequally sized nodes.</li>
+				</ol>
+		<h2>1.0.7a - 07/20/01</h2>
+			<b>Notes:</b>
+				<ol>
+					<li>Put all the release notes into one file like they should be.</li>
+					<li>Started referring to Java Outline Editor as JOE.</li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>You can now view/edit node attributes. Prior to this, attributes were all hidden away. Still need to make new/remove work.</li>
+				</ol>
+			<b>Enhanced Features:</b>
+				<ol>
+					<li>Backspace/Delete now works "symmetrically" for node selections too.</li>
+					<li>Made the open/save API deal with bytes rather than text so it can really deal with binary formats. Prior to this it still treated everything as text even though encoding was up to the format.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Bug #441232 where delete was not working correctly.</li>
+					<li>Fixed a bug where the macros.txt and/or macros where not getting copied into the user's home directory if they already had an installation of JOE.</li>
+					<li>The OPML file format is more paranoid in it's escaping of XML within attributes. This is for compatibility with Radio Userland which apparently likes the > character to be escaped in attributes.</li>
+				</ol>
+			<b>Other Changes:</b>
+				<ol>
+					<li>All class definitions have been separated into their own .java files. This is to make it possible for people to more easily compile the project.</li>
+					<li>Preferences configuration has now been mostly pulled out into the gui_tree.xml file. This makes it a lot easier to add new preferences.</li>
+					<li>The Application name is now configured from the gui_tree.xml file.</li>
+				</ol>
+		<h2>1.0.6b - 07/10/01</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Macros are now automatically copied to the user's profile the first time the app is run.</li>
+					<li>Macros now save themselves. The current macros no longer use .ser files, but instead use their own XML format.</li>
+					<li>The main class now accepts a command line argument for a file to open. This also makes it possible to setup sendto under windows.</li>
+					<li>File formats now have extensions mapped to them. Currently this is only used for files opened via the command line arguments.</li>
+					<li>Node can now store arbitrary Object attributes. This allows the OPML format to parse/store/save any arbitrary attributes an OPML file has.</li>
+					<li>Open and Save API now leaves encoding up to the format. This will allow support for binary formats if/when they are needed.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed bug #440079 where save on close was not working.</li>
+				</ol>
+		<h2>1.0.6a - 07/02/01</h2>
+			<b>Notes:</b>
+				<ol>
+					<li>It's been a while since the last update, I've been busy with work stuff at night, so there's been no time for the outliner. Anyhow, we've got some new code and a few bug fixes. I've probably missed something in the change log since I've been bad and not been writing things down incrementally so I'm sure I've missed something.</li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>Feature #432794 Web File System. This is code contributed by Steven Spencer. It allows you to save/open your files from a web server (Apache) that is running an outliner.php component.</li>
+					<li>Started making the GUI configurable from an XML file. Currently the menubar/menus/menu items can be configured.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Bug #436983 fixed problem where opening an empty document would cause things to explode.</li>
+				</ol>
+		<h2>1.0.5d - 06/12/01</h2>
+			<b>Notes:</b>
+				<ol>
+					<li>Posted a homepage finally at http://outliner.sourceforge.net.</li>
+					<li>Added an installation.txt file.</li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>Implemented feature #430031, storing user preferences    under the user's home directory.</li>
+				</ol>
+			<b>Enhanced Features:</b>
+				<ol>
+					<li>Improved performance of new node inserting.</li>
+					<li>Improved performance of line number display.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed #432315, where I basically mangled build 1.0.5c.    This also includes a rewrite of run.bat.</li>
+				</ol>
+		<h2>1.0.5c - 06/09/01</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Implemented feature #429692. Added a key command to select parent node. HOME and END select the first/last node in a selection. Backspace at the beginning of a leaf node will merge the node with the preceding visible node. Delete at the end of a leaf node will merge the node with the next visible node.</li>
+				</ol>
+			<b>Enhanced Features:</b>
+				<ol>
+					<li>shift-return no longer toggles between node and text selection. This is now done with the insert key.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>#429983 fixed, where drag and drop would not work under certain circumstances.</li>
+					<li>#429534 fixed, where start.bat renamed to run.bat, and the script now just calls java, rather than c:\java1.3\bin\java.</li>
+				</ol>
+		<h2>1.0.5b - 06/01/01</h2>
+			<b>Enhanced Features:</b>
+				<ol>
+					<li>Line numbers are now relative to the document, not to the size of the hoist when hoisted.</li>
+					<li>The warning about the antique being cleared during hoisting/dehoisting will now only show up if your antique has an undoable in it.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>#429092 FIXED. Paste not working in JDK 1.4. This bug should be fixed, but I am unable to verify it since I'm not running JDK 1.4.</li>
+					<li>#429099 FIXED. When line numbers are off and the app is restarted, space was being taken up by the line numbers even though they were not shown.</li>
+					<li>#429459 FIXED. Saving a document while hoisted would only save the hoisted part of the document, not the whole thing.</li>
+				</ol>
+		<h2>1.0.5a - 05/30/01</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Added feature request #424092, hoist/de-hoist.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed bug #428432 where focus was being left behind when switching windows in maximized mode.</li>
+					<li>Fixed bug #428433 where the cursor was being hidden when a new document when not in maximized mode.</li>
+					<li>Fixed bug #428485 where expanded nodes were being commented when a file was opened from the recent file list.</li>
+				</ol>
+		<h2>1.0.4b - 05/29/01</h2>
+			<b>New Features:</b><br>
+				Got a few ideas from looking at tkOutliner which can be found at http://tkoutline.sourceforge.net/ The functions I added are "merge" and "split".
+				<ol>
+					<li>Added "Merge" and "Merge with Spaces" functions. "Merge" combines the text of all selected nodes and their children into the text of the first selected node. "Merge with Spaces" does the same thing, but makes sure there is at least one space character between each of the lines as it does the merge.</li>
+					<li>Added split at cursor functionality. Use ctrl-return when the cursor is in the text of a node and the line will be split at the cursor with the text after the cursor being inserted as a new line below.</li>
+				</ol>
+		<h2>1.0.4a - 05/26/01</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>A Warning/Confirmation dialog is now activated when a file is modified on open. This situation typically occurs when the source file has an invalid node hierarchy.</li>
+					<li>Added commenting of nodes as per feature request #426997.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>#426883 regarding textareas not always resizing has been fixed.</li>
+				</ol>
+		<h2>1.0.3b - 05/23/01</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Added a Document Statistics dialog which shows line count and char count.</li>
+					<li>Added support for displaying line numbers.</li>
+					<li>Goto line number dialog is now pre-populated with the current line number.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed Bug #425858 concerning drag and drop events during deselection.</li>
+					<li>Fixed Bug #426453 concerning visual junk that shows up when pasting in full nodes.</li>
+					<li>Fixed Bug #426488 concerning incomplete redraws when using the goto line number menu item. This was fixed by enhancing the redraw so that it fills in nodes in any leftover space at the bottom of the screen during a drawUp().</li>
+				</ol>
+		<h2>1.0.3a - 05/21/01</h2>
+			<b>Notes:</b>
+				<ol>
+					<li>This release uses an updated rendering algorithm. The new code provides a slight increase in performance, and is easier to understand and debug. However, since the changes are substantial, it is likely that new bugs have been introduced. I've tested the code fairly well, but I'll bet there's something I missed. </li>
+				</ol>
+		<h2>1.0.2d - 05/11/01</h2>
+			<b>New Features:</b><br>
+				These two changes seem to dramatically reduce the amount of memory being leaked. From what I've been reading on the BugParade at Javasoft, Swing leaks memory pretty badly with JInternalFrames, but this should drastically reduce it.
+				<ol>
+					<li>Added an explicit destroy() for documents so that they get garbage collected much better. </li>
+					<li>I also changed the vm settings to use incremental garbage collection -Xincgc. </li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed the bug with the duplicate Mneumonic where prev window and redo were in conflict.</li>
+					<li>Fixed a few minor bugs but I'm too tired to remember what they were.</li>
+				</ol>
+		<h2>1.0.2c - 05/07/01</h2>
+			<b>New Features:</b>
+				<ol>
+					<li>Revert now uses the DocumentInfo if it is available, to set node expansion, vertical scroll location, window size, etc.</li>
+					<li>Added ownerName, ownerEmail as new Editable document settings.</li>
+					<li>Added creationDate, modificationDate as hidden document settings.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>The File Chooser dialog is now a child of the main window. This will prevent potential user confusion with focus changes to other applications.</li>
+					<li>Warning dialogs are now presented when you try to "Save As" over an existing document.</li>
+					<li>When you try to open a document that is already open, your focus is now updated to the open document after the dialog is closed.</li>
+					<li>Corrected element content escaping and attribute escaping for the XML used when saving an OPML document.</li>
+				</ol>
+		<h2>1.0.2b - 05/05/01</h2>
+			<b>Notes:</b>
+				<ol>
+					<li>The openxml-1.2.jar file has been eliminated. I am now using xp.jar since it seems to have fewer bugs.</li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>Added support for opening (Outliner Processor Markup Files) OPML http://www.opml.org/spec. OPML stores the content and state of an outline as an XML document.</li>
+					<li>Files accessed from the recent file menu will now preserve the expanded state of nodes in the document.</li>
+					<li>The file chooser will now remember your last directory from session to session.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed bug where recent file menu was disabled at startup.</li>
+				</ol>
+		<h2>1.0.2a - 05/03/01</h2>
+			<b>Notes:</b>
+				<ol>
+					<li>This is the first phase of the implementation of a new open/save architecture. </li>
+				</ol>
+			<b>New Features:</b>
+				<ol>
+					<li>Window size and position, node expansion state and scrollbar position are now recorded for recent files and restored when you open the file via the recent file menu.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug with drag and drop where dragging between different depths could cause undo/redo to increase the position of the node by one relative to it's parent.</li>
+					<li>Fixed a few bugs where document settings were not being preserved.</li>
+					<li>Fixed the enabled state of the recent file menu when it is empty.</li>
+				</ol>
+		<h2>1.0.1 - 04/29/01</h2>
+			<b>Notes:</b>
+				<ol>
+					<li>Added back in the copyright comment into the XmlRpc client code.</li>
+				</ol>
+			<b>Bug Fixes:</b>
+				<ol>
+					<li>Fixed a bug where it was possible to drag/resize windows either up or to the left so that they would become inaccessible.<li>
+				</ol>
+		<hr>
+		<a name="todo"></a>
+		<h2>TODO</h2>
+			<ol>
+				<li>Keep current documents open. Should do lazy instantiation.</li>
+				<li>Release XML Module</li>
+				<li>Java Web Start compatibility. Executable jar.</li>
+				<li>Break out installer code.</li>
+				<li>Basic printing support.</li>
+				<li>Look at adding toolbar, or possible just more shortcuts.</li>
+				<li>Add tabbed document switching.</li>
+				<li>Auto-scoll during drag and drop.</li>
+				<li>Make the rest of the icons, arrows use colors.</li>
+				<li>Implement hyperlinks.</li>
+				<li>Implement markers.</li>
+				<li>Line breaks within nodes.</li>
+				<li>Syntax highlighting.</li>
+				<li>Make line numbers autospace themselves</li>
+					<li>Make line style customizable. Add "legal" style: 1.2.25.23 for example.
+				<li>Provide an "advanced" preference to set the size of the line cache.</li>
+			</ol>
+	</body>
+</html>

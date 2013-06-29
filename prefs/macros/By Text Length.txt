@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<comparator>int lengthA = nodeA.getValue().length();
+int lengthB = nodeB.getValue().length();
+
+int retVal = 0;		
+if (lengthA &lt; lengthB) {
+	retVal = -1;
+} else if (lengthA > lengthB) {
+	retVal = 1;
+}
+
+</comparator>

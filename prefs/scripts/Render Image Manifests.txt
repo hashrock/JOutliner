@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<script>// Description: This script interprets the currently selected node as a filepath. It then
+// proceeds to crawl the directory structure creating a node for every gif or jpg it finds. The
+// text of the node is the name of the file and the width and height.
+
+import java.awt.Dimension;
+import java.io.File;
+import javax.swing.ImageIcon;
+import com.organic.maynard.io.FileTools;
+import com.organic.maynard.imaging.ImageTools;
+
+String path = "";
+
+// Method Delcaration
+
+promptForPath() {
+	while (global.path.equals("")) {
+		global.path = JOptionPane.showInputDialog("Path to start from");
+		
+		if (global.path == null) {
+			// Aborted by User
+			return;
+		}
+	}
+}
+
+long fixedArea = 10000;
+double arFloor = 0.5;
+double arCeiling = 2.0;
+
+generateManifestsRecursively(String path) {
+	File file = new File(path);
+	File[] files = file.listFiles();
+
+	// Sort the list
+	Arrays.sort(files);
+
+	File manifestFile = new File(path + "/manifest.html");
+	StringBuffer buf = new StringBuffer("&lt;html>&lt;head>&lt;title>manifest&lt;/title>&lt;/head>&lt;body>");
+	StringBuffer fileList = new StringBuffer("&lt;table cellpadding=\"3\" cellspacing=\"1\">");
+	StringBuffer subDirs = new StringBuffer("");
+
+	// Prep fileList header
+	fileList.append("&lt;tr valign=\"top\" bgcolor=\"#aaaaaa\">&lt;td>&lt;b>Name&lt;/b>&lt;/td>&lt;td>&lt;b>Dimensions&lt;/b>&lt;/td>&lt;td>&lt;b>Aspect&amp;#160;Ratio&lt;br>Valid&amp;#160;Range:&amp;#160;" + arFloor + "&amp;#160;-&amp;#160;" + arCeiling + "&lt;/b>&lt;/td>&lt;td>&lt;b>Sizing&amp;#160;for&amp;#160;Area of&amp;#160;" + fixedArea + "&amp;#160;pixels&lt;/b>&lt;/td>&lt;td>&lt;b>Image&lt;/b>&lt;/td>&lt;/tr>");
+
+	// Loop over the files in the directory.
+	boolean even = false;
+
+	for (int i = 0; i &lt; files.length; i++) {
+		File fileToAdd = files[i];
+
+		String src = fileToAdd.getName();
+
+		if (fileToAdd.getName().endsWith(".gif") || fileToAdd.getName().endsWith(".jpg")) {
+
+			// Get dimensions
+			ImageIcon image = new ImageIcon(fileToAdd.getPath());
+			int width = image.getIconWidth();
+			int height = image.getIconHeight();
+
+			if (even) {
+				fileList.append("&lt;tr valign=\"top\" bgcolor=\"#dddddd\">");
+				even = false;
+			} else {
+				fileList.append("&lt;tr valign=\"top\" bgcolor=\"#cccccc\">");
+				even = true;
+			}
+			fileList.append("&lt;td>&lt;a href=\"" + src + "\">" + src + "&lt;/a>&lt;/td>");
+			fileList.append("&lt;td> " + width + "x" + height + "&lt;/td>");
+			double ar = ImageTools.getAspectRatio(width, height);
+			if (ar &lt; arFloor) {
+				fileList.append("&lt;td>&lt;font color=\"#ffff00\"> " + ar + "&lt;/font>&lt;/td>");
+			} else if (ar > arCeiling) {
+				fileList.append("&lt;td>&lt;font color=\"#ff0000\"> " + ar + "&lt;/font>&lt;/td>");
+			} else {
+				fileList.append("&lt;td> " + ar + "&lt;/td>");
+			}
+			Dimension d = ImageTools.resizeToArea(width, height, fixedArea);
+			fileList.append("&lt;td> " + d.width + "x" + d.height + "&lt;/td>");
+			fileList.append("&lt;td>&lt;a href=\"" + src + "\">&lt;img src=\"" + src + "\" width=\"" + width + "\" height=\"" + height + "\" border=\"0\" alt=\"\">&lt;/a>&lt;/td>");
+			fileList.append("&lt;/tr>");
+
+		} else if (fileToAdd.isDirectory() &amp;&amp; !src.equals("CVS")) {
+			subDirs.append("&lt;a href=\"" + src + "/manifest.html\">" + src + "&lt;/a>&lt;br>");
+			generateManifestsRecursively(fileToAdd.toString());
+		} 
+	}
+
+	fileList.append("&lt;/table>");
+
+	buf.append("&lt;a href=\"../manifest.html\">Parent&lt;/a>&lt;br>");
+	buf.append("&lt;h2>Subdirectories&lt;/h2>" + subDirs.toString());
+	buf.append("&lt;h2>Files&lt;/h2>" + fileList.toString());
+
+	// Footer
+	buf.append("&lt;p>&lt;i>Last Rendered: " + DocumentInfo.getCurrentDateTimeString() + "&lt;/i>&lt;/p>");
+	buf.append("&lt;/body>&lt;/html>");
+
+	// Save the manifest to disk.
+	FileTools.dumpStringToFile(manifestFile, buf.toString());
+}
+
+// Main Execution
+promptForPath();
+
+if (path == null) {
+	// Aborted by User
+	return;
+}
+
+while (true) {
+	generateManifestsRecursively(path);
+	Thread.sleep(30000);
+}</script>

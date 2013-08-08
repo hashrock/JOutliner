@@ -95,7 +95,6 @@ import com.organic.maynard.outliner.util.preferences.PreferenceInt;
 import com.organic.maynard.outliner.util.preferences.Preferences;
 import com.organic.maynard.outliner.util.preferences.SetPrefCommand;
 import com.organic.maynard.outliner.util.spelling.SpellingCheckerWrapper;
-import com.organic.maynard.swing.SplashScreen;
 import com.organic.maynard.util.Command;
 import com.organic.maynard.util.CommandParser;
 import com.organic.maynard.util.UnknownCommandException;

@@ -182,14 +182,20 @@ public class DownAction extends AbstractAction {
 		// Do the move
 		JoeNodeList nodeList = tree.getSelectedNodes();
 		int moveCount = 0;
+                if(nodeList.size() == 0){
+//                    Node currentNode = textArea.node;
+                    System.out.println("選択なし");
+                }
+                
+                
 		for (int i = nodeList.size() - 1; i >= 0; i--) {
 			// Record the Insert in the undoable
 			Node nodeToMove = nodeList.get(i);
 
 			// Abort if node is not moveable
-			if (!nodeToMove.isMoveable()) {
-				continue;
-			}
+//			if (!nodeToMove.isMoveable()) {
+//				continue;
+//			}
 		
 			undoable.addPrimitive(new PrimitiveUndoableMove(undoable, nodeToMove, nodeToMove.currentIndex(), targetIndex));
 			targetIndex--;

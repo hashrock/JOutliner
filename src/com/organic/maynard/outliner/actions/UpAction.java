@@ -285,9 +285,9 @@ public class UpAction extends AbstractAction {
 			Node nodeToMove = nodeList.get(i);
 
 			// Abort if node is not moveable
-			if (!nodeToMove.isMoveable()) {
-				continue;
-			}
+//			if (!nodeToMove.isMoveable()) {
+//				continue;
+//			}
 		
 			undoable.addPrimitive(new PrimitiveUndoableMove(undoable, nodeToMove, nodeToMove.currentIndex(), targetIndex));
 			targetIndex++;

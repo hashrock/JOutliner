@@ -34,8 +34,6 @@
  
 package com.organic.maynard.outliner;
 
-import java.util.*;
-
 public interface Node extends AttributeContainer {
 
 	public void destroy();

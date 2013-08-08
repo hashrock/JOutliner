@@ -322,9 +322,9 @@ public class LeftAction extends AbstractAction {
 			Node nodeToMove = nodeList.get(i);
 
 			// Abort if node is not moveable
-			if (!nodeToMove.isMoveable()) {
-				continue;
-			}
+//			if (!nodeToMove.isMoveable()) {
+//				continue;
+//			}
 		
 			int currentIndex = nodeToMove.currentIndex() + currentIndexAdj;
 			undoable.addPrimitive(new PrimitiveUndoableMove(undoable, nodeToMove, currentIndex, targetIndex));

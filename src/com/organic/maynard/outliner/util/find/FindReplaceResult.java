@@ -35,8 +35,6 @@
 package com.organic.maynard.outliner.util.find;
 
 import com.organic.maynard.outliner.*;
-
-import java.util.*;
 import java.io.*;
 
 /**

@@ -52,7 +52,6 @@
 package com.organic.maynard.util.string;
 
 // we use these
-import java.util.*;
 import java.io.File ;
 
 // Stan's string tools

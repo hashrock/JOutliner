@@ -35,10 +35,8 @@
 
 package com.organic.maynard.net;
 
-import java.net.URL;
 import java.net.MalformedURLException;
-import java.net.URLEncoder;
-import java.net.URLDecoder;
+import java.net.URL;
 import java.util.*;
 
 /**

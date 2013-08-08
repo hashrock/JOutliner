@@ -34,14 +34,9 @@
 
 package com.organic.maynard.outliner.util.preferences;
 
-import com.organic.maynard.outliner.menus.file.*;
-import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.*;
-import org.xml.sax.*;
+import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.menus.file.*;
 
 /**
  * class to handle the Recent Files list options prefs panel

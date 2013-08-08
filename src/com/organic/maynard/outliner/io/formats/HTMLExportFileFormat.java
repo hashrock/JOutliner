@@ -34,21 +34,19 @@
  
 package com.organic.maynard.outliner.io.formats;
 
+import com.organic.maynard.io.FileTools;
+import com.organic.maynard.outliner.*;
+import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.io.*;
 import com.organic.maynard.outliner.model.DocumentInfo;
 import com.organic.maynard.outliner.model.propertycontainer.*;
-import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.io.*;
-import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.util.preferences.*;
+import com.organic.maynard.util.string.StringTools;
+import com.organic.maynard.xml.XMLTools;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.*;
 import java.io.*;
-import java.util.*;
-import com.organic.maynard.util.string.StringTools;
-import com.organic.maynard.io.FileTools;
-import com.organic.maynard.xml.XMLTools;
+import javax.swing.*;
 
 /**
  * @author  $Author: maynardd $

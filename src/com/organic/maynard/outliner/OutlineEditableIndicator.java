@@ -34,15 +34,11 @@
  
 package com.organic.maynard.outliner;
 
+import com.organic.maynard.imaging.ImageFilters;
 import com.organic.maynard.outliner.guitree.*;
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-
 import java.awt.image.*;
-import java.awt.geom.*;
-
-import com.organic.maynard.imaging.ImageFilters;
+import javax.swing.*;
 
 /**
  * @author  $Author: maynardd $

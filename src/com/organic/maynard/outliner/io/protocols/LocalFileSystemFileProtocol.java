@@ -34,18 +34,16 @@
 
 package com.organic.maynard.outliner.io.protocols;
 
-import com.organic.maynard.outliner.model.DocumentInfo;
-import com.organic.maynard.outliner.model.propertycontainer.*;
-import com.organic.maynard.outliner.menus.file.*;
-import com.organic.maynard.outliner.io.*;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.io.*;
+import com.organic.maynard.outliner.menus.file.*;
+import com.organic.maynard.outliner.model.DocumentInfo;
+import com.organic.maynard.outliner.model.propertycontainer.*;
 import com.organic.maynard.outliner.util.preferences.*;
-import javax.swing.*;
-import java.io.*;
-import java.net.URL;
-import java.util.*;
 import com.organic.maynard.util.string.Replace;
+import java.io.*;
+import javax.swing.*;
 
 /**
  * Protocol for reading and writing files from the local file system.

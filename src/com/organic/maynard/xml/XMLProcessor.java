@@ -34,20 +34,18 @@
 
 package com.organic.maynard.xml;
 
+import com.organic.maynard.util.TruthTest;
 import java.io.*;
 import java.util.*;
-import com.organic.maynard.xml.SimpleSAXErrorHandler;
-import com.organic.maynard.xml.XMLParserConstants;
-import com.organic.maynard.util.TruthTest;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
-import org.xml.sax.XMLReader;
 import org.xml.sax.InputSource;
-import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.AttributesImpl;
+import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * A base class for SAX2 parsers used by this webapp. This class is responsible 

@@ -34,20 +34,16 @@
  
 package com.organic.maynard.outliner.util.find;
 
+import com.organic.maynard.io.*;
 import com.organic.maynard.outliner.util.preferences.*;
-import com.organic.maynard.outliner.*;
 import com.organic.maynard.util.crawler.*;
-
+import com.organic.maynard.util.string.*;
 import java.io.*;
 import java.util.*;
-
-import com.organic.maynard.io.*;
-import com.organic.maynard.util.string.*;
-
-import org.apache.oro.text.perl.Perl5Util;
 import org.apache.oro.text.perl.MalformedPerl5PatternException;
-import org.apache.oro.text.regex.PatternMatcherInput;
+import org.apache.oro.text.perl.Perl5Util;
 import org.apache.oro.text.regex.MatchResult;
+import org.apache.oro.text.regex.PatternMatcherInput;
 
 
 /**

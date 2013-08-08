@@ -35,13 +35,9 @@
 package com.organic.maynard.outliner.util;
 
 import com.organic.maynard.outliner.*;
-
-import javax.swing.border.*;
-import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 /**
  * @author  $Author: maynardd $

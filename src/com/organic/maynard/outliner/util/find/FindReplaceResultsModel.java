@@ -34,13 +34,9 @@
 
 package com.organic.maynard.outliner.util.find;
 
-import com.organic.maynard.outliner.*;
-
 import com.organic.maynard.outliner.dom.*;
-
-import javax.swing.table.*;
 import java.util.*;
-import java.io.*;
+import javax.swing.table.*;
 
 /**
  * @author  $Author: maynardd $

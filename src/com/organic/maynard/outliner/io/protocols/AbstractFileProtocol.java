@@ -34,7 +34,6 @@
  
 package com.organic.maynard.outliner.io.protocols;
 
-import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.io.*;
 
 /**

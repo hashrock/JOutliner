@@ -34,8 +34,6 @@
 
 package com.organic.maynard.outliner.model.propertycontainer;
 
-import java.util.*;
-
 public class PropertyFilterImpl implements PropertyFilter {
 	
 	// Instance Fields

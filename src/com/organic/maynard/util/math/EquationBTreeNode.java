@@ -31,9 +31,6 @@
 
 package com.organic.maynard.util.math;
 
-import java.util.*;
-import com.organic.maynard.util.*;
-
 public class EquationBTreeNode {
 	public static final String ADD = "+";
 	public static final String SUBTRACT = "-";

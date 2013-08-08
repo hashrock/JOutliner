@@ -34,15 +34,15 @@
 
 package com.organic.maynard.outliner.util.find;
 
-import com.organic.maynard.outliner.guitree.*;
-import com.organic.maynard.outliner.*;
-import java.util.*;
-import java.io.*;
-import org.xml.sax.*;
-import javax.swing.*;
-import com.organic.maynard.xml.XMLTools;
-import com.organic.maynard.xml.XMLProcessor;
 import com.organic.maynard.io.FileTools;
+import com.organic.maynard.outliner.*;
+import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.xml.XMLProcessor;
+import com.organic.maynard.xml.XMLTools;
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+import org.xml.sax.*;
 
 /**
  * Holds the configuration for all find/replace items. Handles loading and saving

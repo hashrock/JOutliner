@@ -34,8 +34,6 @@
  
 package com.organic.maynard.outliner.util.undo;
 
-import com.organic.maynard.outliner.*;
-
 import com.organic.maynard.outliner.util.Destructible;
 
 /**

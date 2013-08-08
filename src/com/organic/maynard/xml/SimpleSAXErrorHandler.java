@@ -34,7 +34,6 @@
 
 package com.organic.maynard.xml;
 
-import java.util.*;
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
 

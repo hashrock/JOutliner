@@ -32,7 +32,6 @@
 package com.organic.maynard.util.misc;
 
 import com.organic.maynard.util.math.*;
-import java.util.*;
 
 public class RandomQuote {
 

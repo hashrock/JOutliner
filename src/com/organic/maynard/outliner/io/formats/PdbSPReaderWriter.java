@@ -99,12 +99,8 @@
  
 package com.organic.maynard.outliner.io.formats;
 
-import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.io.*;
-
-// we use these
-import java.io.*;
-import java.util.Stack ;
+import com.organic.maynard.outliner.* ;
+import java.util.Stack;
 
 // we read and write Palm pdb files created by Brain Forest 
 public class PdbSPReaderWriter extends PdbReaderWriter {

@@ -35,7 +35,6 @@
 package com.organic.maynard.outliner.util.preferences;
 
 import com.organic.maynard.outliner.guitree.*;
-import com.organic.maynard.outliner.*;
 import org.xml.sax.*;
 
 public class PreferenceLineEnding extends AbstractPreference implements GUITreeComponent {

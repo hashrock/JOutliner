@@ -41,13 +41,12 @@ package com.organic.maynard.outliner.menus.help;
  * @version $Revision: 1.2 $, $Date: 2004/02/02 10:17:42 $
  */
 
-import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.menus.*;
 import java.awt.event.*;
-import org.xml.sax.*;
 import java.net.URL;
-import java.io.IOException;
+import org.xml.sax.*;
 
 public class HTMLViewerMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent, JoeReturnCodes {
 	

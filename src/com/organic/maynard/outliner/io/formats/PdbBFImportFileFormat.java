@@ -55,7 +55,6 @@
 package com.organic.maynard.outliner.io.formats;
 
 import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.io.*;
 
 // we read Palm pdb files created by Brain Forest 
 public class PdbBFImportFileFormat extends PdbImportFileFormat { 

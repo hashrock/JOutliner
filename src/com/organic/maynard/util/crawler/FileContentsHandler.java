@@ -31,8 +31,8 @@
 
 package com.organic.maynard.util.crawler;
 
-import java.io.*;
 import com.organic.maynard.io.*;
+import java.io.*;
 import java.util.*;
 
 /**

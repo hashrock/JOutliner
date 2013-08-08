@@ -31,8 +31,6 @@
 
 package com.organic.maynard.util.math;
 
-import java.util.*;
-
 public class RandomNumber {
 	// Distribution Constants
 	public static final int FLAT = 0;

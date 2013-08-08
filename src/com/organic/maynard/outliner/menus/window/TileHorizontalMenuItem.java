@@ -40,14 +40,13 @@
 
 package com.organic.maynard.outliner.menus.window;
 
-import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.menus.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
-import org.xml.sax.*;
 import java.util.Vector;
+import org.xml.sax.*;
 
 public class TileHorizontalMenuItem 
 	extends AbstractOutlinerMenuItem 

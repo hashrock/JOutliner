@@ -34,9 +34,6 @@
  
 package com.organic.maynard.outliner;
 
-import java.util.*;
-import javax.swing.*;
-
 public class HoistStackItem {
 
 	// Instance Variables

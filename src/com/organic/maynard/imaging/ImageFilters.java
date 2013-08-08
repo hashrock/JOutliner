@@ -35,7 +35,6 @@
 package com.organic.maynard.imaging;
 
 import java.awt.image.*;
-import java.awt.geom.*;
 
 /**
  * 

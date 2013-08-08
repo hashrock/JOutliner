@@ -34,14 +34,7 @@
  
 package com.organic.maynard.outliner.util.preferences;
 
-import com.organic.maynard.outliner.*;
-
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.border.*;
-
 import org.xml.sax.*;
 
 /**

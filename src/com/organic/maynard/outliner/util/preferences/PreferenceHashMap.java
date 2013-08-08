@@ -34,11 +34,10 @@
  
 package com.organic.maynard.outliner.util.preferences;
 
+import com.organic.maynard.outliner.guitree.*;
+import java.io.UnsupportedEncodingException;
 import java.net.*;
 import java.util.*;
-import java.io.UnsupportedEncodingException;
-import com.organic.maynard.outliner.guitree.*;
-import com.organic.maynard.outliner.*;
 import org.xml.sax.*;
 
 public class PreferenceHashMap extends AbstractPreference implements GUITreeComponent {

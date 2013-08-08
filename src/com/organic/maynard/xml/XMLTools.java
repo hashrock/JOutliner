@@ -34,8 +34,8 @@
 
 package com.organic.maynard.xml;
 
-import java.util.*;
 import com.organic.maynard.util.string.StringTools;
+import java.util.*;
 
 /**
  * A collection of static methods useful for working with XML.

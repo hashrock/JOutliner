@@ -37,12 +37,7 @@ package com.organic.maynard.outliner;
 import com.organic.maynard.outliner.util.preferences.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
-import javax.swing.text.Caret;
-
-import javax.swing.plaf.*;
-import javax.swing.plaf.metal.*;
 
 /**
  * @author  $Author: maynardd $

@@ -36,12 +36,7 @@ package com.organic.maynard.outliner;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
-import javax.swing.text.Caret;
-
-import javax.swing.plaf.*;
-import javax.swing.plaf.metal.*;
 
 /**
  * This class allows re-routing of keyEvents back to the correct OutlinerCellRendererImpl.

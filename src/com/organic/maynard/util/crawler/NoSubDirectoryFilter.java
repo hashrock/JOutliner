@@ -31,8 +31,8 @@
 
 package com.organic.maynard.util.crawler;
 
+import com.organic.maynard.util.crawler.FileFilter;
 import java.io.*;
-import java.util.*;
 
 public class NoSubDirectoryFilter implements FileFilter {
 

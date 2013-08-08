@@ -34,7 +34,6 @@
  
 package com.organic.maynard.outliner.guitree;
 
-import com.organic.maynard.outliner.*;
 import org.xml.sax.Attributes;
 
 /**

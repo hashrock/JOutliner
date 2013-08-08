@@ -49,7 +49,6 @@
 package com.organic.maynard.outliner.io.formats;
 
 import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.io.*;
 
 // interface for Pdb parser error handlers
 public interface PdbErrorHandler  {

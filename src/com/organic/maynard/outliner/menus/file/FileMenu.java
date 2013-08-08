@@ -35,23 +35,18 @@
 
 package com.organic.maynard.outliner.menus.file;
 
+import com.organic.maynard.data.IntList ;
+import com.organic.maynard.outliner.*;
+import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.io.*;
+import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.model.DocumentInfo;
 import com.organic.maynard.outliner.model.propertycontainer.*;
-import com.organic.maynard.outliner.menus.*;
-import com.organic.maynard.outliner.*;
-import com.organic.maynard.data.IntList;
-import com.organic.maynard.outliner.io.*;
-import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.util.preferences.*;
 import com.organic.maynard.outliner.util.undo.*;
-import java.io.*;
-import java.util.*;
-import java.text.SimpleDateFormat;
-import java.awt.*;
-import javax.swing.*;
-import org.xml.sax.*;
 import com.organic.maynard.util.string.Replace;
-import com.organic.maynard.util.string.StanStringTools ;
+import com.organic.maynard.util.string.StanStringTools;
+import javax.swing.*;
 
 /**
  * This class implements the meat of several File Menu commands: New, Open, Import, Save, Revert, Close.

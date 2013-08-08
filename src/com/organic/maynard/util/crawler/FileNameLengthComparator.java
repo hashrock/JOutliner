@@ -31,8 +31,8 @@
 
 package com.organic.maynard.util.crawler;
 
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 // This is intended as a sample comparator for sorting files.
 public class FileNameLengthComparator implements Comparator {

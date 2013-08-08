@@ -31,8 +31,8 @@
 
 package com.organic.maynard.util;
 
-import java.util.*;
 import com.organic.maynard.util.string.*;
+import java.util.*;
 
 public class CommandParser{
 

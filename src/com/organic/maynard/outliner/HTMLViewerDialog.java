@@ -34,20 +34,17 @@
  
 package com.organic.maynard.outliner;
 
-import com.organic.maynard.outliner.guitree.*;
-import org.xml.sax.*;
-import java.util.ArrayList;
-import java.awt.event.*;
 import java.awt.*;
-import javax.swing.*;
-import javax.swing.event.HyperlinkListener;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.text.html.HTMLEditorKit;
-import javax.swing.text.Document;
-import java.net.URL;
-import java.net.MalformedURLException;
-import java.io.IOException;
+import java.awt.event.*;
 import java.beans.*;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
+import javax.swing.text.Document;
+import javax.swing.text.html.HTMLEditorKit;
 
 /**
  * @author  $Author: maynardd $

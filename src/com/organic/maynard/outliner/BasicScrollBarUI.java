@@ -36,7 +36,6 @@ package com.organic.maynard.outliner;
 
 import java.awt.*;
 import javax.swing.*;
-
 import javax.swing.plaf.*;
 
 

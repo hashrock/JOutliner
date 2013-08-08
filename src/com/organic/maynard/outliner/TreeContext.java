@@ -35,10 +35,6 @@
  
 package com.organic.maynard.outliner;
 
-import java.util.*;
-import javax.swing.*;
-import javax.swing.event.*;
-
 public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	
 	// Private Instance Variables

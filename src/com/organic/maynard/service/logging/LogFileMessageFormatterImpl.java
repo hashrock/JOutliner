@@ -32,8 +32,8 @@
 package com.organic.maynard.service.logging;
 
 import java.io.*;
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class LogFileMessageFormatterImpl implements LogFileMessageFormatter {
 

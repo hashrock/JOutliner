@@ -34,7 +34,6 @@
  
 package com.organic.maynard.outliner.menus.window;
 
-import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.*;
 import javax.swing.*;
 

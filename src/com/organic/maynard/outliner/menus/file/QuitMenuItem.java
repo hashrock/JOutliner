@@ -34,19 +34,18 @@
  
 package com.organic.maynard.outliner.menus.file;
 
-import com.organic.maynard.outliner.dom.*;
-import com.organic.maynard.outliner.menus.*;
+import com.organic.maynard.io.FileTools;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.guitree.*;
-import com.organic.maynard.outliner.util.preferences.*;
-import java.awt.*;
-import java.io.*;
-import java.awt.event.*;
-import org.xml.sax.*;
-import java.util.*;
-import com.organic.maynard.xml.XMLTools;
-import com.organic.maynard.io.FileTools;
+import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.model.propertycontainer.*;
+import com.organic.maynard.outliner.util.preferences.*;
+import com.organic.maynard.xml.XMLTools;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.util.*;
+import org.xml.sax.*;
 
 /**
  * @author  $Author: maynardd $

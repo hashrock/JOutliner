@@ -34,8 +34,6 @@
  
 package com.organic.maynard.outliner;
 
-import java.util.*;
-
 public interface JoeTree 
 	extends AttributeContainer {
 

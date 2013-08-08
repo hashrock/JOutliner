@@ -34,7 +34,6 @@
  
 package com.organic.maynard.outliner;
 
-import java.awt.*;
 import java.awt.event.*;
 
 public class DesktopScrollPaneComponentListener implements ComponentListener {

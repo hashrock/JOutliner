@@ -34,6 +34,7 @@
 
 package com.organic.maynard.outliner;
 
+import com.organic.maynard.outliner.RemoveColumnHeaderRenderer;
 import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.util.preferences.*;
 import com.organic.maynard.xml.XMLTools;
@@ -42,8 +43,6 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.tree.*;
 
 public abstract class AbstractAttributesPanel extends JTable {
 	

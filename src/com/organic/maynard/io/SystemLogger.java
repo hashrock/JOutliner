@@ -32,7 +32,6 @@
 package com.organic.maynard.io;
 
 import java.io.*;
-import java.util.*;
 
 public class SystemLogger extends PrintStream {
 	// These will hold references to the "standard" out and err from System.

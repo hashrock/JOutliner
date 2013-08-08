@@ -35,12 +35,8 @@
  
 package com.organic.maynard.outliner;
 
-import com.organic.maynard.outliner.util.preferences.*;
 import com.organic.maynard.outliner.util.undo.*;
-import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.event.*;
-import java.awt.datatransfer.*;
 
 /**
  * @author  $Author: maynardd $

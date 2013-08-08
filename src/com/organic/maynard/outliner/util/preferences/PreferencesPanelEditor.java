@@ -34,16 +34,9 @@
  
 package com.organic.maynard.outliner.util.preferences;
 
-import com.organic.maynard.outliner.util.undo.UndoQueue;
-import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.event.UndoQueueEvent;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.*;
-
-import org.xml.sax.*;
+import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.util.undo.UndoQueue;
 
 /**
  * @author  $Author: maynardd $

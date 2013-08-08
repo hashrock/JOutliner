@@ -20,8 +20,8 @@ package com.organic.maynard.imaging;
 
 import java.io.DataInput;
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Get file format, image resolution, number of bits per pixel and optionally 

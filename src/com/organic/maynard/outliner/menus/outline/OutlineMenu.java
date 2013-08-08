@@ -34,13 +34,10 @@
  
 package com.organic.maynard.outliner.menus.outline;
 
-import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.guitree.*;
-import com.organic.maynard.outliner.dom.*;
 import com.organic.maynard.outliner.event.*;
-import java.awt.*;
-import java.awt.event.*;
+import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.menus.*;
 import javax.swing.*;
 import org.xml.sax.*;
 

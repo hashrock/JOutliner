@@ -34,10 +34,9 @@
 
 package com.organic.maynard.outliner.dom;
 
-import java.util.*;
 import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.util.find.*;
 import com.organic.maynard.outliner.event.*;
+import java.util.*;
 
 /**
  * @author  $Author: maynardd $

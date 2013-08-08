@@ -39,10 +39,8 @@
 
 package com.organic.maynard.outliner;
 
-import com.organic.maynard.outliner.model.DocumentInfo;
-import com.organic.maynard.outliner.model.propertycontainer.*;
-import java.util.Comparator ;
-import java.lang.ClassCastException ;
+import com.organic.maynard.outliner.model.DocumentInfo ;
+import java.util.Comparator;
 
 /**
  * This lets us put docInfo into a sorted-by-name/orSomeOtherString data structure

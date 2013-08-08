@@ -34,8 +34,6 @@
  
 package com.organic.maynard.outliner.util.undo;
 
-import com.organic.maynard.outliner.*;
-
 /**
  * @author  $Author: maynardd $
  * @version $Revision: 1.1 $, $Date: 2002/08/27 09:42:13 $

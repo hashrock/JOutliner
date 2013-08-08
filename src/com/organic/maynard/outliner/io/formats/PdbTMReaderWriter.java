@@ -68,8 +68,6 @@
 package com.organic.maynard.outliner.io.formats;
 
 import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.io.*;
-import java.io.*;
 
 // we read and write Palm pdb files created by Thought Manager 
 public class PdbTMReaderWriter extends PdbReaderWriter  {

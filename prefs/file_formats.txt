@@ -5,8 +5,6 @@ file_format|save|com.organic.maynard.outliner.io.formats.OPMLFileFormat|OPML|opm
 file_format|open|com.organic.maynard.outliner.io.formats.OPMLFileFormat|OPML|opml opm
 file_format|save|com.organic.maynard.outliner.io.formats.OMLFileFormat|OML|oml
 file_format|open|com.organic.maynard.outliner.io.formats.OMLFileFormat|OML|oml
-file_format|save|com.psm.wiki.WikiFileFormat|Wiki|wiki
-file_format|open|com.psm.wiki.WikiFileFormat|Wiki|wiki
 file_format|export|com.organic.maynard.outliner.io.formats.HTMLExportFileFormat|HTML|htm html
 file_format|export|com.organic.maynard.outliner.io.formats.JustifiedPlaintextExportFileFormat|Justified Plaintext|txt
 file_format|import|com.organic.maynard.outliner.io.formats.PdbBFImportFileFormat|Brain Forest Palm pdb|pdb

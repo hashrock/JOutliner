@@ -35,17 +35,14 @@
 
 package com.organic.maynard.outliner.model;
 
+import com.organic.maynard.data.IntList;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.model.propertycontainer.*;
-
-import com.organic.maynard.data.IntList;
 import com.organic.maynard.outliner.util.preferences.*;
-import com.organic.maynard.util.string.StringTools;
-import java.util.*;
+import java.awt.*;
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.awt.*;
-import javax.swing.*;
+import java.util.*;
 
 /**
  * @author  $Author: maynardd $

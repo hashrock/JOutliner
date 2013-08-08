@@ -31,11 +31,7 @@
 
 package com.organic.maynard.util.crawler;
 
-import java.io.*;
-import java.util.*;
-
 import com.organic.maynard.io.*;
-import com.organic.maynard.util.string.StringTools;
 
 public class SimpleReplace {
 			

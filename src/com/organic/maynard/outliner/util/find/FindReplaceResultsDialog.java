@@ -34,20 +34,18 @@
  
 package com.organic.maynard.outliner.util.find;
 
-import com.organic.maynard.outliner.model.DocumentInfo;
-import com.organic.maynard.outliner.model.propertycontainer.*;
-import com.organic.maynard.outliner.menus.file.FileMenu;
-import com.organic.maynard.outliner.menus.window.WindowMenu;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.dom.*;
 import com.organic.maynard.outliner.event.*;
+import com.organic.maynard.outliner.menus.file.FileMenu;
+import com.organic.maynard.outliner.menus.window.WindowMenu;
+import com.organic.maynard.outliner.model.DocumentInfo;
+import com.organic.maynard.outliner.model.propertycontainer.*;
 import com.organic.maynard.outliner.util.preferences.*;
-import java.io.*;
-import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 import javax.swing.*;
-import javax.swing.event.*;
 import javax.swing.table.*;
 
 /**

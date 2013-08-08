@@ -36,14 +36,11 @@ package com.organic.maynard.outliner.guitree;
 
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.util.preferences.*;
-import com.organic.maynard.util.string.StringTools;
+import com.organic.maynard.xml.XMLProcessor;
 import java.io.*;
-import java.util.*;
-import java.lang.reflect.*;
 import javax.swing.*;
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
-import com.organic.maynard.xml.XMLProcessor;
 
 public class GUITreeLoader extends XMLProcessor implements JoeXMLConstants {
 	

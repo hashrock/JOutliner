@@ -34,10 +34,10 @@
 
 package com.organic.maynard.outliner.model.propertycontainer;
 
-import java.util.*;
-import java.lang.reflect.*;
-import com.organic.maynard.xml.XMLTools;
 import com.organic.maynard.xml.XMLProcessor;
+import com.organic.maynard.xml.XMLTools;
+import java.lang.reflect.*;
+import java.util.*;
 import org.xml.sax.*;
 
 /**

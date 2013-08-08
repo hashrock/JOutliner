@@ -34,13 +34,12 @@
  
 package com.organic.maynard.outliner.util.preferences;
 
+import com.organic.maynard.data.StringList;
+import com.organic.maynard.outliner.guitree.*;
+import java.io.UnsupportedEncodingException;
 import java.net.*;
 import java.util.*;
-import java.io.UnsupportedEncodingException;
 import org.xml.sax.*;
-import com.organic.maynard.outliner.guitree.*;
-import com.organic.maynard.outliner.*;
-import com.organic.maynard.data.StringList;
 
 public class PreferenceStringList extends AbstractPreference implements GUITreeComponent {
 	

@@ -35,7 +35,6 @@
 package com.organic.maynard.outliner;
 
 import java.util.*;
-import javax.swing.*;
 
 /**
  * @author  $Author: maynardd $

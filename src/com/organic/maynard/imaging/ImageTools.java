@@ -34,7 +34,6 @@
 
 package com.organic.maynard.imaging;
 
-import java.util.*;
 import java.awt.*;
 
 /**

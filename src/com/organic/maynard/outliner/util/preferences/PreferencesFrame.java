@@ -34,18 +34,16 @@
  
 package com.organic.maynard.outliner.util.preferences;
 
-import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.*;
-
-import javax.swing.tree.TreePath;
+import com.organic.maynard.outliner.guitree.*;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.tree.*;
 import org.xml.sax.*;
-import java.util.*;
 
 /**
  * @author  $Author: maynardd $

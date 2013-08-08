@@ -34,8 +34,6 @@
 
 package com.organic.maynard.outliner.event;
 
-import com.organic.maynard.outliner.*;
-
 /**
  * @author  $Author: maynardd $
  * @version $Revision: 1.3 $, $Date: 2004/01/16 10:39:12 $

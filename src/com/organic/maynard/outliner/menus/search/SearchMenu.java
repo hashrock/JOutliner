@@ -34,9 +34,9 @@
  
 package com.organic.maynard.outliner.menus.search;
 
-import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.menus.*;
 import org.xml.sax.*;
 
 /**

@@ -31,8 +31,6 @@
 
 package com.organic.maynard.util.string;
 
-import java.util.*;
-
 public class Replace {
 	/**
 	 * @depricated The functionality of this class has been moved into the StringTools class.

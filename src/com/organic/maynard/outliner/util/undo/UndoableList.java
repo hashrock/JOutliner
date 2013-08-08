@@ -34,9 +34,6 @@
  
 package com.organic.maynard.outliner.util.undo;
 
-import com.organic.maynard.outliner.*;
-import java.util.*;
-
 public class UndoableList {
 
 	// Fields

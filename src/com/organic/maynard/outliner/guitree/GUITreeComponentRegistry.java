@@ -35,10 +35,8 @@
 
 package com.organic.maynard.outliner.guitree;
 
-import com.organic.maynard.outliner.*;
-
-import java.util.HashMap;
 import com.organic.maynard.util.string.Replace;
+import java.util.HashMap;
 
 /**
  * This class serves two funtions. Firstly, it stores GUITreeComponent objects

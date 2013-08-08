@@ -34,14 +34,11 @@
  
 package com.organic.maynard.outliner.menus.file;
 
+import com.organic.maynard.outliner.io.*;
+import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.model.DocumentInfo;
 import com.organic.maynard.outliner.model.propertycontainer.*;
-import com.organic.maynard.outliner.menus.*;
-import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.io.*;
-import com.organic.maynard.outliner.guitree.*;
 import java.awt.event.*;
-import javax.swing.*;
 
 public class ImportFileMenuItem extends AbstractOutlinerMenuItem implements ActionListener {
 	

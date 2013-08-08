@@ -34,8 +34,8 @@
  
 package com.organic.maynard.data;
 
-import java.util.*;
 import java.io.Serializable;
+import java.util.*;
 
 public class IntList implements Serializable {
 	
@@ -47,15 +47,17 @@ public class IntList implements Serializable {
 	// Fields
 	private int data[];
 	private int size;
-	private String delimiter = DEFAULT_DELIMITER;
+	private String delimiter;
 	
 	
 	// Constructors
 	public IntList() {
 		this(DEFAULT_SIZE);
+        this.delimiter = DEFAULT_DELIMITER;
 	}
 	
 	public IntList(int initialCapacity) {
+        this.delimiter = DEFAULT_DELIMITER;
 		if (initialCapacity < 0) {
 			throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
 		}
@@ -64,10 +66,12 @@ public class IntList implements Serializable {
 	
 	public IntList(String int_list) {
 		this(int_list, DEFAULT_DELIMITER);
+        this.delimiter = DEFAULT_DELIMITER;
 	}
 	
 	public IntList(String int_list, String delimiter) {
 		this();
+        this.delimiter = DEFAULT_DELIMITER;
 		
 		this.delimiter = delimiter;
 		

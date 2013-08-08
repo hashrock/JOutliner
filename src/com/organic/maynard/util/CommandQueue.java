@@ -31,7 +31,7 @@
 
 package com.organic.maynard.util;
 
-import java.util.*;
+import com.organic.maynard.util.Queue;
 import java.io.*;
 
 public class CommandQueue extends Queue {

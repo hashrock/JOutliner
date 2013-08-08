@@ -544,9 +544,6 @@
 				<menuitem id="preferences" class="com.organic.maynard.outliner.menus.edit.PreferencesMenuItem" text="Programmeinstellungen..."/>
 				<menuitem id="edit_document_settings" class="com.organic.maynard.outliner.menus.edit.EditDocumentSettingsMenuItem" text="Dokumenteneinstellungen..."/>
 				<menuitem id="edit_document_attributes" class="com.organic.maynard.outliner.menus.edit.EditDocumentAttributesMenuItem" text="Dokumentenattribute..."/>
-				<separator/>
-				<menuitem id="check_spelling" class="com.organic.maynard.outliner.menus.edit.CheckSpellingMenuItem" text="Rechtschreibprüfung" keybinding="K" keybindingmodifiers="shortcut"/>
-				<menuitem id="check_spelling_for_selection" class="com.organic.maynard.outliner.menus.edit.CheckSpellingForSelectionMenuItem" text="Rechtschreibprüfung für Auswahl" keybinding="K" keybindingmodifiers="shortcut shift"/>
 			</menu>
 			<menu id="outline" class="com.organic.maynard.outliner.menus.outline.OutlineMenu" text="Outline" mnemonic="o">
 				<menuitem id="comment_submenu" class="com.organic.maynard.outliner.menus.OutlinerSubMenuItem" text="Kommentare">
@@ -601,13 +598,6 @@
 				<separator/>
 				<menuitem id="find" class="com.organic.maynard.outliner.menus.search.FindMenuItem" text="Suchen/Ersetzen..." keybinding="F" keybindingmodifiers="shortcut"/>
 			</menu>
-			<menu id="script" class="com.organic.maynard.outliner.menus.script.ScriptMenu" text="Skript" mnemonic="k">
-				<menuitem id="macros" class="com.organic.maynard.outliner.menus.script.MacrosMenuItem" text="Makro Manager..."/>
-				<separator/>
-				<run_as_bsh_script id="run_as_bsh_script" class="com.organic.maynard.outliner.menus.script.RunAsBSHScriptMenuItem" text="Als Bean Shell Skript ausführen"/>
-				<menuitem id="bsh_console" class="com.organic.maynard.outliner.menus.script.BSHConsoleMenuItem" text="Bean Shell Konsole"/>
-				<menuitem id="scripts_manager" class="com.organic.maynard.outliner.menus.script.ScriptsManagerMenuItem" text="Skript Manager..."/>
-			</menu>
 			<menu id="window" class="com.organic.maynard.outliner.menus.window.WindowMenu" text="Fenster" mnemonic="f">
 				<menuitem id="statistics" class="com.organic.maynard.outliner.menus.window.StatisticsMenuItem" text="Dokumentenstatistik..."/>
 				<separator/>
@@ -640,11 +630,6 @@
 		<document_settings_view id="document_settings_view" class="com.organic.maynard.outliner.DocumentSettingsView" title="Dokumenteneinstellungen"/>
 		<document_attributes_view id="document_attributes_view" class="com.organic.maynard.outliner.DocumentAttributesView" title="Dokumentenattribute"/>
 		<document_statistics id="document_statistics" class="com.organic.maynard.outliner.DocumentStatistics" title="Dokumentenstatistik"/>
-		<macro_manager id="macro_manager" class="com.organic.maynard.outliner.scripting.macro.MacroManagerFrame" title="Makro-Manager"/>
-		<scripts_manager id="macro_manager" class="com.organic.maynard.outliner.scripting.script.ScriptsManager" title="Skript-Manager"/>
-		<macro_editor id="macro_editor" class="com.organic.maynard.outliner.scripting.macro.MacroEditor" title="Makro-Editor"/>
-		<script_editor id="script_editor" class="com.organic.maynard.outliner.scripting.script.ScriptEditor" title="Skript-Editor"/>
 		<find_replace id="find_replace" class="com.organic.maynard.outliner.util.find.FindReplaceFrame" title="Suchen/Ersetzen"/>
 		<goto_dialog id="goto_dialog" class="com.organic.maynard.outliner.GoToDialog" title="Gehe zu Zeile"/>
-		<bsh_console id="bsh_console" class="com.organic.maynard.outliner.scripting.BSHConsole" title="Bean Shell Konsole"/>
 </root>

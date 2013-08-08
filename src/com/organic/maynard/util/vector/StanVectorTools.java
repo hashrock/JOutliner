@@ -64,8 +64,8 @@ package com.organic.maynard.util.vector;
 
 // we use these
 import java.util.ArrayList ;
-import java.util.Vector ;
-import java.util.TreeSet ;
+import java.util.TreeSet;
+import java.util.Vector;
 
 // a few useful vector tools
 public class StanVectorTools {

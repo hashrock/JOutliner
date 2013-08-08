@@ -31,11 +31,12 @@
 
 package com.organic.maynard.util.crawler;
 
-import org.apache.oro.text.GlobCompiler;
-import org.apache.oro.io.GlobFilenameFilter;
+import com.organic.maynard.util.crawler.FileFilter;
 
 import java.io.*;
 import java.util.*;
+import org.apache.oro.io.GlobFilenameFilter;
+import org.apache.oro.text.GlobCompiler;
 
 public class TypeGlobFileFilter implements FileFilter {
 

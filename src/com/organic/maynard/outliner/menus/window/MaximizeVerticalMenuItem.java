@@ -40,12 +40,11 @@
 
 package com.organic.maynard.outliner.menus.window;
 
-import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.menus.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
 import org.xml.sax.*;
 
 public class MaximizeVerticalMenuItem 

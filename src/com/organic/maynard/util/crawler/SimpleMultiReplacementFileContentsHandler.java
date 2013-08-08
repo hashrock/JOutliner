@@ -31,12 +31,9 @@
 
 package com.organic.maynard.util.crawler;
 
+import com.organic.maynard.util.string.StringTools;
 import java.io.*;
 import java.util.*;
-
-import com.organic.maynard.io.*;
-import com.organic.maynard.util.*;
-import com.organic.maynard.util.string.StringTools;
 
 public class SimpleMultiReplacementFileContentsHandler extends FileContentsHandler {
 	private Vector matches = null;

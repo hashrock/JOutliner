@@ -34,12 +34,8 @@
  
 package com.organic.maynard.outliner;
 
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-import java.awt.image.*;
-import java.awt.geom.*;
 
 abstract public class AbstractOutlineIndicator extends JLabel {
 

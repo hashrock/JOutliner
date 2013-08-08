@@ -34,23 +34,10 @@
  
 package com.organic.maynard.outliner.util.preferences;
 
-import com.organic.maynard.outliner.*;
-
-import java.awt.*;
 import java.awt.event.*;
-import java.awt.Window;
-
-import java.io.*;
 import java.util.*;
-
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.tree.*;
 import javax.swing.table.*;
-
-import org.xml.sax.*;
-
-import com.organic.maynard.data.StringList;
 
 /**
  * @author  $Author: maynardd $

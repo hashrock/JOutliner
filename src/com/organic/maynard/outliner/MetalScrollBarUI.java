@@ -36,7 +36,6 @@ package com.organic.maynard.outliner;
 
 import java.awt.*;
 import javax.swing.*;
-
 import javax.swing.plaf.*;
 
 public class MetalScrollBarUI extends javax.swing.plaf.metal.MetalScrollBarUI {

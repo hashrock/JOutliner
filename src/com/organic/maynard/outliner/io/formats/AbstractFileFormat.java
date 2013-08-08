@@ -34,15 +34,8 @@
 
 package com.organic.maynard.outliner.io.formats;
 
-import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.io.*;
-
-import com.organic.maynard.outliner.guitree.*;
-import com.organic.maynard.outliner.util.preferences.*;
-import javax.swing.*;
-import java.io.*;
 import java.util.*;
-import com.organic.maynard.util.string.Replace;
 
 /**
  * @author  $Author: maynardd $

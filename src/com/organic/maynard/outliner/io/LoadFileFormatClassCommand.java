@@ -36,8 +36,8 @@ package com.organic.maynard.outliner.io;
 
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.util.*;
-import java.util.*;
 import com.organic.maynard.util.string.StringTools;
+import java.util.*;
 
 /**
  * @author  $Author: maynardd $

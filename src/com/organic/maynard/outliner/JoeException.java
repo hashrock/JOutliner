@@ -36,8 +36,8 @@
 package com.organic.maynard.outliner;
 
 // we use these
-import java.util.* ;
 import java.lang.* ;
+import java.util.*;
 
 // we read and write Palm pdb files 
 public class JoeException 

@@ -36,13 +36,7 @@ package com.organic.maynard.outliner;
 
 import java.awt.*;
 import java.awt.event.*;
-
-import java.util.*;
-
 import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.tree.*;
 
 /**
  * Most of the code for this class, ButtonCellEditor, 

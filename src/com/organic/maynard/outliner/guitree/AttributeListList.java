@@ -35,8 +35,6 @@
 package com.organic.maynard.outliner.guitree;
 
 import org.xml.sax.*;
-import com.organic.maynard.outliner.*;
-import java.util.*;
 
 public class AttributeListList {
 	

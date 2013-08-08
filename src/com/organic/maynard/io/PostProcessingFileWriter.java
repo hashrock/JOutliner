@@ -31,8 +31,8 @@
 
 package com.organic.maynard.io;
 
-import java.io.*;
 import com.organic.maynard.util.string.Replace;
+import java.io.*;
 
 /**
  * @author  $Author: maynardd $

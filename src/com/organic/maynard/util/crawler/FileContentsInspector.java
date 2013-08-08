@@ -31,9 +31,9 @@
 
 package com.organic.maynard.util.crawler;
 
-import java.util.*;
-import java.io.*;
 import com.organic.maynard.io.*;
+import java.io.*;
+import java.util.*;
 
 public class FileContentsInspector implements FileHandler {
 	// Constants

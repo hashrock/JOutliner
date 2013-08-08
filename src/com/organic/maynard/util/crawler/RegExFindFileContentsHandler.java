@@ -31,14 +31,12 @@
 
 package com.organic.maynard.util.crawler;
 
+import com.organic.maynard.util.string.StringSplitter;
 import java.io.File;
-
 import org.apache.oro.text.perl.MalformedPerl5PatternException;
 import org.apache.oro.text.perl.Perl5Util;
 import org.apache.oro.text.regex.MatchResult;
 import org.apache.oro.text.regex.PatternMatcherInput;
-
-import com.organic.maynard.util.string.StringSplitter;
 
 public class RegExFindFileContentsHandler extends FileContentsInspector {
 

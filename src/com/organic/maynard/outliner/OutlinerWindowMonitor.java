@@ -40,16 +40,14 @@
 
 package com.organic.maynard.outliner;
 
+import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.outliner.menus.file.*;
 import com.organic.maynard.outliner.model.DocumentInfo;
 import com.organic.maynard.outliner.model.propertycontainer.*;
-import com.organic.maynard.outliner.menus.file.*;
-import com.organic.maynard.outliner.guitree.*;
-import java.util.*;
+import com.organic.maynard.outliner.util.Ginsu;
+import com.organic.maynard.util.string.Replace;
 import javax.swing.*;
 import javax.swing.event.*;
-import java.awt.Rectangle;
-import com.organic.maynard.util.string.Replace;
-import com.organic.maynard.outliner.util.Ginsu;
 
 public class OutlinerWindowMonitor extends InternalFrameAdapter {
 	

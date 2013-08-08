@@ -34,8 +34,6 @@
  
 package com.organic.maynard.outliner.util.undo;
 
-import com.organic.maynard.outliner.*;
-
 /**
  * A minimal implementation of CompoundUndoable. Most classes
  * that do anything interesting will not extend this class, but will

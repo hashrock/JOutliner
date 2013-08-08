@@ -50,7 +50,6 @@
 package com.organic.maynard.outliner.io.formats;
 
 import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.io.*;
 
 /**
  * @author  $Author: maynardd $

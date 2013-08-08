@@ -34,7 +34,6 @@
  
 package com.organic.maynard.data;
 
-import java.util.*;
 import java.io.Serializable;
 
 public class StringList implements Serializable, Cloneable {

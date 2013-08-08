@@ -34,13 +34,9 @@
  
 package com.organic.maynard.outliner.util.undo;
 
-import com.organic.maynard.outliner.util.preferences.*;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.dom.*;
 import com.organic.maynard.outliner.event.*;
-
-import java.util.*;
-import javax.swing.*;
 
 /**
  * @author  $Author: maynardd $

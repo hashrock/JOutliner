@@ -34,8 +34,8 @@
  
 package com.organic.maynard.outliner.util.preferences;
 
-import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.*;
+import com.organic.maynard.outliner.guitree.*;
 
 /**
  * @author  $Author: maynardd $

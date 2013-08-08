@@ -34,19 +34,18 @@
  
 package com.organic.maynard.outliner;
 
+import com.organic.maynard.outliner.dom.* ;
+import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.model.DocumentInfo;
 import com.organic.maynard.outliner.model.propertycontainer.*;
-import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.util.preferences.*;
-import com.organic.maynard.outliner.dom.*;
 import com.organic.maynard.outliner.util.undo.*;
+import com.organic.maynard.util.string.StanStringTools;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
+import java.beans.*;
 import javax.swing.*;
 import javax.swing.border.*;
-import java.beans.*;
-import com.organic.maynard.util.string.StanStringTools ;
 
 /**
  * @author  $Author: maynardd $

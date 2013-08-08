@@ -34,9 +34,8 @@
 
 package com.organic.maynard.outliner.dom;
 
-import com.organic.maynard.outliner.model.DocumentInfo;
-import com.organic.maynard.outliner.model.propertycontainer.*;
 import com.organic.maynard.outliner.*;
+import com.organic.maynard.outliner.model.DocumentInfo;
 import com.organic.maynard.outliner.util.Destructible;
 import com.organic.maynard.outliner.util.undo.UndoQueue;
 

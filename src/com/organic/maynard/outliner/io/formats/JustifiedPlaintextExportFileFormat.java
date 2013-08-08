@@ -34,17 +34,15 @@
  
 package com.organic.maynard.outliner.io.formats;
 
-import com.organic.maynard.outliner.model.DocumentInfo;
-import com.organic.maynard.outliner.model.propertycontainer.*;
+import com.organic.maynard.data.IntList;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.io.*;
-import com.organic.maynard.data.IntList;
+import com.organic.maynard.outliner.model.DocumentInfo;
+import com.organic.maynard.outliner.model.propertycontainer.*;
 import com.organic.maynard.outliner.util.preferences.*;
-import javax.swing.*;
 import java.io.*;
-import java.util.*;
-import com.organic.maynard.util.string.StringTools;
 import java.text.*;
+import java.util.*;
 
 /**
  * @author  $Author: maynardd $

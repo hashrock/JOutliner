@@ -31,21 +31,13 @@
 
 package com.organic.maynard.util.crawler;
 
-import java.io.*;
-import java.util.*;
-
-import com.organic.maynard.io.*;
-import com.organic.maynard.util.string.*;
 import com.organic.maynard.xml.*;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import java.io.*;
 import javax.xml.parsers.ParserConfigurationException;
-import org.xml.sax.SAXException;
-import org.xml.sax.Attributes;
-import org.xml.sax.XMLReader;
+import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.InputSource;
-import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
 
 public class XMLCheckerFileContentsHandler extends FileContentsInspector {
 	

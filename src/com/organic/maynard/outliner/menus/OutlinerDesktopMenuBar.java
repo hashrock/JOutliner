@@ -35,13 +35,13 @@
 package com.organic.maynard.outliner.menus;
 
 import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.menus.file.FileMenu;
+import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.menus.edit.EditMenu;
+import com.organic.maynard.outliner.menus.file.FileMenu;
+import com.organic.maynard.outliner.menus.help.HelpMenu;
 import com.organic.maynard.outliner.menus.outline.OutlineMenu;
 import com.organic.maynard.outliner.menus.search.SearchMenu;
 import com.organic.maynard.outliner.menus.window.WindowMenu;
-import com.organic.maynard.outliner.menus.help.HelpMenu;
-import com.organic.maynard.outliner.guitree.*;
 import javax.swing.JMenuBar;
 import org.xml.sax.*;
 

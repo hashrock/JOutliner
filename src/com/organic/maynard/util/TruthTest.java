@@ -34,8 +34,6 @@
 
 package com.organic.maynard.util;
 
-import com.organic.maynard.util.TruthConstants;
-
 /**
  * Contains static methods for converting String values to booleans and the 
  * cannonical String representations for truth and false as defined in

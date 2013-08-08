@@ -32,8 +32,9 @@
 package com.organic.maynard.util.crawler;
 
 import com.organic.maynard.swing.ProgressMonitor;
-import java.util.*;
+import com.organic.maynard.util.crawler.FileFilter;
 import java.io.*;
+import java.util.*;
 
 public class DirectoryCrawler {
 

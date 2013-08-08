@@ -48,7 +48,6 @@ import java.awt.MediaTracker;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.net.URL;
-
 import javax.swing.JWindow;
 
 public class SplashScreen extends JWindow {

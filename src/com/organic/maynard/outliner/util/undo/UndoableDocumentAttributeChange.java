@@ -36,9 +36,6 @@ package com.organic.maynard.outliner.util.undo;
 
 import com.organic.maynard.outliner.*;
 
-import java.util.*;
-import java.awt.*;
-
 /**
  * @author  $Author: maynardd $
  * @version $Revision: 1.1 $, $Date: 2002/12/20 01:01:40 $

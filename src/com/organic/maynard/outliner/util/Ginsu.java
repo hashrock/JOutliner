@@ -42,10 +42,6 @@ package com.organic.maynard.outliner.util;
 
 // we use these
 import java.util.*;
-import javax.swing.*;
-import javax.swing.event.*;
-import java.awt.Rectangle;
-import com.organic.maynard.util.string.Replace;
 
 public class Ginsu implements Runnable {
 	

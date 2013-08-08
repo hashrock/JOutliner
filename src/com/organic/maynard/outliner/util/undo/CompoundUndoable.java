@@ -34,8 +34,6 @@
  
 package com.organic.maynard.outliner.util.undo;
 
-import com.organic.maynard.outliner.*;
-
 /**
  * A CompoundUndoable is an object that may contain multiple undoable
  * actions that should all be undone/redone as a single unit. By calling

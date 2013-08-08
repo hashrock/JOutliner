@@ -31,15 +31,9 @@
 
 package com.organic.maynard.util.crawler;
 
-import java.io.*;
-import java.util.*;
-
 import com.organic.maynard.io.*;
 import com.organic.maynard.util.*;
-import com.organic.maynard.util.string.StringTools;
-
-import org.apache.oro.text.perl.Perl5Util;
-import org.apache.oro.text.perl.MalformedPerl5PatternException;
+import java.util.*;
 
 public class RegExMultiReplaceConfigCommand extends Command {
 	public RegExMultiReplace app = null;

@@ -35,7 +35,6 @@
 package com.organic.maynard.outliner.event;
 
 import com.organic.maynard.outliner.JoeTree;
-import com.organic.maynard.outliner.dom.Document;
 
 /**
  * @author  $Author: maynardd $

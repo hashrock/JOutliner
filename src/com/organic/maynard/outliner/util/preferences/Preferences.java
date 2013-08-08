@@ -34,16 +34,15 @@
  
 package com.organic.maynard.outliner.util.preferences;
 
-import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.data.StringList;
 import com.organic.maynard.outliner.*;
-import java.awt.Font;
+import com.organic.maynard.outliner.guitree.*;
+import com.organic.maynard.util.string.*;
 import java.awt.*;
-import java.util.*;
 import java.io.*;
+import java.util.*;
 import javax.swing.*;
 import org.xml.sax.*;
-import com.organic.maynard.util.string.*;
-import com.organic.maynard.data.StringList;
 
 /**
  * @author  $Author: maynardd $

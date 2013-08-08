@@ -35,16 +35,13 @@
  
 package com.organic.maynard.outliner.io;
 
+import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.menus.file.*;
-import com.organic.maynard.outliner.*;
-import com.organic.maynard.outliner.guitree.*;
 import com.organic.maynard.outliner.util.preferences.*;
-import java.io.*;
+import java.awt.*;
 import java.util.*;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 
 /**
  * @author  $Author: maynardd $

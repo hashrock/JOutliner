@@ -34,20 +34,6 @@
  
 package com.organic.maynard.outliner;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Event;
-import java.awt.Font;
-import java.awt.Insets;
-import java.awt.Point;
-import java.awt.event.KeyEvent;
-
-import javax.swing.ActionMap;
-import javax.swing.InputMap;
-import javax.swing.JTextArea;
-import javax.swing.KeyStroke;
-import javax.swing.text.Keymap;
-
 import com.organic.maynard.outliner.actions.BackspaceAction;
 import com.organic.maynard.outliner.actions.ChangeFocusAction;
 import com.organic.maynard.outliner.actions.CopyAction;
@@ -72,6 +58,18 @@ import com.organic.maynard.outliner.actions.ToggleExpansionAction;
 import com.organic.maynard.outliner.actions.ToggleMoveableAction;
 import com.organic.maynard.outliner.actions.UpAction;
 import com.organic.maynard.outliner.util.preferences.Preferences;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Event;
+import java.awt.Font;
+import java.awt.Insets;
+import java.awt.Point;
+import java.awt.event.KeyEvent;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JTextArea;
+import javax.swing.KeyStroke;
+import javax.swing.text.Keymap;
 
 /**
  * @author  $Author: maynardd $

@@ -66,18 +66,22 @@ public class PreferenceInt extends AbstractPreference implements GUITreeComponen
 
 
 	// GUITreeComponent Interface
+        @Override
 	public void endSetup(Attributes atts) {
 		super.endSetup(atts);
 	}	
 
 
 	// Setters with Validation	
+        @Override
 	public void setDef(String value) {this.def = ((Integer) getValidator().getValidValue(value)).intValue();}
 	public void setDef(int value) {this.def = ((Integer) getValidator().getValidValue(new Integer(value))).intValue();}
 
+        @Override
 	public void setCur(String value) {this.cur = ((Integer) getValidator().getValidValue(value)).intValue();}
 	public void setCur(int value) {this.cur = ((Integer) getValidator().getValidValue(new Integer(value))).intValue();}
 
+        @Override
 	public void setTmp(String value) {
 		if (getValidator() == null) {System.out.println("Validator is null");}
 		this.tmp = ((Integer) getValidator().getValidValue(value)).intValue();
@@ -87,17 +91,25 @@ public class PreferenceInt extends AbstractPreference implements GUITreeComponen
 		this.tmp = ((Integer) getValidator().getValidValue(new Integer(value))).intValue();
 	}
 
+        @Override
 	public String getCur() {return "" + cur;}
+        @Override
 	public String getDef() {return "" + def;}
+        @Override
 	public String getTmp() {return "" + tmp;}
 
 	// Misc Methods
+        @Override
 	public String toString() {return String.valueOf(cur);}
 
 
 	// Preference Interface
+        @Override
 	public void restoreCurrentToDefault() {cur = def;}
+        @Override
 	public void restoreTemporaryToDefault() {tmp = def;}
+        @Override
 	public void restoreTemporaryToCurrent() {tmp = cur;}
+        @Override
 	public void applyTemporaryToCurrent() {cur = tmp;}
 }

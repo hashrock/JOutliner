@@ -46,6 +46,7 @@ import com.organic.maynard.outliner.util.undo.UndoQueue;
 public class PreferencesPanelEditor extends AbstractPreferencesPanel implements PreferencesPanel, GUITreeComponent {
 	
 	// PreferencePanel Interface
+        @Override
 	public void applyCurrentToApplication() {
 		Preferences prefs = Outliner.prefs;
 		

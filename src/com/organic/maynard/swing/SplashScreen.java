@@ -76,6 +76,7 @@ public class SplashScreen extends JWindow {
 		setVisible(true);
 	}
 
+        @Override
 	public void paint(Graphics g) {
 		if (image != null) {
 			g.drawImage(image,0,0,this);

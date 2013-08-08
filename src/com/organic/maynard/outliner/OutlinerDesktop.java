@@ -64,6 +64,7 @@ public class OutlinerDesktop extends JDesktopPane implements Scrollable {
 	
 	
 	// Overridden Methods
+        @Override
 	public Dimension getPreferredSize() {
 		if (isMaximized()) {
 			return new Dimension(getParent().getWidth(), getParent().getHeight());
@@ -100,10 +101,12 @@ public class OutlinerDesktop extends JDesktopPane implements Scrollable {
 	
 	
 	// Scrollable Interface
+        @Override
 	public Dimension getPreferredScrollableViewportSize() {
 		return getPreferredSize();
 	}
 	
+        @Override
 	public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
 		//System.out.println("getScrollableUnitIncrement");
 		switch(orientation) {
@@ -118,6 +121,7 @@ public class OutlinerDesktop extends JDesktopPane implements Scrollable {
 		}
 	}
 	
+        @Override
 	public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
 		//System.out.println("getScrollableBlockIncrement");
 		switch(orientation) {
@@ -132,11 +136,13 @@ public class OutlinerDesktop extends JDesktopPane implements Scrollable {
 		}
 	}
 	
+        @Override
 	public boolean getScrollableTracksViewportHeight() {
 		//System.out.println("getScrollableTracksViewportHeight");
 		return false;
 	}
 	
+        @Override
 	public boolean getScrollableTracksViewportWidth() {
 		//System.out.println("getScrollableTracksViewportWidth");
 		return false;

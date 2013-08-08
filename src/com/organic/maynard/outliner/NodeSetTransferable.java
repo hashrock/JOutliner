@@ -71,10 +71,12 @@ public class NodeSetTransferable extends StringSelection implements Transferable
 
 
 	// Transferable Interface
+        @Override
 	public synchronized DataFlavor[] getTransferDataFlavors() {
 		return flavors;
 	}
 
+        @Override
 	public boolean isDataFlavorSupported(DataFlavor flavor) {
 		return (
 			flavor.equals(flavors[STRING]) || 
@@ -82,6 +84,7 @@ public class NodeSetTransferable extends StringSelection implements Transferable
 		);    
 	}
     
+        @Override
 	public synchronized Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
 		if (flavor.equals(flavors[STRING])) {
 			return nodeSet.toString();

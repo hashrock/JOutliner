@@ -75,6 +75,7 @@ public class FileSystemFindFileContentsHandler extends FileContentsInspector {
 	}
 
 	// Overridden Methods
+        @Override
 	protected void inspectContents(File file, ArrayList lines, ArrayList lineEndings) {
 		for (int lineCount = 1; lineCount <= lines.size(); lineCount++) {
 			String line = (String) lines.get(lineCount - 1);

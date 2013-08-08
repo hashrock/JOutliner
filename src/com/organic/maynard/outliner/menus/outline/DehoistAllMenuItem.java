@@ -44,10 +44,13 @@ import org.xml.sax.*;
 public class DehoistAllMenuItem extends AbstractOutlinerMenuItem implements OutlinerDocumentListener, DocumentRepositoryListener, ActionListener, GUITreeComponent {
 	
 	// OutlinerDocumentListener Interface
+        @Override
 	public void modifiedStateChanged(DocumentEvent e) {}
 	
+        @Override
 	public void attributesVisibilityChanged(OutlinerDocumentEvent e) {}
 	
+        @Override
 	public void hoistDepthChanged(OutlinerDocumentEvent e) {
 		if (e.getOutlinerDocument() == Outliner.documents.getMostRecentDocumentTouched()) {
 			calculateEnabledState(e.getOutlinerDocument());
@@ -56,10 +59,13 @@ public class DehoistAllMenuItem extends AbstractOutlinerMenuItem implements Outl
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		calculateEnabledState((OutlinerDocument) e.getDocument());
 	}
@@ -79,6 +85,7 @@ public class DehoistAllMenuItem extends AbstractOutlinerMenuItem implements Outl
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -91,6 +98,7 @@ public class DehoistAllMenuItem extends AbstractOutlinerMenuItem implements Outl
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		dehoist_all((OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched());
 	}

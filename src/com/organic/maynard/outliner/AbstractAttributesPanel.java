@@ -118,6 +118,7 @@ class RemoveColumnHeaderRenderer extends JButton implements TableCellRenderer {
 		super(TEXT_NEW_ELLIPSIS);
 	}
 	
+        @Override
 	public Component getTableCellRendererComponent(
 		JTable table, 
 		Object value, 
@@ -155,14 +156,17 @@ class AttributeTableModel extends AbstractTableModel implements MouseListener {
 	}
 	
 	
+        @Override
 	public int getColumnCount() {
 		return 4;
 	}
 	
+        @Override
 	public int getRowCount() {
 		return keys.size();
 	}
 	
+        @Override
 	public Object getValueAt(int row, int col) {
 		if (col == 0) {
 			if (panel.isCellEditable(row)) {
@@ -184,6 +188,7 @@ class AttributeTableModel extends AbstractTableModel implements MouseListener {
 		}
 	}
 	
+        @Override
 	public Class getColumnClass(int col) {
 		try {
 			if (col == 0) {
@@ -201,6 +206,7 @@ class AttributeTableModel extends AbstractTableModel implements MouseListener {
 		}
 	}
 	
+        @Override
 	public String getColumnName(int col) {
 		if (col == 0) {
 			return "";
@@ -213,6 +219,7 @@ class AttributeTableModel extends AbstractTableModel implements MouseListener {
 		}
 	}
 	
+        @Override
 	public boolean isCellEditable(int row, int col) {
 		if (col == 1) {
 			if (!panel.isCellEditable()) {
@@ -233,6 +240,7 @@ class AttributeTableModel extends AbstractTableModel implements MouseListener {
 		}
 	}
 	
+        @Override
 	public void setValueAt(Object value, int row, int col) {
 		if (col == 3) {
 			panel.setValueAt(value, row, this);
@@ -242,6 +250,7 @@ class AttributeTableModel extends AbstractTableModel implements MouseListener {
 	}
 	
 	// MouseListener Interface
+        @Override
 	public void mouseClicked(MouseEvent e) {
 		int col = panel.getTableHeader().columnAtPoint(e.getPoint());
 		if (col == 0) {
@@ -255,9 +264,13 @@ class AttributeTableModel extends AbstractTableModel implements MouseListener {
 		}
 	}
 	
+        @Override
 	public void mouseEntered(MouseEvent e) {}
+        @Override
 	public void mouseExited(MouseEvent e) {}
+        @Override
 	public void mousePressed(MouseEvent e) {}
+        @Override
 	public void mouseReleased(MouseEvent e) {}
 }
 
@@ -271,6 +284,7 @@ class AttributesButtonCellEditor extends ButtonCellEditor {
 		this.panel = panel;
 	}
 	
+        @Override
 	protected void doEditing() {
 		if (this.col == 0) {
 			panel.deleteAttribute(this.row, (AttributeTableModel) panel.getModel());
@@ -287,6 +301,7 @@ class AttributesImageIconCellEditor extends ImageIconCellEditor {
 		this.panel = panel;
 	}
 	
+        @Override
 	protected void doEditing() {
 		if (this.col == 1) {
 			panel.toggleEditability(this.row, (AttributeTableModel) panel.getModel());
@@ -344,6 +359,7 @@ class NewAttributeDialog extends JDialog implements ActionListener {
 		// Solution found at: http://forums.java.sun.com/thread.jsp?forum=57&thread=124417&start=15&range=15;
 		addWindowListener(
 			new WindowAdapter() {
+                                @Override
 				public void windowOpened(WindowEvent e) {
 					attributeField.requestFocus();
 				}
@@ -393,6 +409,7 @@ class NewAttributeDialog extends JDialog implements ActionListener {
 	}
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(OK)) {
 			ok();

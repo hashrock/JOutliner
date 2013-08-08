@@ -48,12 +48,14 @@ import org.xml.sax.*;
  
 public class DemoteMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent {
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
 	}
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		OutlinerDocument doc = (OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched();
 		OutlinerCellRendererImpl textArea = doc.panel.layout.getUIComponent(doc.tree.getEditingNode());

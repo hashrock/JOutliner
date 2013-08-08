@@ -65,6 +65,7 @@ public class PreferencesGUITreeComboBoxComponent extends AbstractPreferencesGUIT
 	
 	
 	// GUITree Component Interface
+        @Override
 	public void startSetup(Attributes atts) {
 		String listName = atts.getValue(A_LIST);
 		

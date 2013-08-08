@@ -109,6 +109,7 @@ class SelectHTMLExportStyleDialog extends AbstractOutlinerJDialog implements Act
 		getContentPane().add(vBox,BorderLayout.CENTER);
 	}
 	
+        @Override
 	public void show() {
 		// Get list of styles and populate comboBox.
 		styles.removeAllItems();
@@ -135,6 +136,7 @@ class SelectHTMLExportStyleDialog extends AbstractOutlinerJDialog implements Act
 	}
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(OK)) {
 			ok();
@@ -163,12 +165,18 @@ public class HTMLExportFileFormat extends AbstractFileFormat implements ExportFi
 	
 	
 	// ExportFileFormat Interface
+        @Override
 	public boolean supportsComments() {return true;}
+        @Override
 	public boolean supportsEditability() {return false;}
+        @Override
 	public boolean supportsMoveability() {return false;}
+        @Override
 	public boolean supportsAttributes() {return false;}
+        @Override
 	public boolean supportsDocumentAttributes() {return false;}
 	
+        @Override
 	public byte[] save(JoeTree tree, DocumentInfo docInfo) {
 		String lineEnding = PlatformCompatibility.platformToLineEnding(PropertyContainerUtil.getPropertyAsString(docInfo, DocumentInfo.KEY_LINE_ENDING));
 		

@@ -65,6 +65,7 @@ public class PdbBFImportFileFormat extends PdbImportFileFormat {
 	
 	// NOTE this is PDB-flavor-specific
 	// NOTE failures should throw an appropriate JoeException
+        @Override
 	protected void createReaderWriter() throws JoeException {
 		// try to create an appropriate reader-writer
 		ourReaderWriter = new PdbBFReaderWriter() ;

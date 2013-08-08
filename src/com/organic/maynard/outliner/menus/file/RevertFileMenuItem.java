@@ -53,6 +53,7 @@ public class RevertFileMenuItem
 	implements DocumentListener, DocumentRepositoryListener, ActionListener, GUITreeComponent 
 {
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -65,6 +66,7 @@ public class RevertFileMenuItem
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		revertOutlinerDocument((OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched());
 	}
@@ -80,16 +82,20 @@ public class RevertFileMenuItem
 	
 	
 	// DocumentListener Interface
+        @Override
 	public void modifiedStateChanged(DocumentEvent e) {
 		calculateEnabledState(e.getDocument());
 	}
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		calculateEnabledState(e.getDocument());
 	}

@@ -53,6 +53,7 @@ public class MaximizeVerticalMenuItem
 {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -60,6 +61,7 @@ public class MaximizeVerticalMenuItem
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		// if we're not in a totally-maximized state 
 		// [which would make this all pointless] ...

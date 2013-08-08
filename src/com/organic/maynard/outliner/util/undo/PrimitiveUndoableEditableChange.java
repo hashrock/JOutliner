@@ -55,20 +55,24 @@ public class PrimitiveUndoableEditableChange extends AbstractUndoable implements
 		this.newState = newState;
 	}
 
+        @Override
 	public void destroy() {
 		node = null;
 	}
 
 
 	// PrimitiveUndoablePropertyChangeInterface
+        @Override
 	public Node getNode() {return node;}
 	
 	
 	// Undoable Interface
+        @Override
 	public void undo() {
 		node.setEditableState(oldState);
 	}
 	
+        @Override
 	public void redo() {
 		node.setEditableState(newState);
 	}

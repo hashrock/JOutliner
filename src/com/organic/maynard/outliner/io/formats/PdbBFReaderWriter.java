@@ -97,6 +97,7 @@ public class PdbBFReaderWriter extends PdbReaderWriter {
 	// process a PDB BF header block
 	// this is a PDB-flavor specific method
 	// TBD
+        @Override
 	protected int processHeader (byte[] header)
 		{
 		
@@ -112,6 +113,7 @@ public class PdbBFReaderWriter extends PdbReaderWriter {
 	// process a PDB record chunk
 	// NOTE this method is PDB-flavor specific
 	// and over-rides PdbReaderWriter's.processRecord
+        @Override
 	protected int processRecord (int recordCounter, byte[] recordData, short recordAttributes, int recordUniqueID) 
 		{
 		// local vars
@@ -262,6 +264,7 @@ public class PdbBFReaderWriter extends PdbReaderWriter {
 	// process a PDB AppInfo block
 	// this is a PDB-flavor specific method
 	// TBD
+        @Override
 	protected int processAppInfo (byte[] appInfo)
 		{
 		
@@ -278,6 +281,7 @@ public class PdbBFReaderWriter extends PdbReaderWriter {
 	
 	// this is a PDB-flavor specific method
 	
+        @Override
 	protected int processSortInfo (byte[] sortInfo)
 		{
 		

@@ -60,6 +60,7 @@ public abstract class AbstractOutlinerJDialog extends JDialog {
 		addComponentListener(new WindowSizeManager(resizeOnShow, initialWidth, initialHeight, minimumWidth, minimumHeight));
 	}
 	
+        @Override
 	public void show() {
 		if (alwaysCenter || !hasBeenShown) {
 			hasBeenShown = true;

@@ -48,6 +48,7 @@ import org.xml.sax.*;
 public class FindMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -55,6 +56,7 @@ public class FindMenuItem extends AbstractOutlinerMenuItem implements ActionList
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		(Outliner.findReplace).show();
 	}

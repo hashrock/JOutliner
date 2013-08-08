@@ -44,6 +44,7 @@ import org.xml.sax.*;
 
 public class PreferencesGUITreeCheckBoxComponent extends AbstractPreferencesGUITreeComponent {
 
+        @Override
 	public void startSetup(Attributes atts) {
 		JCheckBox component = new JCheckBox();
 		setComponent(component);

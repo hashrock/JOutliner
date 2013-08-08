@@ -51,6 +51,7 @@ import org.xml.sax.*;
 public class CopyMenuItem extends AbstractOutlinerMenuItem implements TreeSelectionListener, DocumentRepositoryListener, ActionListener, GUITreeComponent {
 	
 	// TreeSelectionListener Interface
+        @Override
 	public void selectionChanged(TreeSelectionEvent e) {
 		JoeTree tree = e.getTree();
 		Document doc = tree.getDocument();
@@ -74,10 +75,13 @@ public class CopyMenuItem extends AbstractOutlinerMenuItem implements TreeSelect
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		if (e.getDocument() == null) {
 			setEnabled(false);
@@ -88,6 +92,7 @@ public class CopyMenuItem extends AbstractOutlinerMenuItem implements TreeSelect
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -100,6 +105,7 @@ public class CopyMenuItem extends AbstractOutlinerMenuItem implements TreeSelect
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		OutlinerDocument doc = (OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched();
 		OutlinerCellRendererImpl textArea = doc.panel.layout.getUIComponent(doc.tree.getEditingNode());

@@ -47,6 +47,7 @@ import org.xml.sax.*;
 public class HelpMenu extends AbstractOutlinerMenu implements GUITreeComponent {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		Outliner.menuBar.helpMenu = this;

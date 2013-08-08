@@ -56,10 +56,13 @@ public class SaveAsSubMenuItem extends OutlinerSubMenuItem implements DocumentRe
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		if (e.getDocument() == null) {
 			setEnabled(false);

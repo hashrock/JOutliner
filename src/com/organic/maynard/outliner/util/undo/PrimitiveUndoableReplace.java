@@ -57,6 +57,7 @@ public class PrimitiveUndoableReplace extends AbstractUndoable implements Undoab
 		this.index = oldNode.currentIndex();
 	}
 
+        @Override
 	public void destroy() {
 		parent = null;
 		oldNode = null;
@@ -72,6 +73,7 @@ public class PrimitiveUndoableReplace extends AbstractUndoable implements Undoab
 		return newNode;
 	}
 		
+        @Override
 	public void undo() {
 		JoeTree tree = parent.getTree();
 		
@@ -94,6 +96,7 @@ public class PrimitiveUndoableReplace extends AbstractUndoable implements Undoab
 	}
 	
 	// Undoable Interface
+        @Override
 	public void redo() {
 		JoeTree tree = parent.getTree();
 

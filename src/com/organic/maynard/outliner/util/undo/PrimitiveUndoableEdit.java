@@ -59,6 +59,7 @@ public class PrimitiveUndoableEdit extends AbstractUndoable implements Undoable 
 	}
 
 	// Destructible Interface
+        @Override
 	public void destroy() {
 		node = null;
 		oldText = null;
@@ -66,10 +67,12 @@ public class PrimitiveUndoableEdit extends AbstractUndoable implements Undoable 
 	}
 	
 	// Undoable Interface
+        @Override
 	public void undo() {
 		node.setValue(oldText);
 	}
 	
+        @Override
 	public void redo() {
 		node.setValue(newText);
 	}

@@ -63,28 +63,40 @@ public class PreferenceLineEnding extends AbstractPreference implements GUITreeC
 
 
 	// GUITreeComponent Interface
+        @Override
 	public void endSetup(Attributes atts) {
 		super.endSetup(atts);
 	}	
 
 
 	// Setters	
+        @Override
 	public void setDef(String value) {this.def = value;}
+        @Override
 	public void setCur(String value) {this.cur = value;}
+        @Override
 	public void setTmp(String value) {this.tmp = value;}
 
+        @Override
 	public String getCur() {return cur;}
+        @Override
 	public String getDef() {return def;}
+        @Override
 	public String getTmp() {return tmp;}
 
 
 	// Misc Methods
+        @Override
 	public String toString() {return String.valueOf(cur);}
 
 
 	// Preference Interface
+        @Override
 	public void restoreCurrentToDefault() {cur = def;}
+        @Override
 	public void restoreTemporaryToDefault() {tmp = def;}
+        @Override
 	public void restoreTemporaryToCurrent() {tmp = cur;}
+        @Override
 	public void applyTemporaryToCurrent() {cur = tmp;}
 }

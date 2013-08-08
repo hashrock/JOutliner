@@ -66,32 +66,44 @@ public class PreferenceBoolean extends AbstractPreference implements GUITreeComp
 
 
 	// GUITreeComponent Interface
+        @Override
 	public void endSetup(Attributes atts) {
 		super.endSetup(atts);
 	}	
 
 
 	// Setters with Validation
+        @Override
 	public void setDef(String value) {this.def = ((Boolean) getValidator().getValidValue(value)).booleanValue();}
 	public void setDef(boolean value) {this.def = value;}
 
+        @Override
 	public void setCur(String value) {this.cur = ((Boolean) getValidator().getValidValue(value)).booleanValue();}
 	public void setCur(boolean value) {this.cur = value;}
 
+        @Override
 	public void setTmp(String value) {this.tmp = ((Boolean) getValidator().getValidValue(value)).booleanValue();}
 	public void setTmp(boolean value) {this.tmp = value;}
 
+        @Override
 	public String getCur() {return String.valueOf(cur);}
+        @Override
 	public String getDef() {return String.valueOf(def);}
+        @Override
 	public String getTmp() {return String.valueOf(tmp);}
 
 	// Misc Methods
+        @Override
 	public String toString() {return String.valueOf(cur);}
 
 	
 	// Preference Interface
+        @Override
 	public void restoreCurrentToDefault() {cur = def;}
+        @Override
 	public void restoreTemporaryToDefault(){tmp = def;}
+        @Override
 	public void restoreTemporaryToCurrent(){tmp = cur;}
+        @Override
 	public void applyTemporaryToCurrent(){cur = tmp;}
 }

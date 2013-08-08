@@ -83,6 +83,7 @@ public class StrungDocumentInfo implements Comparable, Comparator {
 	}
 	
 	// Comparable interface method
+        @Override
 	public int compareTo(Object obj) {
 		String objString = null;
 		String ourString = null;
@@ -109,6 +110,7 @@ public class StrungDocumentInfo implements Comparable, Comparator {
 	
 	
 	// Comparator interface methods
+        @Override
 	public int compare(Object obj01, Object obj02) {
 		String obj01String = null;
 		String obj02String = null;
@@ -133,6 +135,7 @@ public class StrungDocumentInfo implements Comparable, Comparator {
 		return obj01String.compareTo(obj02String);
 	}
 	
+        @Override
 	public boolean equals(Object obj) {
 		String objString = null;
 		String ourString = null;

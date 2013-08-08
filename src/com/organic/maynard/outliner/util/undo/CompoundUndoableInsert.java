@@ -65,11 +65,13 @@ public class CompoundUndoableInsert extends AbstractCompoundUndoable {
 	
 	
 	// Undoable Interface
+        @Override
 	public void destroy() {
 		super.destroy();
 		parent = null;
 	}
 
+        @Override
 	public String getName() {
 		String name = super.getName();
 		if (name == null) {
@@ -79,6 +81,7 @@ public class CompoundUndoableInsert extends AbstractCompoundUndoable {
 		}
 	}
 	
+        @Override
 	public void undo() {
 		// Find the node we will change focus too, note may end up null
 		Node youngestNode = ((PrimitiveUndoableInsert) primitives.get(primitives.size() - 1)).getNode();
@@ -125,6 +128,7 @@ public class CompoundUndoableInsert extends AbstractCompoundUndoable {
 		layout.draw(newSelectedNode, OutlineLayoutManager.ICON);	
 	}
 	
+        @Override
 	public void redo() {
 		Node youngestNode = ((PrimitiveUndoableInsert) primitives.get(primitives.size() - 1)).getNode();
 		JoeTree tree = youngestNode.getTree();

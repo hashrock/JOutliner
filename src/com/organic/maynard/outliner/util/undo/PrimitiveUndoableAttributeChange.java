@@ -63,6 +63,7 @@ public class PrimitiveUndoableAttributeChange extends AbstractUndoable implement
 		this.newReadOnly = newReadOnly;
 	}
 
+        @Override
 	public void destroy() {
 		node = null;
 		oldValue = null;
@@ -71,12 +72,14 @@ public class PrimitiveUndoableAttributeChange extends AbstractUndoable implement
 
 
 	// PrimitiveUndoablePropertyChangeInterface
+        @Override
 	public Node getNode() {
 		return node;
 	}
 
 
 	// Undoable Interface
+        @Override
 	public void undo() {
 		if (oldKey == null) {
 			if (newKey == null) {
@@ -96,6 +99,7 @@ public class PrimitiveUndoableAttributeChange extends AbstractUndoable implement
 		}
 	}
 
+        @Override
 	public void redo() {
 		if (oldKey == null) {
 			if (newKey == null) {

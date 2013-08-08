@@ -52,9 +52,12 @@ public abstract class AbstractPreference implements Preference, GUITreeComponent
 	
 	// GUITreeComponent Interface
 	private String id = null;
+        @Override
 	public String getGUITreeComponentID() {return this.id;}
+        @Override
 	public void setGUITreeComponentID(String id) {this.id = id;}
 	
+        @Override
 	public void startSetup(Attributes atts) {
 		String id = atts.getValue(A_ID);
 
@@ -63,6 +66,7 @@ public abstract class AbstractPreference implements Preference, GUITreeComponent
 		Outliner.prefs.addPreference(id, this);
 	}
 	
+        @Override
 	public void endSetup(Attributes atts) {
 		String def = atts.getValue(AbstractPreference.A_DEFAULT);
 		String cur = Outliner.prefs.getTempValue(getCommand());
@@ -79,28 +83,37 @@ public abstract class AbstractPreference implements Preference, GUITreeComponent
 	
 			
 	// Preference Interface
+        @Override
 	public String getCommand() {
 		return this.command;
 	}
 	
+        @Override
 	public void setCommand(String command) {
 		this.command = command;
 	}
 
+        @Override
 	public void setValidator(Validator validator) {
 		this.validator = validator;
 	}
 	
+        @Override
 	public Validator getValidator() {
 		return this.validator;
 	}
 
 	// Abstract methods
+        @Override
 	public abstract void restoreCurrentToDefault();
+        @Override
 	public abstract void restoreTemporaryToDefault();
 
+        @Override
 	public abstract void setCur(String s);
+        @Override
 	public abstract void setDef(String s);
+        @Override
 	public abstract void setTmp(String s);
 
 }

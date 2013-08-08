@@ -86,9 +86,11 @@ public class DocumentAttributesPanel extends AbstractAttributesPanel {
 		model.fireTableDataChanged();
 	}
 	
+        @Override
 	public void update() {}
 	
 	// Data Modification
+        @Override
 	public void newAttribute(String key, Object value, boolean isReadOnly, AttributeTableModel model) {
 		AttributeContainer node = view.tree;
 		
@@ -114,6 +116,7 @@ public class DocumentAttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Delete Attribute
+        @Override
 	public void deleteAttribute(int row, AttributeTableModel model) {
 		AttributeContainer node = view.tree;
 		
@@ -143,6 +146,7 @@ public class DocumentAttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Toggle Editability
+        @Override
 	public void toggleEditability(int row, AttributeTableModel model) {
 		AttributeContainer node = view.tree;
 		
@@ -181,6 +185,7 @@ public class DocumentAttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Set Value
+        @Override
 	public void setValueAt(Object value, int row, AttributeTableModel model) {
 		AttributeContainer node = view.tree;
 		
@@ -209,6 +214,7 @@ public class DocumentAttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Misc
+        @Override
 	protected boolean isCellEditable() {
 		if (view.tree == null) {
 			return false;
@@ -217,6 +223,7 @@ public class DocumentAttributesPanel extends AbstractAttributesPanel {
 		}
 	}
 		
+        @Override
 	protected boolean isCellEditable(int row) {
 		AttributeContainer node = view.tree;
 		

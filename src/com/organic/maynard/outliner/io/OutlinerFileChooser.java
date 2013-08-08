@@ -399,6 +399,7 @@ public class OutlinerFileChooser extends JFileChooser implements ItemListener {
 	// ItemListener Interface
 	// The purpose of this listener is to update the file extension to the default 
 	// extension of the newly selected format.
+        @Override
 	public void itemStateChanged(ItemEvent e) {
 		if (textEntryField == null) {
 			// We we're unable to find a JTextField component that was a decendant of this
@@ -446,6 +447,7 @@ public class OutlinerFileChooser extends JFileChooser implements ItemListener {
 
 
 	// Overriden Methods of JFileChooser
+        @Override
 	public void approveSelection() {
 		File file = getSelectedFile();
 		

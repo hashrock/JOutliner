@@ -55,6 +55,7 @@ public class PrimitiveUndoableInsert extends AbstractUndoable implements Undoabl
 		this.index = index;
 	}
 
+        @Override
 	public void destroy() {
 		parent = null;
 		node = null;
@@ -69,6 +70,7 @@ public class PrimitiveUndoableInsert extends AbstractUndoable implements Undoabl
 		return this.node;
 	}
 
+        @Override
 	public void undo() {
 		// Remove the Node
 		node.getTree().removeNode(node);
@@ -76,6 +78,7 @@ public class PrimitiveUndoableInsert extends AbstractUndoable implements Undoabl
 	}
 	
 	// Undoable Interface
+        @Override
 	public void redo() {
 		// Insert the Node
 		parent.insertChild(node, index);

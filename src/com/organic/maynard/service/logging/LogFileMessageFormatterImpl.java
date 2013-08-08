@@ -43,6 +43,7 @@ public class LogFileMessageFormatterImpl implements LogFileMessageFormatter {
 	public LogFileMessageFormatterImpl() {}
 	
 	// LogFileMessageFormatter Interface
+        @Override
 	public String prepareLogMessage(int type, String msg, Throwable throwable) {
 		StringWriter stackTrace = new StringWriter();
 		if (throwable != null) {
@@ -52,6 +53,7 @@ public class LogFileMessageFormatterImpl implements LogFileMessageFormatter {
 		return (getDate() + "\t" + Logger.MSG_TYPE_STRING[type] + ": " + msg + stackTrace.toString());
 	}
 	
+        @Override
 	public String prepareConsoleMessage(int type, String msg, Throwable throwable) {
 		StringWriter stackTrace = new StringWriter();
 		if (throwable != null) {

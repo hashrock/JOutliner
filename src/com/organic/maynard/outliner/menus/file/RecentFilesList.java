@@ -108,6 +108,7 @@ public class RecentFilesList extends AbstractOutlinerMenu implements ActionListe
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -148,6 +149,7 @@ public class RecentFilesList extends AbstractOutlinerMenu implements ActionListe
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		DocumentInfo docInfo = ((RecentFilesListItem) e.getSource()).getDocumentInfo();
 		

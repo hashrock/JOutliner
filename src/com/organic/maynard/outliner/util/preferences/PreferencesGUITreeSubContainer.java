@@ -64,9 +64,12 @@ public class PreferencesGUITreeSubContainer extends JPanel implements GUITreeCom
 
 	// GUITreeComponent interface
 	private String id = null;
+        @Override
 	public String getGUITreeComponentID() {return this.id;}
+        @Override
 	public void setGUITreeComponentID(String id) {this.id = id;}
 
+        @Override
 	public void startSetup(Attributes atts) {
 		// Set Border Style
 		String style = atts.getValue(A_STYLE);
@@ -80,6 +83,7 @@ public class PreferencesGUITreeSubContainer extends JPanel implements GUITreeCom
 		prefPanel.startAddSubContainer(this);
 	}
 
+        @Override
 	public void endSetup(Attributes atts) {
 		AbstractPreferencesPanel prefPanel = (AbstractPreferencesPanel) GUITreeLoader.getAncestorElementOfClass("com.organic.maynard.outliner.util.preferences.AbstractPreferencesPanel");
 		prefPanel.endAddSubContainer(this);

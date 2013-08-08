@@ -71,5 +71,6 @@ public class OutlineLineNumber extends JLabel {
 		renderer = null;
 	}
 	
+        @Override
 	public boolean isManagingFocus() {return true;}
 }

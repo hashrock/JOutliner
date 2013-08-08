@@ -47,6 +47,7 @@ import org.xml.sax.*;
 
 public class PreferencesGUITreeColorButtonComponent extends AbstractPreferencesGUITreeComponent implements ActionListener {
 
+        @Override
 	public void startSetup(Attributes atts) {
 		// Set the Component
 		JButton component = new JButton("");
@@ -57,6 +58,7 @@ public class PreferencesGUITreeColorButtonComponent extends AbstractPreferencesG
 	}
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		PreferencesFrame pf = (PreferencesFrame) GUITreeLoader.reg.get(GUITreeComponentRegistry.PREFERENCES_FRAME);
 		PreferenceColor pref = (PreferenceColor) getPreference();

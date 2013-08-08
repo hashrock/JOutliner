@@ -99,19 +99,23 @@ public class FindReplaceResultsModel extends AbstractTableModel {
 	
 	
 	// TableModel Interface
+        @Override
 	public void fireTableDataChanged() {
 		super.fireTableDataChanged();
 		view.updateTotalMatches();
 	}
 	
+        @Override
 	public int getRowCount() {
 		return size();
 	}
 	
+        @Override
 	public int getColumnCount() {
 		return 5;
 	}
 	
+        @Override
 	public Object getValueAt(int row, int col) {
 		FindReplaceResult result = getResult(row);
 		
@@ -137,6 +141,7 @@ public class FindReplaceResultsModel extends AbstractTableModel {
 		}
 	}
 	
+        @Override
 	public String getColumnName(int col) {
 		if (col == 0) {
 			return "Document";
@@ -153,6 +158,7 @@ public class FindReplaceResultsModel extends AbstractTableModel {
 		}
 	}
 	
+        @Override
     public boolean isCellEditable(int row, int col) {
 		return false;
 	}

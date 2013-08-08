@@ -55,20 +55,24 @@ public class PrimitiveUndoableCommentChange extends AbstractUndoable implements 
 		this.newState = newState;
 	}
 
+        @Override
 	public void destroy() {
 		node = null;
 	}
 
 
 	// PrimitiveUndoablePropertyChangeInterface
+        @Override
 	public Node getNode() {return node;}
 	
 	
 	// Undoable Interface
+        @Override
 	public void undo() {
 		node.setCommentState(oldState);
 	}
 	
+        @Override
 	public void redo() {
 		node.setCommentState(newState);
 	}

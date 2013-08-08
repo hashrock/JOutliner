@@ -135,6 +135,7 @@ public class PdbFileFormat extends AbstractFileFormat implements
 	
 	// ======== OpenFileFormat interface Implementations ========
 	
+        @Override
 	public int open(JoeTree tree, DocumentInfo docInfo, InputStream stream) {
 		// Set the objects we are going to populate.
 		this.docInfo = docInfo;
@@ -195,6 +196,7 @@ public class PdbFileFormat extends AbstractFileFormat implements
 	
 	// initialize the outline data structure
 	// TBD this can be moved further up the line, it's quite vanilla
+        @Override
 	public void startOutline () {
 		// initialize the current node to the root node of the outline
 		this.currentNode = tree.getRootNode();
@@ -211,11 +213,13 @@ public class PdbFileFormat extends AbstractFileFormat implements
 		
 	
 	// apply finishing touches to the outline data structure
+        @Override
 	public void finishOutline () {}
 	
 	
 	// add a node of data to the outline
 	// TBD this can be moved further up the line, it's quite vanilla
+        @Override
 	public void addNodeToOutline (NodeImpl node, int level) {
 		
 		// for appendage, we need to consider the current node's level
@@ -278,16 +282,19 @@ public class PdbFileFormat extends AbstractFileFormat implements
 		
 	// ======== PdbErrorHandler Implementations ========
 	
+        @Override
 	public void error(JoeException someException) {
 		System.out.println(someException.getMessage()) ;
 		this.errorOccurred = true;
 	} // end method error
 	
+        @Override
 	public void fatalError(JoeException someException) {
 		System.out.println(someException.getMessage()) ;
 		this.errorOccurred = true;
 	} // end method fatalError
 	
+        @Override
 	public void warning(JoeException someException) {
 		System.out.println(someException.getMessage()) ;
 		this.errorOccurred = true;
@@ -297,10 +304,15 @@ public class PdbFileFormat extends AbstractFileFormat implements
 	// ======== FileFormat Implementations ========
 	
 	// what do we support ?
+        @Override
 	public boolean supportsComments() {return true;}
+        @Override
 	public boolean supportsEditability() {return true;}
+        @Override
 	public boolean supportsMoveability() {return true;}	
+        @Override
 	public boolean supportsAttributes() {return true;}
+        @Override
 	public boolean supportsDocumentAttributes() {return true;}
 	
 	
@@ -308,6 +320,7 @@ public class PdbFileFormat extends AbstractFileFormat implements
 	
 	
 	// save the outline 
+        @Override
 	public byte[] save(JoeTree tree, DocumentInfo docInfo) {
 		StringBuffer buf = prepareFile(tree, docInfo);
 		

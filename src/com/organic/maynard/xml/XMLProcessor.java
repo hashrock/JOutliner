@@ -229,16 +229,19 @@ public abstract class XMLProcessor extends DefaultHandler implements XMLParserCo
 	/**
 	 * Start of document processing.
 	 */
+        @Override
 	public void startDocument() {}
 	
 	/**
 	 * End of document processing.
 	 */
+        @Override
 	public void endDocument() {}
 	
 	/**
 	 * Processing instruction processing.
 	 */
+        @Override
 	public void processingInstruction(String target, String data) {
 		if (PI_VERBOSE.equalsIgnoreCase(target)) {
 			HashMap map = parseAttributes(data);
@@ -269,6 +272,7 @@ public abstract class XMLProcessor extends DefaultHandler implements XMLParserCo
 	 * implementations by subclasses so that the component can be setup there and
 	 * stored here.
 	 */
+        @Override
 	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
 		component_stack.push(component);
 		component = null;
@@ -287,6 +291,7 @@ public abstract class XMLProcessor extends DefaultHandler implements XMLParserCo
 	/**
 	 * End of element processing.
 	 */
+        @Override
 	public void endElement(String namespaceURI, String localName, String qName) {
 		component_stack.pop();
 		elements_stack.pop();
@@ -301,6 +306,7 @@ public abstract class XMLProcessor extends DefaultHandler implements XMLParserCo
 	/**
 	 * Characters processing.
 	 */
+        @Override
 	public void characters(char ch[], int start, int length) throws SAXException {
 		StringBuffer buf = (StringBuffer) characters_stack.peek();
 		buf.append(new String(ch, start, length));

@@ -51,6 +51,7 @@ import javax.swing.event.*;
 
 public class OutlinerWindowMonitor extends InternalFrameAdapter {
 	
+        @Override
 	public void internalFrameClosing(InternalFrameEvent e) {
 		closeInternalFrame(e.getInternalFrame());
 	}

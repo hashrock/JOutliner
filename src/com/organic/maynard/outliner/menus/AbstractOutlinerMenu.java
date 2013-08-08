@@ -55,9 +55,12 @@ public abstract class AbstractOutlinerMenu extends JMenu implements GUITreeCompo
 	
 	// GUITreeComponent interface
 	private String id = null;
+        @Override
 	public String getGUITreeComponentID() {return this.id;}
+        @Override
 	public void setGUITreeComponentID(String id) {this.id = id;}
 	
+        @Override
 	public void startSetup(Attributes atts) {
 		setText(atts.getValue(A_TEXT));
 		
@@ -72,11 +75,13 @@ public abstract class AbstractOutlinerMenu extends JMenu implements GUITreeCompo
 		Outliner.menuBar.revalidate();
 	}
 	
+        @Override
 	public void endSetup(Attributes atts) {}
 	
 	
 	// Fix for java bug #4309156.
 	// This bug is fixed in jdk1.4.0 since this method no longer seems to get called.
 	// Instead jdk1.4.0 calls requestFocus(boolean) to obtain temporary focus.
+        @Override
 	public void requestFocus() {}
 }

@@ -49,10 +49,12 @@ public abstract class AbstractFileProtocol implements FileProtocol {
 	public AbstractFileProtocol() {}
 	
 	// FileProtocol Interface
+        @Override
 	public String getName() {
 		return this.name;
 	}
 	
+        @Override
 	public void setName(String name) {
 		this.name = name;
 	}

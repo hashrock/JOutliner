@@ -45,6 +45,7 @@ import com.organic.maynard.outliner.guitree.*;
 
 public class PreferencesPanelOpenAndSave extends AbstractPreferencesPanel implements PreferencesPanel, GUITreeComponent {
 
+        @Override
 	public void applyCurrentToApplication() {
 		// Synchronize default protocol in model.
 		Outliner.fileProtocolManager.synchronizeDefault();

@@ -59,6 +59,7 @@ public class HTMLViewerMenuItem extends AbstractOutlinerMenuItem implements Acti
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -98,6 +99,7 @@ public class HTMLViewerMenuItem extends AbstractOutlinerMenuItem implements Acti
 	}
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		Outliner.html_viewer.show();
 		Outliner.html_viewer.addURL(getResourceURL());

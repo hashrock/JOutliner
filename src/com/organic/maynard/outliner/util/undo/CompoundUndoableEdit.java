@@ -68,6 +68,7 @@ public class CompoundUndoableEdit extends AbstractCompoundUndoable {
 
 
 	// Destructible Interface
+        @Override
 	public void destroy() {
 		super.destroy();
 		tree = null;
@@ -75,6 +76,7 @@ public class CompoundUndoableEdit extends AbstractCompoundUndoable {
 
 
 	// Undoable Interface
+        @Override
 	public String getName() {
 		String name = super.getName();
 		if (name == null) {
@@ -84,6 +86,7 @@ public class CompoundUndoableEdit extends AbstractCompoundUndoable {
 		}
 	}
 
+        @Override
 	public void undo() {
 		for (int i = primitives.size() - 1; i >= 0; i--) {
 			primitives.get(i).undo();
@@ -91,6 +94,7 @@ public class CompoundUndoableEdit extends AbstractCompoundUndoable {
 		tree.getDocument().panel.layout.redraw();
 	}
 	
+        @Override
 	public void redo() {
 		for (int i = 0, limit = primitives.size(); i < limit; i++) {
 			primitives.get(i).redo();

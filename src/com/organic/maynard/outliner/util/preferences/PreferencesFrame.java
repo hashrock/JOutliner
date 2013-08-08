@@ -107,6 +107,7 @@ public class PreferencesFrame extends AbstractGUITreeJDialog implements TreeSele
 
 
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -129,6 +130,7 @@ public class PreferencesFrame extends AbstractGUITreeJDialog implements TreeSele
 		RIGHT_PANEL.setLayout(CARD_LAYOUT);
 	}
 	
+        @Override
 	public void endSetup(Attributes atts) {
 		// Define the JTree		
 		tree = new JTree(treeModel);
@@ -182,6 +184,7 @@ public class PreferencesFrame extends AbstractGUITreeJDialog implements TreeSele
 	}
 	
 	// TreeSelectionListener interface
+        @Override
 	public void valueChanged(TreeSelectionEvent e) {
 		DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getPath().getLastPathComponent();
 		String key = (String) node.getUserObject();
@@ -192,6 +195,7 @@ public class PreferencesFrame extends AbstractGUITreeJDialog implements TreeSele
 
 
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		// File Menu
 		if (e.getActionCommand().equals(OK)) {

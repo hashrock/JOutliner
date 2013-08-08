@@ -68,6 +68,7 @@ public class OutlinerPanel extends JPanel implements MouseWheelListener {
 	}
 	
 	// MouseWheelListener Interface
+        @Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		int clicks = e.getWheelRotation() * Preferences.getPreferenceInt(Preferences.MOUSE_WHEEL_SCROLL_SPEED).cur;
 		BoundedRangeModel model = this.layout.scrollBar.getModel();

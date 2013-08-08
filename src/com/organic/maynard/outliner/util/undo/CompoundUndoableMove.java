@@ -68,12 +68,14 @@ public class CompoundUndoableMove extends AbstractCompoundUndoable {
 	
 	
 	// Undoable Interface
+        @Override
 	public void destroy() {
 		super.destroy();
 		parent = null;
 		targetParent = null;
 	}
 
+        @Override
 	public String getName() {
 		String name = super.getName();
 		if (name == null) {
@@ -83,6 +85,7 @@ public class CompoundUndoableMove extends AbstractCompoundUndoable {
 		}
 	}
 
+        @Override
 	public void undo() {
 		// Shorthand
 		Node youngestNode = ((PrimitiveUndoableMove) primitives.get(0)).getNode();
@@ -159,6 +162,7 @@ public class CompoundUndoableMove extends AbstractCompoundUndoable {
 		}
 	}
 	
+        @Override
 	public void redo() {
 		// Shorthand
 		Node youngestNode = ((PrimitiveUndoableMove) primitives.get(0)).getNode();

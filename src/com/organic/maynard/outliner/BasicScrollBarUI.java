@@ -46,6 +46,7 @@ public class BasicScrollBarUI extends javax.swing.plaf.basic.BasicScrollBarUI {
 
 	// This overrides the normal behaviour to allow the thumb
 	// to be resized while dragging is occurring.
+        @Override
 	public void layoutContainer(Container scrollbarContainer) {
 
 		JScrollBar scrollbar = (JScrollBar) scrollbarContainer;

@@ -58,22 +58,27 @@ public abstract class AbstractCompoundUndoable extends AbstractUndoable implemen
 
 
 	// CompoundUndoable Interface
+        @Override
 	public int getPrimitiveCount() {
 		return primitives.size();
 	}
 	
+        @Override
 	public void addPrimitive(Undoable primitive) {
 		primitives.add(primitive);
 	}
 
+        @Override
 	public void setUpdatingGui(boolean isUpdatingGui) {
 		this.isUpdatingGui = isUpdatingGui;
 	}
 	
+        @Override
 	public boolean isUpdatingGui() {
 		return isUpdatingGui;
 	}
 	
+        @Override
 	public boolean isEmpty() {
 		if (primitives.size() > 0) {
 			return false;
@@ -84,6 +89,7 @@ public abstract class AbstractCompoundUndoable extends AbstractUndoable implemen
 
 
 	// Destructible Interface
+        @Override
 	public void destroy() {
 		for (int i = 0, limit = primitives.size(); i < limit; i++) {
 			primitives.get(i).destroy();

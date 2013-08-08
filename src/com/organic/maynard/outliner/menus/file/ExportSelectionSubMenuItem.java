@@ -58,6 +58,7 @@ public class ExportSelectionSubMenuItem extends OutlinerSubMenuItem implements T
 	
 	
 	// TreeSelectionListener Interface
+        @Override
 	public void selectionChanged(TreeSelectionEvent e) {
 		JoeTree tree = e.getTree();
 		Document doc = tree.getDocument();
@@ -81,10 +82,13 @@ public class ExportSelectionSubMenuItem extends OutlinerSubMenuItem implements T
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		if (e.getDocument() == null) {
 			setEnabled(false);

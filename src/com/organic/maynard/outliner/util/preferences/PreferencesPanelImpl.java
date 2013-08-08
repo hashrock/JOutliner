@@ -38,6 +38,7 @@ import com.organic.maynard.outliner.guitree.*;
 
 public class PreferencesPanelImpl extends AbstractPreferencesPanel implements PreferencesPanel, GUITreeComponent {
 	
+        @Override
 	public void applyCurrentToApplication() {		
 		// Apply any prefs to the app that won't be looked up directly from the preferences.
 	}

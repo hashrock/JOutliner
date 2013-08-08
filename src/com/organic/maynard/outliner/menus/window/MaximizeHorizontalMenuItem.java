@@ -53,6 +53,7 @@ public class MaximizeHorizontalMenuItem
 {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -61,6 +62,7 @@ public class MaximizeHorizontalMenuItem
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		
 		// if we're not in a totally-maximized state 

@@ -51,12 +51,16 @@ public abstract class AbstractGUITreeJDialog extends AbstractOutlinerJDialog imp
 	
 	// GUITreeComponent interface
 	private String id = null;
+        @Override
 	public String getGUITreeComponentID() {return this.id;}
+        @Override
 	public void setGUITreeComponentID(String id) {this.id = id;}
 	
+        @Override
 	public void startSetup(Attributes atts) {
 		setTitle(atts.getValue(A_TITLE));
 	}
 	
+        @Override
 	public void endSetup(Attributes atts) {}
 }

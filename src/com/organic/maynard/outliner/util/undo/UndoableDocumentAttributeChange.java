@@ -63,6 +63,7 @@ public class UndoableDocumentAttributeChange extends AbstractUndoable implements
 		this.newReadOnly = newReadOnly;
 	}
 	
+        @Override
 	public void destroy() {
 		tree = null;
 		oldValue = null;
@@ -71,6 +72,7 @@ public class UndoableDocumentAttributeChange extends AbstractUndoable implements
 	
 	
 	// Undoable Interface
+        @Override
 	public void undo() {
 		if (oldKey == null) {
 			if (newKey == null) {
@@ -92,6 +94,7 @@ public class UndoableDocumentAttributeChange extends AbstractUndoable implements
 		Outliner.documentAttributes.configureAndShow(tree);
 	}
 	
+        @Override
 	public void redo() {
 		if (oldKey == null) {
 			if (newKey == null) {

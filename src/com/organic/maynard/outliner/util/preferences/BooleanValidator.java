@@ -44,6 +44,7 @@ public class BooleanValidator extends AbstractValidator implements Validator, GU
 
 
 	// Validator Interface
+        @Override
 	public Object getValidValue(Object value) {
 		if (value instanceof String) {
 			return getValidValue((String) value);

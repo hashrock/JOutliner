@@ -606,6 +606,7 @@ public class OutlineLayoutManager implements LayoutManager, AdjustmentListener {
 	
 	
 	// AdjustmentListener Interface
+        @Override
 	public void adjustmentValueChanged(AdjustmentEvent e) {
 		if (drawBlock) {
 			return;
@@ -624,6 +625,7 @@ public class OutlineLayoutManager implements LayoutManager, AdjustmentListener {
 	
 	
 	// LayoutManager Interface
+        @Override
 	public void layoutContainer(Container container) {
 		Insets insets = panel.getInsets();
 		this.top = insets.top;
@@ -636,17 +638,21 @@ public class OutlineLayoutManager implements LayoutManager, AdjustmentListener {
 		scrollBar.setBounds(right - d.width, top, d.width, bottom - top);
 	}
 	
+        @Override
 	public Dimension minimumLayoutSize(Container parent) {
 		return MINIMUM_DIMENSION;
 	}
 	
+        @Override
 	public Dimension preferredLayoutSize(Container parent) {
 		// Need to get parent because we've got the DummyJScrollPane 
 		// between us and our parent window which has the size we want.
 		return parent.getParent().getSize();
 	}
 	
+        @Override
 	public void addLayoutComponent(String name, Component comp) {}
 	
+        @Override
 	public void removeLayoutComponent(Component comp) {}
 }

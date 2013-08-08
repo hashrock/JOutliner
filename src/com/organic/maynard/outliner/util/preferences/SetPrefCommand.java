@@ -52,6 +52,7 @@ public class SetPrefCommand extends Command {
 	}
 
 
+        @Override
 	public void execute(ArrayList signature) {
 		String variableName = (String) signature.get(1);
 		String value = (String) signature.get(2);

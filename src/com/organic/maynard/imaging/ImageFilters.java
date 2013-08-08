@@ -75,6 +75,7 @@ public class ImageFilters {
 class InversionFilter extends RGBImageFilter {
 	
 	// RGBImageFilter Methods
+        @Override
 	public int filterRGB(int x, int y, int rgb) {
 		return (
 			(rgb & 0xff000000) | (0xffffff - (rgb & 0x00ffffff))
@@ -94,6 +95,7 @@ class LightenFilter extends RGBImageFilter {
 	}
 	
 	// RGBImageFilter Methods
+        @Override
 	public int filterRGB(int x, int y, int rgb) {
 		return (
 			(rgb & 0xff000000) | (amount | (rgb & 0x00ffffff))
@@ -113,6 +115,7 @@ class DarkenFilter extends RGBImageFilter {
 	}
 	
 	// RGBImageFilter Methods
+        @Override
 	public int filterRGB(int x, int y, int rgb) {
 		return (
 			(rgb & 0xff000000) | (amount & (rgb & 0x00ffffff))
@@ -132,6 +135,7 @@ class FillFilter extends RGBImageFilter {
 	}
 	
 	// RGBImageFilter Methods
+        @Override
 	public int filterRGB(int x, int y, int rgb) {
 		return (rgb & 0xff000000) | amount;
 	}

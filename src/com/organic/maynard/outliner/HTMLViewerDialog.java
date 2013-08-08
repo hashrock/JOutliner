@@ -166,6 +166,7 @@ public class HTMLViewerDialog extends AbstractGUITreeJDialog implements Hyperlin
 		return this.initialized;
 	}
 	
+        @Override
 	public void show() {
 		// Lazy Instantiation
 		if (!isInitialized()) {
@@ -243,6 +244,7 @@ public class HTMLViewerDialog extends AbstractGUITreeJDialog implements Hyperlin
 	
 	
 	// HyperlinkListener Interface
+        @Override
 	public void hyperlinkUpdate(HyperlinkEvent e) {
 		if (HyperlinkEvent.EventType.ACTIVATED.equals(e.getEventType())) {
 			URL url = e.getURL();
@@ -257,6 +259,7 @@ public class HTMLViewerDialog extends AbstractGUITreeJDialog implements Hyperlin
 	
 	
 	// PropertyChangeListener Interface
+        @Override
 	public void propertyChange(PropertyChangeEvent e) {
 		String name = e.getPropertyName();
 		if (name.equals("page")) {
@@ -266,6 +269,7 @@ public class HTMLViewerDialog extends AbstractGUITreeJDialog implements Hyperlin
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(NEXT)) {
 			this.location.setSelectedIndex(this.history_location + 1);
@@ -298,6 +302,7 @@ public class HTMLViewerDialog extends AbstractGUITreeJDialog implements Hyperlin
 	
 	
 	// Other Methods
+        @Override
 	public String getTitle() {
 		Document doc = this.viewer.getDocument();
 		return (String) doc.getProperty(Document.TitleProperty);
@@ -315,18 +320,23 @@ public class HTMLViewerDialog extends AbstractGUITreeJDialog implements Hyperlin
 		}
 		
 		// MouseListener Interface
+                @Override
 		public void mouseClicked(MouseEvent e) {}
 		
+                @Override
 		public void mouseEntered(MouseEvent e) {
 			setBorderPainted(true);
 		}
 		
+                @Override
 		public void mouseExited(MouseEvent e) {
 			setBorderPainted(false);
 		}
 		
+                @Override
 		public void mousePressed(MouseEvent e) {}
 		
+                @Override
 		public void mouseReleased(MouseEvent e) {}
 	}
 	
@@ -337,6 +347,7 @@ public class HTMLViewerDialog extends AbstractGUITreeJDialog implements Hyperlin
 			this.url = url;
 		}
 		
+                @Override
 		public String toString() {
 			return(url.toString());
 		}

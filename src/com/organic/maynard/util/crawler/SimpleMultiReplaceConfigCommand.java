@@ -44,6 +44,7 @@ public class SimpleMultiReplaceConfigCommand extends Command {
 		this.app = app;
 	}
 
+        @Override
 	public synchronized void execute(ArrayList signature) {
 		String variableName = (String) signature.get(1);
 		

@@ -51,6 +51,7 @@ public class SimpleFileFormat extends AbstractFileFormat implements SaveFileForm
 	
 	
 	// SaveFileFormat Interface
+        @Override
 	public byte[] save(JoeTree tree, DocumentInfo docInfo) {
 		StringBuffer buf = new StringBuffer();
 		tree.getRootNode().depthPaddedValue(buf, PlatformCompatibility.platformToLineEnding(PropertyContainerUtil.getPropertyAsString(docInfo, DocumentInfo.KEY_LINE_ENDING)));
@@ -63,14 +64,20 @@ public class SimpleFileFormat extends AbstractFileFormat implements SaveFileForm
 		}
 	}
 	
+        @Override
 	public boolean supportsComments() {return false;}
+        @Override
 	public boolean supportsEditability() {return false;}
+        @Override
 	public boolean supportsMoveability() {return false;}
+        @Override
 	public boolean supportsAttributes() {return false;}
+        @Override
 	public boolean supportsDocumentAttributes() {return false;}
 	
 	
 	// OpenFileFormat Interface
+        @Override
 	public int open(JoeTree tree, DocumentInfo docInfo, InputStream stream) {
 		int success = FAILURE;
 		

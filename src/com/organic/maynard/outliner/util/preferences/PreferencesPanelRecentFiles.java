@@ -47,6 +47,7 @@ import com.organic.maynard.outliner.menus.file.*;
 
 public class PreferencesPanelRecentFiles extends AbstractPreferencesPanel implements PreferencesPanel, GUITreeComponent {
 	
+        @Override
 	public void applyCurrentToApplication() {
 		int limit = 0;
 		String currentSetting = null;

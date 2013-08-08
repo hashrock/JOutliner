@@ -49,10 +49,13 @@ import org.xml.sax.*;
 public class EditDocumentAttributesMenuItem extends AbstractOutlinerMenuItem implements DocumentRepositoryListener, ActionListener, GUITreeComponent {
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		if (e.getDocument() == null) {
 			setEnabled(false);
@@ -63,6 +66,7 @@ public class EditDocumentAttributesMenuItem extends AbstractOutlinerMenuItem imp
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -74,6 +78,7 @@ public class EditDocumentAttributesMenuItem extends AbstractOutlinerMenuItem imp
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		Outliner.documentAttributes.configureAndShow(Outliner.documents.getMostRecentDocumentTouched().getTree());
 	}

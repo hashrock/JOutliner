@@ -88,6 +88,7 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 	 * Records focus state and records a reference to the OutlinerCellRendererImpl
 	 * that spawned the FocusEvent.
 	 */
+        @Override
 	public void focusGained(FocusEvent e) {
 		recordRenderer(e.getComponent());
 		textArea.hasFocus = true;
@@ -97,6 +98,7 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 	 * Records focus state and records a reference to the OutlinerCellRendererImpl
 	 * that spawned the FocusEvent.
 	 */
+        @Override
 	public void focusLost(FocusEvent e) {
 		recordRenderer(e.getComponent());
 		textArea.hasFocus = false;
@@ -119,14 +121,17 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 	
 	// MouseListener Interface
 	/** Not implemented. */
+        @Override
 	public void mouseEntered(MouseEvent e) {}
 	
 	/** Not implemented. */
+        @Override
 	public void mouseExited(MouseEvent e) {}
 	
 	/**
 	 * Handles mouse pressed events.
 	 */
+        @Override
 	public void mousePressed(MouseEvent e) {
 		recordRenderer(e.getComponent());
 		
@@ -186,6 +191,7 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 	 * Handles mouse released events. Checks for conditions that would cause the
 	 * macro popup to occur and shows the popup.
 	 */
+        @Override
 	public void mouseReleased(MouseEvent e) {
  		// Catch for Solaris/Mac if they did the popup trigger.
  		if (e.isConsumed()) {
@@ -206,6 +212,7 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 	}
 	
 	/** Not implemented. */
+        @Override
 	public void mouseClicked(MouseEvent e) {}
 	
 	/**
@@ -264,12 +271,14 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 	
 	// KeyListener Interface
 	/** Not implemented. */
+        @Override
 	public void keyPressed(KeyEvent e) {}
 	
 	/**
 	 * Handles keyTyped events by updating the underlying Node and then changing
 	 * focus to the appropriate node.
 	 */
+        @Override
 	public void keyTyped(KeyEvent e) {
  		recordRenderer(e.getComponent());
  		
@@ -329,6 +338,7 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 	}
 	
 	/** Not implemented. */
+        @Override
 	public void keyReleased(KeyEvent e) {}
 	
 	

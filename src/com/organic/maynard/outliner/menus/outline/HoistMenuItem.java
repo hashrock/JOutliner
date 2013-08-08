@@ -52,6 +52,7 @@ public class HoistMenuItem
 	implements OutlinerDocumentListener, DocumentRepositoryListener, TreeSelectionListener, ActionListener, GUITreeComponent 
 {
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -65,6 +66,7 @@ public class HoistMenuItem
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		hoist((OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched());
 	}
@@ -83,10 +85,13 @@ public class HoistMenuItem
 	
 	
 	// OutlinerDocumentListener Interface
+        @Override
 	public void modifiedStateChanged(DocumentEvent e) {}
 	
+        @Override
 	public void attributesVisibilityChanged(OutlinerDocumentEvent e) {}
 	
+        @Override
 	public void hoistDepthChanged(OutlinerDocumentEvent e) {
 		if (e.getOutlinerDocument() == Outliner.documents.getMostRecentDocumentTouched()) {
 			updateText(e.getOutlinerDocument());
@@ -95,10 +100,13 @@ public class HoistMenuItem
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		OutlinerDocument doc = (OutlinerDocument) e.getDocument();
 		updateText(doc);
@@ -117,6 +125,7 @@ public class HoistMenuItem
 	
 	
 	// TreeSelectionListener Interface
+        @Override
 	public void selectionChanged(TreeSelectionEvent e) {
 		calculateEnabledState(e.getTree());
 	}

@@ -45,6 +45,7 @@ public class MetalScrollBarUI extends javax.swing.plaf.metal.MetalScrollBarUI {
 
 	// This overrides the normal behaviour to allow the thumb
 	// to be resized while dragging is occurring.
+        @Override
 	public void layoutContainer(Container scrollbarContainer) {
 
 		JScrollBar scrollbar = (JScrollBar) scrollbarContainer;

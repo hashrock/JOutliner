@@ -87,6 +87,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	
+        @Override
 	public void destroy() {
 		if (children != null) {
 			for (int i = 0; i < children.size(); i++) {
@@ -102,6 +103,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Explicit Cloning Method
+        @Override
 	public Node cloneClean() {
 		NodeImpl nodeImpl = new NodeImpl(tree,value);
 		
@@ -132,20 +134,24 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	private int lineNumber = -1;
 	private int lineNumberUpdateKey = -1;
 	
+        @Override
 	public void setLineNumber(int lineNumber) {
 		this.lineNumber = lineNumber;
 	}
 	
+        @Override
 	public void setLineNumberKey(int lineNumberUpdateKey) {
 		this.lineNumberUpdateKey = lineNumberUpdateKey;
 	}
 	
+        @Override
 	public int getLineNumber() {
 		// This for when we need to get a line number but we don't want the
 		// key to get in the way. -2 will never be a normal key for things.
 		return getLineNumber(-2);
 	}
 	
+        @Override
 	public int getLineNumber(int key) {
 		if (lineNumberUpdateKey == key) {
 			return lineNumber;
@@ -179,6 +185,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		return lineNumber;
 	}
 	
+        @Override
 	public void adjustDecendantCount(int amount) {
 		NodeImpl node = this;
 		while(!node.isRoot()) {
@@ -187,6 +194,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public void adjustDecendantCharCount(int amount) {
 		decendantCharCount += amount;
 		if (!isRoot()) {
@@ -194,10 +202,12 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public int getDecendantCount() {
 		return decendantCount;
 	}
 	
+        @Override
 	public int getDecendantCharCount() {
 		if (isLeaf()) {
 			return 0;
@@ -212,15 +222,18 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Parent Methods
+        @Override
 	public void setParent(Node node) {
 		this.parent = node;
 	}
 	
+        @Override
 	public Node getParent() {
 		return parent;
 	}
 	
 	// Child Methods
+        @Override
 	public int numOfChildren() {
 		if (children != null) {
 			return children.size();
@@ -229,6 +242,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public void appendChild(Node node) {
 		if (children == null) {
 			children = Outliner.newNodeList(INITIAL_ARRAY_LIST_SIZE);
@@ -244,6 +258,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		adjustDecendantCount(node.getDecendantCount() + 1);
 	}
 	
+        @Override
 	public void removeChild(Node node) {
 		if (children == null) {
 			return;
@@ -256,6 +271,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		adjustDecendantCount(-(node.getDecendantCount() + 1));
 	}
 	
+        @Override
 	public void removeChild(Node node, int index) {
 		if (children == null) {
 			return;
@@ -268,6 +284,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		adjustDecendantCount(-(node.getDecendantCount() + 1));
 	}
 		
+        @Override
 	public Node getChild(int i) {
 		if (children == null) {
 			return null;
@@ -280,6 +297,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node getFirstChild() {
 		if (children == null) {
 			return null;
@@ -292,6 +310,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node getLastChild() {
 		if (children == null) {
 			return null;
@@ -304,6 +323,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node getLastDecendent() {
 		Node node = this;
 		Node child = getLastChild();
@@ -316,6 +336,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		return node;
 	}
 	
+        @Override
 	public Node getLastViewableDecendent() {
 		// Shortcut since most calls should exit here.
 		if (!isExpanded()) {
@@ -333,6 +354,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		return node;
 	}
 	
+        @Override
 	public void insertChild(Node node, int i) {
 		if (children == null) {
 			children = Outliner.newNodeList(INITIAL_ARRAY_LIST_SIZE);
@@ -345,6 +367,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		adjustDecendantCount(node.getDecendantCount() + 1);
 	}
 	
+        @Override
 	public int getChildIndex(Node node) {
 		if (children == null) {
 			return -1;
@@ -353,6 +376,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		return children.indexOf(node);
 	}
 	
+        @Override
 	public boolean isLeaf() {
 		if (children == null) {
 			return true;
@@ -365,6 +389,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public boolean isRoot() {
 		if (getParent() == null) {
 			return true;
@@ -374,10 +399,12 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Tree Accessor Methods
+        @Override
 	public JoeTree getTree() {
 		return tree;
 	}
 	
+        @Override
 	public void setTree(JoeTree tree, boolean recursive) {
 		this.tree = tree;
 		
@@ -390,23 +417,28 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	
 	
 	// Visibility Methods
+        @Override
 	public void setVisible(boolean visible) {
 		this.visible = visible;
 	}
 	
+        @Override
 	public boolean isVisible() {
 		return visible;
 	}
 	
 	// Comment Methods
+        @Override
 	public void setCommentState(int commentState) {
 		this.commentState = commentState;
 	}
 	
+        @Override
 	public int getCommentState() {
 		return commentState;
 	}
 	
+        @Override
 	public boolean isComment() {
 		Node node = this;
 		
@@ -423,14 +455,17 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Editability Methods
+        @Override
 	public void setEditableState(int editableState) {
 		this.editableState = editableState;
 	}
 	
+        @Override
 	public int getEditableState() {
 		return editableState;
 	}
 	
+        @Override
 	public boolean isEditable() {
 		Node node = this;
 		
@@ -447,14 +482,17 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Moveability Methods
+        @Override
 	public void setMoveableState(int moveableState) {
 		this.moveableState = moveableState;
 	}
 	
+        @Override
 	public int getMoveableState() {
 		return moveableState;
 	}
 	
+        @Override
 	public boolean isMoveable() {
 		Node node = this;
 		
@@ -471,14 +509,17 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Hoisting Methods
+        @Override
 	public void setHoisted(boolean hoisted) {
 		this.hoisted = hoisted;
 	}
 	
+        @Override
 	public boolean isHoisted() {
 		return hoisted;
 	}
 	
+        @Override
 	public Node getHoistedAncestorOrSelf() {
 		if (isRoot()) {
 			return null;
@@ -490,14 +531,17 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Selection Methods
+        @Override
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
 	
+        @Override
 	public boolean isSelected() {
 		return selected;
 	}
 	
+        @Override
 	public boolean isAncestorSelected() {
 		Node node = this;
 		
@@ -512,6 +556,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Is this a decendant of node?
+        @Override
 	public boolean isDecendantOf(Node decendant) {
 		Node node = this;
 		
@@ -526,14 +571,17 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Depth Methods
+        @Override
 	public void setDepth(int depth) {
 		this.depth = depth;
 	}
 	
+        @Override
 	public int getDepth() {
 		return depth;
 	}
 	
+        @Override
 	public void setDepthRecursively(int depth) {
 		setDepth(depth);
 		int childrenCount = numOfChildren();
@@ -543,14 +591,17 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Navigation Methods
+        @Override
 	public void setExpandedClean(boolean expanded) {
 		this.expanded = expanded;
 	}
 	
+        @Override
 	public void setExpanded(boolean expanded) {
 		setExpanded(expanded, true);
 	}
 	
+        @Override
 	public void setExpanded(boolean expanded, boolean collapseChildrenWhenCollapsing) {
 		if (expanded == isExpanded()) {
 			// Since we have not changed state, Abort.
@@ -582,10 +633,12 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public boolean isExpanded() {
 		return this.expanded;
 	}
 	
+        @Override
 	public void ExpandAllSubheads() {
 		setExpanded(true);
 		for (int i = 0; i < this.numOfChildren(); i++) {
@@ -593,6 +646,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public void CollapseAllSubheads() {
 		setExpanded(false);
 		for (int i = 0; i < this.numOfChildren(); i++) {
@@ -600,6 +654,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public void expandAllAncestors() {
 		Node parent = getParent();
 		
@@ -609,6 +664,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public int currentIndex() {
 		Node parent = getParent();
 		if (parent == null) {
@@ -618,6 +674,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public boolean isFirstChild() {
 		if (currentIndex() == 0) {
 			return true;
@@ -626,6 +683,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public boolean isLastChild() {
 		if (currentIndex() == (getParent().numOfChildren() - 1)) {
 			return true;
@@ -634,6 +692,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node nextSibling() {
 		if (getParent() == null) {
 			return this;
@@ -648,6 +707,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node prevSibling() {
 		if (getParent() == null) {
 			return this;
@@ -662,6 +722,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node prevSiblingOrParent() {
 		Node node = prevSibling();
 		if (node == this) {
@@ -673,6 +734,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		return node;
 	}
 	
+        @Override
 	public Node next() {
 		if (isExpanded() && !isLeaf()) {
 			return getChild(0);
@@ -686,6 +748,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node nextNode() {
 		if (!isLeaf()) {
 			return getChild(0);
@@ -699,6 +762,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node nextUnSelectedNode() {
 		// This does not test the current node.
 		Node node = next();
@@ -710,6 +774,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		return node;
 	}
 	
+        @Override
 	public Node nextSelectedSibling() {
 		// This does not test the current node.
 		Node node = nextSibling();
@@ -747,6 +812,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		return nextSiblingOfParent;
 	}
 	
+        @Override
 	public Node prev() {
 		Node node = prevSibling();
 		if (node == this) {
@@ -760,6 +826,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public Node prevUnSelectedNode() {
 		// This does not test the current node.
 		Node node = prev();
@@ -771,6 +838,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		return node;
 	}
 	
+        @Override
 	public Node prevSelectedSibling() {
 		// This does not test the current node.
 		Node node = prevSibling();
@@ -791,6 +859,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	}
 	
 	// Data Methods
+        @Override
 	public void setValue(String value) {
 		this.value = value;
 		
@@ -799,12 +868,14 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 			super.setAttribute(KEY_MODIFIED, tree.getDocument().settings.dateFormat.format(new Date()), true);
 		}
 	}
+        @Override
 	public String getValue() {
 		return value;
 	}
 	
 	
 	// String Representation Methods
+        @Override
 	public void depthPaddedValue(StringBuffer buf, String lineEndString) {
 		if (!isRoot()) {
 			for (int i = 0; i < this.depth; i++) {
@@ -820,6 +891,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public void getRecursiveValue(StringBuffer buf, String lineEndString, boolean includeComments) {
 		if (includeComments || !isComment()) {
 			buf.append(getValue()).append(lineEndString);
@@ -832,6 +904,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public void getMergedValue(StringBuffer buf) {
 		buf.append(getValue());
 		
@@ -846,6 +919,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	public static boolean merge_trim_enabled = true;
 	public static boolean merge_empty_nodes_enabled = false;
 	
+        @Override
 	public void getMergedValueWithSpaces(StringBuffer buf, int count) {
 		String value = getValue();
 		if (merge_trim_enabled) {
@@ -870,6 +944,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 	
 	
 	// AttributeContainer Interface
+        @Override
 	public void setAttribute(String key, Object value, boolean isReadOnly) {
 		super.setAttribute(key, value, isReadOnly);
 		
@@ -879,6 +954,7 @@ public class NodeImpl extends AttributeContainerImpl implements Node {
 		}
 	}
 	
+        @Override
 	public void removeAttribute(String key) {
 		// Set Modified Date
 		if (tree.getDocument() != null && tree.getDocument().settings.getUseCreateModDates().cur && !KEY_MODIFIED.equals(key) && !KEY_CREATED.equals(key)) {

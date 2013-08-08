@@ -43,6 +43,7 @@ import org.xml.sax.*;
 public class StatisticsMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -51,6 +52,7 @@ public class StatisticsMenuItem extends AbstractOutlinerMenuItem implements Acti
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		Outliner.statistics.show();
 	}

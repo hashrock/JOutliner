@@ -56,6 +56,7 @@ public class AttributesPanel extends AbstractAttributesPanel {
 	
 	
 	// Data Display
+        @Override
 	public void update() {
 		if (doc.isShowingAttributes()) {
 			AttributeContainer node = doc.tree.getEditingNode();
@@ -86,6 +87,7 @@ public class AttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Data Modification
+        @Override
 	public void newAttribute(String key, Object value, boolean isReadOnly, AttributeTableModel model) {
  		model.keys.add(key);
 		model.values.add(value);
@@ -105,6 +107,7 @@ public class AttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Delete Attribute
+        @Override
 	public void deleteAttribute(int row, AttributeTableModel model) {
 		
 		Node node = doc.tree.getEditingNode();
@@ -131,6 +134,7 @@ public class AttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Toggle Editability
+        @Override
 	public void toggleEditability(int row, AttributeTableModel model) {
 		Node node = doc.tree.getEditingNode();
 		String key = (String) model.keys.get(row);
@@ -154,6 +158,7 @@ public class AttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Set Value
+        @Override
 	public void setValueAt(Object value, int row, AttributeTableModel model) {
 		Node node = doc.tree.getEditingNode();
 		String key = (String) model.keys.get(row);
@@ -179,6 +184,7 @@ public class AttributesPanel extends AbstractAttributesPanel {
 	}
 	
 	// Misc
+        @Override
 	protected boolean isCellEditable() {
 		Node node = doc.tree.getEditingNode();
 		
@@ -189,6 +195,7 @@ public class AttributesPanel extends AbstractAttributesPanel {
     		return true;
 	}
 	
+        @Override
 	protected boolean isCellEditable(int row) {
 		if (!isCellEditable()) {
 			return false;

@@ -54,6 +54,7 @@ public class TileHorizontalMenuItem
 {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -61,6 +62,7 @@ public class TileHorizontalMenuItem
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		// determine how many documents are open
 		int openDocCount = Outliner.documents.openDocumentCount();

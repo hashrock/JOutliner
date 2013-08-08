@@ -92,6 +92,7 @@ public class OutlineButton extends JLabel {
 		renderer = null;
 	}
 	
+        @Override
 	public boolean isManagingFocus() {return true;}
 	
 	// Used to fire key events

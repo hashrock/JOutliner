@@ -333,6 +333,7 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 			final String filepath = sb_filepath.toString();
 			
 			SwingUtilities.invokeLater(new Runnable() {
+                                @Override
 				public void run() {
 					openFile(filepath);
 				}
@@ -387,14 +388,17 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 	// GUITreeComponent interface
 	private String id = null;
 
+        @Override
 	public String getGUITreeComponentID() {
 		return this.id;
 	}
 
+        @Override
 	public void setGUITreeComponentID(String id) {
 		this.id = id;
 	}
 
+        @Override
 	public void startSetup(Attributes atts) {
 		outliner = this;
 
@@ -410,6 +414,7 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 		loadPrefsFile(PARSER, FILE_FORMATS_FILE);
 	}
 
+        @Override
 	public void endSetup(Attributes atts) {
 		// Set the Window Location.
 		// Get Main Window Dimension out of the prefs.
@@ -453,6 +458,7 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 
 		addComponentListener(new WindowSizeManager(initialWidth, initialHeight, minimumWidth, minimumHeight));
 		addWindowListener(new WindowAdapter() {
+                        @Override
 			public void windowClosing(WindowEvent e) {
 				QuitMenuItem item = (QuitMenuItem) GUITreeLoader.reg.get(GUITreeComponentRegistry.QUIT_MENU_ITEM);
 				item.quit();
@@ -495,6 +501,7 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 	// ClipboardOwner Interface
 	public static Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
+        @Override
 	public void lostOwnership(Clipboard clipboard, Transferable contents) {
 	}
 

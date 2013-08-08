@@ -44,6 +44,7 @@ import com.organic.maynard.outliner.guitree.*;
  
 public class PreferencesPanelMisc extends AbstractPreferencesPanel implements PreferencesPanel, GUITreeComponent {
 	
+        @Override
 	public void applyCurrentToApplication() {
 		Preferences prefs = Outliner.prefs;
 		

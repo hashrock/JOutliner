@@ -94,6 +94,7 @@ public class FileSystemReplaceFileContentsHandler extends FileContentsHandler {
 	}
 	
 	// Overridden Methods
+        @Override
 	protected boolean processContents(File file, ArrayList lines, ArrayList lineEndings) {
 		ArrayList backupLines = null;
 		ArrayList backupLineEndings = null;

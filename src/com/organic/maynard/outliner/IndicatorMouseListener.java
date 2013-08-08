@@ -57,14 +57,19 @@ public class IndicatorMouseListener implements MouseListener {
 	}	
 
 	// MouseListener Interface
+        @Override
 	public void mouseEntered(MouseEvent e) {}
 	
+        @Override
 	public void mouseExited(MouseEvent e) {}
 	
+        @Override
 	public void mousePressed(MouseEvent e) {}
 	
+        @Override
 	public void mouseReleased(MouseEvent e) {}
 	
+        @Override
 	public void mouseClicked(MouseEvent e) {
 		Component c = e.getComponent();
 		if (c instanceof OutlineCommentIndicator) {

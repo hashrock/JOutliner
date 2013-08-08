@@ -296,6 +296,7 @@ public class OutlinerCellRendererImpl extends JTextArea implements OutlinerCellR
 		iMoveable = null;
 	}
 	
+        @Override
 	public boolean isManagingFocus() {
 		return true;
 	}
@@ -315,6 +316,7 @@ public class OutlinerCellRendererImpl extends JTextArea implements OutlinerCellR
 	
 	
 	// OutlinerCellRenderer Interface
+        @Override
 	public void setVisible(boolean visibility) {
 		super.setVisible(visibility);
 		button.setVisible(visibility);
@@ -343,6 +345,7 @@ public class OutlinerCellRendererImpl extends JTextArea implements OutlinerCellR
 		}
 	}
 	
+        @Override
 	public void drawUp(Point p, Node node) {
 		this.node = node;
 		
@@ -418,6 +421,7 @@ public class OutlinerCellRendererImpl extends JTextArea implements OutlinerCellR
 		}
 	}
 		
+        @Override
 	public void drawDown(Point p, Node node) {
 		this.node = node;
 		

@@ -147,6 +147,7 @@ public class DocumentInfo extends PropertyContainerImpl implements Serializable 
 		addPropertyFilter(
 			KEY_VERTICAL_SCROLL_STATE, 
 			new PropertyFilterImpl(KEY_VERTICAL_SCROLL_STATE) {
+                                @Override
 				public Object filter(PropertyContainer container, Object value) {
 					int vertical_scroll_state = PropertyContainerUtil.convertObjectToInt(value);
 					if (vertical_scroll_state >= 1) {
@@ -161,6 +162,7 @@ public class DocumentInfo extends PropertyContainerImpl implements Serializable 
 		addPropertyFilter(
 			KEY_WINDOW_TOP, 
 			new PropertyFilterImpl(KEY_WINDOW_TOP) {
+                                @Override
 				public Object filter(PropertyContainer container, Object value) {
 					int window_top = PropertyContainerUtil.convertObjectToInt(value);
 					if ((window_top >= 0) && (window_top <= 10000)) {
@@ -175,6 +177,7 @@ public class DocumentInfo extends PropertyContainerImpl implements Serializable 
 		addPropertyFilter(
 			KEY_WINDOW_LEFT, 
 			new PropertyFilterImpl(KEY_WINDOW_LEFT) {
+                                @Override
 				public Object filter(PropertyContainer container, Object value) {
 					int window_left = PropertyContainerUtil.convertObjectToInt(value);
 					if ((window_left >= 0) && (window_left <= 10000)) {
@@ -189,6 +192,7 @@ public class DocumentInfo extends PropertyContainerImpl implements Serializable 
 		addPropertyFilter(
 			KEY_WINDOW_BOTTOM, 
 			new PropertyFilterImpl(KEY_WINDOW_BOTTOM) {
+                                @Override
 				public Object filter(PropertyContainer container, Object value) {
 					int window_bottom = PropertyContainerUtil.convertObjectToInt(value);
 					int window_top = PropertyContainerUtil.getPropertyAsInt(container, KEY_WINDOW_TOP);
@@ -204,6 +208,7 @@ public class DocumentInfo extends PropertyContainerImpl implements Serializable 
 		addPropertyFilter(
 			KEY_WINDOW_RIGHT, 
 			new PropertyFilterImpl(KEY_WINDOW_RIGHT) {
+                                @Override
 				public Object filter(PropertyContainer container, Object value) {
 					int window_right = PropertyContainerUtil.convertObjectToInt(value);
 					int window_left = PropertyContainerUtil.getPropertyAsInt(container, KEY_WINDOW_LEFT);
@@ -244,6 +249,7 @@ public class DocumentInfo extends PropertyContainerImpl implements Serializable 
 	}
 	
 	// This is used with Save As operations
+        @Override
 	public Object clone() throws CloneNotSupportedException  {
 		return super.clone();
 	}
@@ -267,6 +273,7 @@ public class DocumentInfo extends PropertyContainerImpl implements Serializable 
 	}
 	
 	// Testing
+        @Override
 	public void setProperty(String key, Object value) {
 		//System.out.println(key + ":" + value.toString());
 		super.setProperty(key, value);

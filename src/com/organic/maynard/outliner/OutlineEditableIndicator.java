@@ -66,6 +66,7 @@ public class OutlineEditableIndicator extends AbstractOutlineIndicator {
 	}
 	
 	// Misc Methods
+        @Override
 	public void updateIcon() {
 		if(isProperty()) {
 			if (isPropertyInherited()) {

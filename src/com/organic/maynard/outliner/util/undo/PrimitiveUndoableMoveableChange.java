@@ -55,22 +55,26 @@ public class PrimitiveUndoableMoveableChange extends AbstractUndoable implements
 		this.newState = newState;
 	}
 
+        @Override
 	public void destroy() {
 		node = null;
 	}
 
 
 	// PrimitiveUndoablePropertyChangeInterface
+        @Override
 	public Node getNode() {
 		return node;
 	}
 	
 	
 	// Undoable Interface
+        @Override
 	public void undo() {
 		node.setMoveableState(oldState);
 	}
 	
+        @Override
 	public void redo() {
 		node.setMoveableState(newState);
 	}

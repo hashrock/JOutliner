@@ -52,20 +52,24 @@ import org.xml.sax.*;
 public class SaveAllFileMenuItem extends AbstractOutlinerMenuItem implements DocumentListener, DocumentRepositoryListener, ActionListener, GUITreeComponent {
 	
 	// DocumentListener Interface
+        @Override
 	public void modifiedStateChanged(DocumentEvent e) {
 		calculateEnabledState();
 	}
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {
 		calculateEnabledState();
 	}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {
 		calculateEnabledState();
 	}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		calculateEnabledState();
 	}
@@ -85,6 +89,7 @@ public class SaveAllFileMenuItem extends AbstractOutlinerMenuItem implements Doc
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -97,6 +102,7 @@ public class SaveAllFileMenuItem extends AbstractOutlinerMenuItem implements Doc
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		saveAllOutlinerDocuments();
 	}

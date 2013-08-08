@@ -42,10 +42,12 @@ public abstract class Command implements Nameable {
 	}
 	
 	// The Accessors
+        @Override
 	public synchronized void setName(String name) {
 		this.name = name;
 	}
 	
+        @Override
 	public String getName() {
 		return this.name;
 	}

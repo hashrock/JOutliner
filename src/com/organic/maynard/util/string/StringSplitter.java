@@ -54,6 +54,7 @@ public class StringSplitter implements Enumeration {
 		}
 	}
 	
+        @Override
 	public Object nextElement() {
 		if (!hasMoreElements()) {return null;}
 		
@@ -72,6 +73,7 @@ public class StringSplitter implements Enumeration {
 		return token;
 	}
 		
+        @Override
 	public boolean hasMoreElements() {
 		return hasMore;
 	}

@@ -62,6 +62,7 @@ public class OpenFileMenuItem extends AbstractOutlinerMenuItem implements Action
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		openOutlinerDocument(getProtocol());
 	}

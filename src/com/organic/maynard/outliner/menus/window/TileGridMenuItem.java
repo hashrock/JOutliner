@@ -118,6 +118,7 @@ public class TileGridMenuItem
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -126,6 +127,7 @@ public class TileGridMenuItem
 	
 	// ActionListener Interface
 	// we've been clicked - deal with it
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		
 		// determine how many documents are open

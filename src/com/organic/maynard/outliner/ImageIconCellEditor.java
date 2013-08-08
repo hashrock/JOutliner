@@ -58,6 +58,7 @@ public class ImageIconCellEditor extends DefaultCellEditor {
 		button.setOpaque(true);
 		button.addActionListener(
 			new ActionListener() {
+                                @Override
 				public void actionPerformed(ActionEvent e) {
 					fireEditingStopped();
 				}
@@ -68,6 +69,7 @@ public class ImageIconCellEditor extends DefaultCellEditor {
 		rendererButton.setOpaque(true);
 		rendererButton.addActionListener(
 			new ActionListener() {
+                                @Override
 				public void actionPerformed(ActionEvent e) {
 					fireEditingStopped();
 				}
@@ -76,6 +78,7 @@ public class ImageIconCellEditor extends DefaultCellEditor {
 
 	}
 	
+        @Override
 	public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
 		isPushed = true;
 		this.row = row;
@@ -89,6 +92,7 @@ public class ImageIconCellEditor extends DefaultCellEditor {
 		}
 	}
 
+        @Override
 	public Object getCellEditorValue() {
 		if (isPushed)  {
 			doEditing();
@@ -99,11 +103,13 @@ public class ImageIconCellEditor extends DefaultCellEditor {
 
 	protected void doEditing() {}
 	
+        @Override
 	public boolean stopCellEditing() {
 		isPushed = false;
 		return super.stopCellEditing();
 	}
 	
+        @Override
 	protected void fireEditingStopped() {
 		super.fireEditingStopped();
 	}

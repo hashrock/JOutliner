@@ -282,6 +282,7 @@ public class DocumentSettingsView extends AbstractGUITreeJDialog implements Acti
 	}
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(OK)) {
 			ok();

@@ -108,14 +108,17 @@ public class FindReplaceResultsDialog extends AbstractOutlinerJDialog implements
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {
 		if (isVisible()) {
 			getModel().removeAllResultsForDocument(e.getDocument());
 		}
 	}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {}
 	
 	public FindReplaceResultsModel getModel() {
@@ -164,20 +167,27 @@ public class FindReplaceResultsDialog extends AbstractOutlinerJDialog implements
 		
 		show();
 		
-		SwingUtilities.invokeLater(new Runnable(){public void run(){Outliner.outliner.requestFocus();}});
+		SwingUtilities.invokeLater(new Runnable(){@Override
+                public void run(){Outliner.outliner.requestFocus();}});
 	}
 	
 	public void updateTotalMatches() {
 		totalMatches.setText(new StringBuffer().append(TOTAL_MATCHES).append(model.size()).toString());
 	}
 	
+        @Override
 	public void requestFocus() {}
 	
 	// MouseListener Interface
+        @Override
 	public void mouseClicked(MouseEvent e) {}
+        @Override
 	public void mouseEntered(MouseEvent e) {}
+        @Override
 	public void mouseExited(MouseEvent e) {}
+        @Override
 	public void mousePressed(MouseEvent e) {}
+        @Override
 	public void mouseReleased(MouseEvent e) {
 		int row = table.rowAtPoint(e.getPoint());
 		

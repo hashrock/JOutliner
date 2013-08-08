@@ -78,6 +78,7 @@ public class FileContentsInspector implements FileHandler {
 
 	
 	// FileHandler Interface
+        @Override
 	public void handleFile(File file) {
 		if (getProcessMode() == MODE_BIG_CHUNK) {
 			inspectContents(file, FileTools.readFileToString(file, lineEnding));

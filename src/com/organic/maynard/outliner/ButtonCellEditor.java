@@ -60,6 +60,7 @@ public class ButtonCellEditor extends DefaultCellEditor implements TableCellRend
 		button.setOpaque(true);
 		button.addActionListener(
 			new ActionListener() {
+                                @Override
 				public void actionPerformed(ActionEvent e) {
 					fireEditingStopped();
 				}
@@ -71,6 +72,7 @@ public class ButtonCellEditor extends DefaultCellEditor implements TableCellRend
 
 	}
 
+        @Override
 	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 
 		if (isSelected) {
@@ -87,6 +89,7 @@ public class ButtonCellEditor extends DefaultCellEditor implements TableCellRend
 		return rendererButton;
 	}
 	
+        @Override
 	public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
 		if (isSelected) {
 			button.setForeground(table.getSelectionForeground());
@@ -103,6 +106,7 @@ public class ButtonCellEditor extends DefaultCellEditor implements TableCellRend
 		return button;
 	}
 
+        @Override
 	public Object getCellEditorValue() {
 		if (isPushed)  {
 			doEditing();
@@ -113,11 +117,13 @@ public class ButtonCellEditor extends DefaultCellEditor implements TableCellRend
 
 	protected void doEditing() {}
 	
+        @Override
 	public boolean stopCellEditing() {
 		isPushed = false;
 		return super.stopCellEditing();
 	}
 	
+        @Override
 	protected void fireEditingStopped() {
 		super.fireEditingStopped();
 	}

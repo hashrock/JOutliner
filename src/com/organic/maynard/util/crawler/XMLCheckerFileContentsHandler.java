@@ -99,6 +99,7 @@ public class XMLCheckerFileContentsHandler extends FileContentsInspector {
 	}
 
 	// Overridden Methods
+        @Override
 	protected void inspectContents(File file, String contents) {
 		if (checkType.equals(XMLChecker.VALID)) {
 			System.out.println("  START VALIDATION FOR FILE: " + file.getPath());

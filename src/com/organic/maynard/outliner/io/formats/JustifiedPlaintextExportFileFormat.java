@@ -62,12 +62,18 @@ public class JustifiedPlaintextExportFileFormat extends AbstractFileFormat imple
 	
 	
 	// ExportFileFormat Interface
+        @Override
 	public boolean supportsComments() {return false;}
+        @Override
 	public boolean supportsEditability() {return false;}
+        @Override
 	public boolean supportsMoveability() {return false;}
+        @Override
 	public boolean supportsAttributes() {return false;}
+        @Override
 	public boolean supportsDocumentAttributes() {return false;}
 	
+        @Override
 	public byte[] save(JoeTree tree, DocumentInfo docInfo) {
 		COLS = Preferences.getPreferenceInt(Preferences.JUSTIFIED_PLAINTEXT_COL_WIDTH).cur;
 		DRAW_LINES = Preferences.getPreferenceBoolean(Preferences.JUSTIFIED_PLAINTEXT_DRAW_LINES).cur;

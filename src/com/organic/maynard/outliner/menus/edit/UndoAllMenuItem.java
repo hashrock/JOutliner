@@ -52,6 +52,7 @@ public class UndoAllMenuItem extends AbstractOutlinerMenuItem implements UndoQue
 	private static String TEXT = null;
 	
 	// UndoQueueListener Interface
+        @Override
 	public void undo(UndoQueueEvent e) {
 		if (e.getDocument() == Outliner.documents.getMostRecentDocumentTouched()) {
 			calculateEnabledState(e.getDocument());
@@ -74,16 +75,20 @@ public class UndoAllMenuItem extends AbstractOutlinerMenuItem implements UndoQue
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		calculateEnabledState(e.getDocument());
 	}
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -98,6 +103,7 @@ public class UndoAllMenuItem extends AbstractOutlinerMenuItem implements UndoQue
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		Outliner.documents.getMostRecentDocumentTouched().getUndoQueue().undoAll();
 	}

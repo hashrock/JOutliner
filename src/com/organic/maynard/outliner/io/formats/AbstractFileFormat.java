@@ -46,19 +46,26 @@ public abstract class AbstractFileFormat implements FileFormat {
 	
 	private String name = null;
 	
+        @Override
 	public String getName() {
 		return this.name;
 	}
 	
+        @Override
 	public void setName(String name) {
 		this.name = name;
 	}
 	
 	// Feature Support
+        @Override
 	public boolean supportsComments() {return false;}
+        @Override
 	public boolean supportsEditability() {return false;}
+        @Override
 	public boolean supportsMoveability() {return false;}
+        @Override
 	public boolean supportsAttributes() {return false;}
+        @Override
 	public boolean supportsDocumentAttributes() {return false;}
 	
 	// File Extensions
@@ -68,14 +75,17 @@ public abstract class AbstractFileFormat implements FileFormat {
 	 */
 	private HashMap extensions = new HashMap();
 	
+        @Override
 	public void addExtension(String ext, boolean isDefault) {
 		extensions.put(ext, new Boolean(isDefault));
 	}
 	
+        @Override
 	public void removeExtension(String ext) {
 		extensions.remove(ext);
 	}
 	
+        @Override
 	public String getDefaultExtension() {
 		Iterator i = getExtensions();
 		while (i.hasNext()) {
@@ -90,10 +100,12 @@ public abstract class AbstractFileFormat implements FileFormat {
 		return null;
 	}
 	
+        @Override
 	public Iterator getExtensions() {
 		return extensions.keySet().iterator();
 	}
 	
+        @Override
 	public boolean extensionExists(String ext) {
 		Iterator it = getExtensions();
 		while (it.hasNext()) {

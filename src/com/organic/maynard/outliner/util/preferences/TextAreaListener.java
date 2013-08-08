@@ -64,10 +64,12 @@ public class TextAreaListener implements FocusListener {
 
 	
 	// FocusListener Interface
+        @Override
 	public void focusGained(FocusEvent e) {
 		handleUpdate();
 	}
 	
+        @Override
 	public void focusLost(FocusEvent e) {
 		handleUpdate();
 	}

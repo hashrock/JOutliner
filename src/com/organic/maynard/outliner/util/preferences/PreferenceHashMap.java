@@ -69,32 +69,39 @@ public class PreferenceHashMap extends AbstractPreference implements GUITreeComp
 	
 	
 	// GUITreeComponent Interface
+        @Override
 	public void endSetup(Attributes atts) {
 		super.endSetup(atts);
 	}
 	
 	
 	// Setters
+        @Override
 	public void setDef(String value) {
 		this.def = convertToHashMap(value);
 	}
 	
+        @Override
 	public void setCur(String value) {
 		this.cur = convertToHashMap(value);
 	}
 	
+        @Override
 	public void setTmp(String value) {
 		this.tmp = convertToHashMap(value);
 	}
 	
+        @Override
 	public String getCur() {
 		return convertToString(cur);
 	}
 	
+        @Override
 	public String getDef() {
 		return convertToString(def);
 	}
 	
+        @Override
 	public String getTmp() {
 		return convertToString(tmp);
 	}
@@ -161,24 +168,29 @@ public class PreferenceHashMap extends AbstractPreference implements GUITreeComp
 		return map;
 	}
 	
+        @Override
 	public String toString() {
 		return convertToString(cur);
 	}
 	
 	
 	// Preference Interface
+        @Override
 	public void restoreCurrentToDefault() {
 		copyHashMap(def,cur);
 	}
 	
+        @Override
 	public void restoreTemporaryToDefault() {
 		copyHashMap(def,tmp);
 	}
 	
+        @Override
 	public void restoreTemporaryToCurrent() {
 		copyHashMap(cur,tmp);
 	}
 	
+        @Override
 	public void applyTemporaryToCurrent() {
 		copyHashMap(tmp,cur);
 	}

@@ -110,6 +110,7 @@ public class DocumentStatistics extends AbstractGUITreeJDialog {
 		return this.initialized;
 	}
 	
+        @Override
 	public void show() {
 		// Lazy Instantiation
 		if (!initialized) {

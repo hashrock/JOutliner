@@ -69,32 +69,39 @@ public class PreferenceStringList extends AbstractPreference implements GUITreeC
 	
 	
 	// GUITreeComponent Interface
+        @Override
 	public void endSetup(Attributes atts) {
 		super.endSetup(atts);
 	}
 	
 	
 	// Setters
+        @Override
 	public void setDef(String value) {
 		this.def = convertToStringList(value);
 	}
 	
+        @Override
 	public void setCur(String value) {
 		this.cur = convertToStringList(value);
 	}
 	
+        @Override
 	public void setTmp(String value) {
 		this.tmp = convertToStringList(value);
 	}
 	
+        @Override
 	public String getCur() {
 		return convertToString(cur);
 	}
 	
+        @Override
 	public String getDef() {
 		return convertToString(def);
 	}
 	
+        @Override
 	public String getTmp() {
 		return convertToString(tmp);
 	}
@@ -133,24 +140,29 @@ public class PreferenceStringList extends AbstractPreference implements GUITreeC
 		return list;
 	}
 	
+        @Override
 	public String toString() {
 		return convertToString(cur);
 	}
 	
 	
 	// Preference Interface
+        @Override
 	public void restoreCurrentToDefault() {
 		cur = (StringList) def.clone();
 	}
 	
+        @Override
 	public void restoreTemporaryToDefault() {
 		tmp = (StringList) def.clone();
 	}
 	
+        @Override
 	public void restoreTemporaryToCurrent() {
 		tmp = (StringList) cur.clone();
 	}
 	
+        @Override
 	public void applyTemporaryToCurrent() {
 		cur = (StringList) tmp.clone();
 	}

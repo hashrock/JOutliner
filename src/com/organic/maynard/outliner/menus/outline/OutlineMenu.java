@@ -59,11 +59,13 @@ public class OutlineMenu extends AbstractOutlinerMenu implements DocumentReposit
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {
 		// Enable menu since we've got at least one document now.
 		setEnabled(true);
 	}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {
 		if (e.getDocument().getDocumentRepository().openDocumentCount() <= 0) {
 			// Disable menu since no documents are open.
@@ -71,10 +73,12 @@ public class OutlineMenu extends AbstractOutlinerMenu implements DocumentReposit
 		}
 	}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {}
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -82,6 +86,7 @@ public class OutlineMenu extends AbstractOutlinerMenu implements DocumentReposit
 		setEnabled(false);
 	}
 	
+        @Override
 	public void endSetup(Attributes atts) {
 		super.endSetup(atts);
 		

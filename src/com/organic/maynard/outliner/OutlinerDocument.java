@@ -155,6 +155,7 @@ public class OutlinerDocument extends JInternalFrame implements Document, Compon
 		}
 	}
 	
+        @Override
 	public void destroy() {
 		removeInternalFrameListener(monitor);
 		removeComponentListener(this);
@@ -197,43 +198,53 @@ public class OutlinerDocument extends JInternalFrame implements Document, Compon
 		return this.settings ;
 	}
 	
+        @Override
 	public void setDocumentRepository(DocumentRepository repository) {
 		this.repository = repository;
 	}
 	
+        @Override
 	public DocumentRepository getDocumentRepository() {
 		return this.repository;
 	}
 	
+        @Override
 	public void setTree(JoeTree tree) {
 		this.tree = tree;
 		tree.setDocument(this);
 	}
 	
+        @Override
 	public JoeTree getTree() {
 		return this.tree;
 	}
 	
+        @Override
 	public void setUndoQueue(UndoQueue queue) {
 		this.undoQueue = queue;
 	}
 	
+        @Override
 	public UndoQueue getUndoQueue() {
 		return this.undoQueue;
 	}
 	
+        @Override
 	public DocumentInfo getDocumentInfo() {
 		return this.docInfo;
 	}
 	
+        @Override
 	public void setDocumentInfo(DocumentInfo docInfo) {
 		this.docInfo = docInfo;
 	}
 	
+        @Override
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
 	
+        @Override
 	public String getFileName() {
 		return this.fileName;
 	}
@@ -250,6 +261,7 @@ public class OutlinerDocument extends JInternalFrame implements Document, Compon
 		return nameFormIndex;
 	}
 	
+        @Override
 	public void setModified(boolean fileModified) {
 		// Abort if we're not changing state.
 		if (fileModified == this.fileModified) {
@@ -268,6 +280,7 @@ public class OutlinerDocument extends JInternalFrame implements Document, Compon
 		}
 	}
 	
+        @Override
 	public boolean isModified() {
 		return this.fileModified;
 	}
@@ -326,6 +339,7 @@ public class OutlinerDocument extends JInternalFrame implements Document, Compon
 		}
 	}
 	
+        @Override
 	public void setSelected(boolean selected) throws java.beans.PropertyVetoException {
 		super.setSelected(selected);
 		if (selected) {
@@ -335,12 +349,16 @@ public class OutlinerDocument extends JInternalFrame implements Document, Compon
 	
 	
 	// ComponentListener Interface
+        @Override
 	public void componentResized(ComponentEvent e) {
 		panel.layout.redraw();
 	}
 	
+        @Override
 	public void componentHidden(ComponentEvent e) {} 
+        @Override
 	public void componentMoved(ComponentEvent e) {}
+        @Override
 	public void componentShown(ComponentEvent e) {}
 	
 	
@@ -372,6 +390,7 @@ public class OutlinerDocument extends JInternalFrame implements Document, Compon
 	
 	
 	// PropertyChangeListener Interface
+        @Override
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getPropertyName().equals(JSplitPane.DIVIDER_LOCATION_PROPERTY)) {
 			panel.layout.redraw();

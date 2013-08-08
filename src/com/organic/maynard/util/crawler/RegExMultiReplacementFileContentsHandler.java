@@ -55,6 +55,7 @@ public class RegExMultiReplacementFileContentsHandler extends FileContentsHandle
 	
 	
 	// Overridden Methods
+        @Override
 	protected String processContents(File file, String contents) {
 		for (int i = 0; i < regexes.length; i++) {
 			String regex = regexes[i];

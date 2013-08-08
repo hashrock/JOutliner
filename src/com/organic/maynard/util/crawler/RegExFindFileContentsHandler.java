@@ -63,6 +63,7 @@ public class RegExFindFileContentsHandler extends FileContentsInspector {
 	public void setTotalNumberOfMatches(int totalNumberOfMatches) {this.totalNumberOfMatches = totalNumberOfMatches;}
 	
 	// Overridden Methods
+        @Override
 	protected void inspectContents(File file, String contents) {
 		StringBuffer buf = new StringBuffer();
 		

@@ -93,6 +93,7 @@ public class OutlinerDesktopManager extends DefaultDesktopManager {
 	}
 	
 	// DesktopManagerInterface
+        @Override
 	public void beginResizingFrame(JComponent f, int direction) {
 		//System.out.println("beginResizingFrame");
 		resizeDirection = direction;
@@ -103,6 +104,7 @@ public class OutlinerDesktopManager extends DefaultDesktopManager {
 		super.beginResizingFrame(f,direction);
 	}
 	
+        @Override
 	public void resizeFrame(JComponent f, int newX, int newY, int newWidth, int newHeight) {
 		//System.out.println("resizingFrame");
 		// Ensure a minimum size for the window.
@@ -144,17 +146,20 @@ public class OutlinerDesktopManager extends DefaultDesktopManager {
 		updateDesktopSize(false);
 	}
 	
+        @Override
 	public void endResizingFrame(JComponent f) {
 		//System.out.println("endResizingFrame");
 		super.endResizingFrame(f);
 	}
 	
+        @Override
 	public void beginDraggingFrame(JComponent f) {
 		//System.out.println("beginDraggingFrame");
 		isDragging = true;
 		super.beginDraggingFrame(f);
 	}
 	
+        @Override
 	public void dragFrame(JComponent f, int newX, int newY) {
 		//System.out.println("dragFrame");
 		
@@ -165,6 +170,7 @@ public class OutlinerDesktopManager extends DefaultDesktopManager {
 		updateDesktopSize(false);
 	}
 	
+        @Override
 	public void endDraggingFrame(JComponent f) {
 		//System.out.println("endDraggingFrame");
 		isDragging = false;
@@ -172,6 +178,7 @@ public class OutlinerDesktopManager extends DefaultDesktopManager {
 		updateDesktopSize(true);
 	}
 	
+        @Override
 	public void activateFrame(JInternalFrame f) {
 		if (activationBlock) {return;}
 		
@@ -192,35 +199,41 @@ public class OutlinerDesktopManager extends DefaultDesktopManager {
 		}
 	}
 	
+        @Override
 	public void deactivateFrame(JInternalFrame f) {
 		//System.out.println("deactivateFrame");
 		super.deactivateFrame(f);
 	}
 	
+        @Override
 	public void openFrame(JInternalFrame f) {
 		//System.out.println("openFrame");
 		super.openFrame(f);
 		updateDesktopSize(false);
 	}
 	
+        @Override
 	public void closeFrame(JInternalFrame f) {
 		//System.out.println("closeFrame");
 		super.closeFrame(f);
 		updateDesktopSize(false);
 	}
 	
+        @Override
 	public void iconifyFrame(JInternalFrame f) {
 		//System.out.println("iconifyFrame");
 		super.iconifyFrame(f);
 		f.getDesktopIcon().setSize(ICON_WIDTH,ICON_HEIGHT);
 	}
 	
+        @Override
 	public void deiconifyFrame(JInternalFrame f) {
 		//System.out.println("deiconifyFrame");
 		super.deiconifyFrame(f);
 		updateDesktopSize(false);
 	}
 	
+        @Override
 	public void maximizeFrame(JInternalFrame f) {
 		//System.out.println("maximizeFrame: " + f.getTitle());
 		setMaximized(true);
@@ -242,6 +255,7 @@ public class OutlinerDesktopManager extends DefaultDesktopManager {
 		updateDesktopSize(false);
 	}
 	
+        @Override
 	public void minimizeFrame(JInternalFrame f) {
 		//System.out.println("minimizeFrame: " + f.getTitle());
 		setMaximized(false);
@@ -257,6 +271,7 @@ public class OutlinerDesktopManager extends DefaultDesktopManager {
 		updateDesktopSize(false);
 	}
 	
+        @Override
 	public void setBoundsForFrame(JComponent f, int newX, int newY, int newWidth, int newHeight) {
 		//System.out.println("setBoundsForFrame");
 		if (!(f instanceof JInternalFrame)) {

@@ -48,10 +48,12 @@ public class PostProcessingFileWriter extends FileWriter {
 	
 	
 	// Writing Methods
+        @Override
 	public void write(int b) throws IOException {
 		super.write(b);
 	}
 
+        @Override
 	public void write(char[] cbuf, int off, int len) throws IOException {
 		String str = String.copyValueOf(cbuf, off, len);
 		str = convertLineEndings(str);
@@ -60,6 +62,7 @@ public class PostProcessingFileWriter extends FileWriter {
 		super.write(cbuf,off,cbuf.length);
 	}
 
+        @Override
 	public void write(String str, int off, int len) throws IOException {
 		super.write(str,off,len);
 	}

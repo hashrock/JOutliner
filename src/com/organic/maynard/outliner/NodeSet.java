@@ -80,6 +80,7 @@ public class NodeSet implements Cloneable {
 	
 	
 	// Cloneable Interface
+        @Override
 	public Object clone() {
 		NodeSet nodeSet = new NodeSet();
 		
@@ -92,6 +93,7 @@ public class NodeSet implements Cloneable {
 
 	
 	// Overridden Methods
+        @Override
 	public String toString() {
 		StringBuffer buf = new StringBuffer();
 		

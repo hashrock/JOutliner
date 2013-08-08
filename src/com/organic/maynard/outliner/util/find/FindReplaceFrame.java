@@ -289,6 +289,7 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 		
 		FIND_REPLACE_LIST.addMouseListener(
 			new MouseAdapter() {
+                                @Override
 				public void mouseClicked(MouseEvent e) {
 					if (e.getClickCount() == 2) {
 						int index = FIND_REPLACE_LIST.locationToIndex(e.getPoint());
@@ -614,6 +615,7 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 		
 		tabs.addChangeListener(
 			new ChangeListener() {
+                                @Override
 				public void stateChanged(ChangeEvent e) {
 					updateButtons();
 				}
@@ -721,6 +723,7 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 		return this.initialized;
 	}
 	
+        @Override
 	public void show() {
 		// Lazy Instantiation
 		if (!initialized) {
@@ -748,16 +751,20 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		updateButtons();
 	}
 	
 	
 	// ListSelectionListenerInterface
+        @Override
 	public void valueChanged(ListSelectionEvent e) {
 		int currentIndex = getFindReplaceItemIndex();
 		
@@ -778,6 +785,7 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 	}
 	
 	// KeyListener Interface
+        @Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyChar() == KeyEvent.VK_ENTER) {
 			JTextArea text = (JTextArea) e.getSource();
@@ -810,7 +818,9 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 		}
 	}
 	
+        @Override
 	public void keyTyped(KeyEvent e) {}
+        @Override
 	public void keyReleased(KeyEvent e) {}
 	
 	
@@ -845,6 +855,7 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 		updateButtons();
 	}
 	
+        @Override
 	public void hide() {
 		if (initialized) {
 			model.setPath(TEXTFIELD_PATH.getText());
@@ -857,6 +868,7 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 	}
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		// File Menu
 		if (e.getActionCommand().equals(FIND)) {
@@ -1043,6 +1055,7 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 			
 			case FindReplaceModel.MODE_FILE_SYSTEM:
 				Thread t = new Thread(new Runnable() {
+                                        @Override
 					public void run() {
 						//System.out.println("Thread started.");
 						findAllFileSystem(
@@ -1164,6 +1177,7 @@ public class FindReplaceFrame extends AbstractGUITreeJDialog implements JoeRetur
 			
 			case FindReplaceModel.MODE_FILE_SYSTEM:
 				Thread t = new Thread(new Runnable() { 
+                                        @Override
 					public void run() { 
 						replaceAllFileSystem(
 							results,
@@ -2565,6 +2579,7 @@ class FindReplaceDialog extends JDialog implements ActionListener {
 		// Solution found at: http://forums.java.sun.com/thread.jsp?forum=57&thread=124417&start=15&range=15;
 		addWindowListener(
 			new WindowAdapter() {
+                                @Override
 				public void windowOpened(WindowEvent e) {
 					nameField.requestFocus();
 				}
@@ -2646,6 +2661,7 @@ class FindReplaceDialog extends JDialog implements ActionListener {
 	}
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(OK)) {
 			ok();
@@ -2712,14 +2728,17 @@ class FindReplaceJTextAreaDocumentListener implements DocumentListener {
 	
 	
 	// DocumentListener Interface
+        @Override
 	public void changedUpdate(DocumentEvent e) {
 		update(e);
 	}
 	
+        @Override
 	public void insertUpdate(DocumentEvent e) {
 		update(e);
 	}
 	
+        @Override
 	public void removeUpdate(DocumentEvent e) {
 		update(e);
 	}

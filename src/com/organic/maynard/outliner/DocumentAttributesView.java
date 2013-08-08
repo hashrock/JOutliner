@@ -130,10 +130,13 @@ public class DocumentAttributesView extends AbstractGUITreeJDialog implements Ac
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		calculateEnabledState(e.getDocument());
 	}
@@ -154,6 +157,7 @@ public class DocumentAttributesView extends AbstractGUITreeJDialog implements Ac
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(CLOSE)) {
 			close();

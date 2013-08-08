@@ -86,6 +86,7 @@ public class UndoableEdit extends AbstractUndoable implements Undoable {
 		this.oldMarkPosition = oldMarkPosition;
 	}
 	
+        @Override
 	public void destroy() {
 		node = null;
 		newText = null;
@@ -134,6 +135,7 @@ public class UndoableEdit extends AbstractUndoable implements Undoable {
 	}
 	
 	// Undoable Interface
+        @Override
 	public String getName() {
 		String name = super.getName();
 		if (name == null) {
@@ -143,6 +145,7 @@ public class UndoableEdit extends AbstractUndoable implements Undoable {
 		}
 	}
 	
+        @Override
 	public void undo() {
 		JoeTree tree = node.getTree();
 		
@@ -161,6 +164,7 @@ public class UndoableEdit extends AbstractUndoable implements Undoable {
 		tree.getDocument().panel.layout.draw(node, OutlineLayoutManager.TEXT);
 	}
 	
+        @Override
 	public void redo() {
 		JoeTree tree = node.getTree();
 

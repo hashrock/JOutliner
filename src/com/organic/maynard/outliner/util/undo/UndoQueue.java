@@ -67,6 +67,7 @@ public class UndoQueue implements com.organic.maynard.outliner.util.Destructible
 
 
 	// Destructible Interface
+        @Override
 	public void destroy() {
 		doc = null;
 		queue = null;

@@ -56,6 +56,7 @@ public class PropertyContainerImpl implements PropertyContainer {
 	
 	
 	// Cloneable Interface
+        @Override
 	public Object clone() throws CloneNotSupportedException {
 		//PropertyContainerImpl cloned = new PropertyContainerImpl();
 		PropertyContainerImpl cloned = (PropertyContainerImpl) super.clone();
@@ -67,18 +68,21 @@ public class PropertyContainerImpl implements PropertyContainer {
 	
 	
 	// PropertyContainer Interface
+        @Override
 	public void removeAllProperties() {
 		this.default_values = new HashMap();
 		this.current_values = new HashMap();
 		this.filter_chains = new HashMap();
 	}
 	
+        @Override
 	public void removeProperty(String key) {
 		this.default_values.remove(key);
 		this.current_values.remove(key);
 		this.filter_chains.remove(key);
 	}
 	
+        @Override
 	public void resetAllProperties() {
 		Iterator it = getKeys();
 		while (it.hasNext()) {
@@ -91,10 +95,12 @@ public class PropertyContainerImpl implements PropertyContainer {
 		}
 	}
 	
+        @Override
 	public void resetProperty(String key) {
 		this.current_values.put(key, this.default_values.get(key));
 	}
 	
+        @Override
 	public void setProperty(String key, Object value) {
 		PropertyFilterChain filter_chain = (PropertyFilterChain) filter_chains.get(key);
 		if (filter_chain != null) {
@@ -105,22 +111,27 @@ public class PropertyContainerImpl implements PropertyContainer {
 		}
 	}
 	
+        @Override
 	public void setPropertyDefault(String key, Object default_value) {
 		this.default_values.put(key, default_value);
 	}
 	
+        @Override
 	public void setPropertyFilterChain(String key, PropertyFilterChain filter_chain) {
 		this.filter_chains.put(key, filter_chain);
 	}
 	
+        @Override
 	public PropertyFilterChain getPropertyFilterChain(String key) {
 		return (PropertyFilterChain) filter_chains.get(key);
 	}
 	
+        @Override
 	public PropertyFilterChain removePropertyFilterChain(String key, int index) {
 		return (PropertyFilterChain) filter_chains.remove(key);
 	}
 	
+        @Override
 	public void addPropertyFilter(String key, PropertyFilter filter) {
 		PropertyFilterChain filter_chain = getPropertyFilterChain(key);
 		if (filter_chain == null) {
@@ -130,6 +141,7 @@ public class PropertyContainerImpl implements PropertyContainer {
 		filter_chain.addFilter(filter);
 	}
 	
+        @Override
 	public Object getProperty(String key) {
 		if (propertyExists(key)) {
 			return current_values.get(key);
@@ -140,6 +152,7 @@ public class PropertyContainerImpl implements PropertyContainer {
 		}
 	}
 	
+        @Override
 	public Object getProperty(String key, Object backup_value) {
 		if (propertyExists(key)) {
 			return current_values.get(key);
@@ -148,10 +161,12 @@ public class PropertyContainerImpl implements PropertyContainer {
 		}
 	}
 	
+        @Override
 	public Object getPropertyDefault(String key) {
 		return default_values.get(key);
 	}
 	
+        @Override
 	public boolean propertyEquals(String key, Object test_value) {
 		if (propertyExists(key)) {
 			Object value = getProperty(key);
@@ -169,14 +184,17 @@ public class PropertyContainerImpl implements PropertyContainer {
 		}
 	}
 	
+        @Override
 	public boolean propertyExists(String key) {
 		return current_values.containsKey(key);
 	}
 	
+        @Override
 	public boolean propertyDefaultExists(String key) {
 		return default_values.containsKey(key);
 	}
 	
+        @Override
 	public boolean propertyIsDefault(String key) {
 		if (propertyDefaultExists(key) && propertyExists(key)) {
 			return propertyEquals(key, getPropertyDefault(key));
@@ -185,6 +203,7 @@ public class PropertyContainerImpl implements PropertyContainer {
 		}
 	}
 	
+        @Override
 	public Iterator getKeys() {
 		return current_values.keySet().iterator();
 	}

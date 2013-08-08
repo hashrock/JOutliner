@@ -72,9 +72,12 @@ public abstract class AbstractPreferencesPanel extends JPanel implements Prefere
 	
 	// GUITreeComponent interface
 	private String id = null;
+        @Override
 	public String getGUITreeComponentID() {return this.id;}
+        @Override
 	public void setGUITreeComponentID(String id) {this.id = id;}
 	
+        @Override
 	public void startSetup(Attributes atts) {
 		String title = atts.getValue(A_TITLE);
 		String id = atts.getValue(A_ID);
@@ -101,6 +104,7 @@ public abstract class AbstractPreferencesPanel extends JPanel implements Prefere
 		addSingleItemCentered(new JLabel(new StringBuffer().append("<html><font size=\"+1\">").append(title).append("</font></html>").toString()), this);
 	}
 	
+        @Override
 	public void endSetup(Attributes atts) {
 		RESTORE_DEFAULT_EDITOR_BUTTON.addActionListener(this);		
 		AbstractPreferencesPanel.addLastItem(RESTORE_DEFAULT_EDITOR_BUTTON, this);
@@ -113,6 +117,7 @@ public abstract class AbstractPreferencesPanel extends JPanel implements Prefere
 	// PreferencesPanel Interface
 	private ArrayList containerStack = new ArrayList();
 	
+        @Override
 	public Container getCurrentContainer() {
 		if (containerStack.size() > 0) {
 			return (Container) containerStack.get(containerStack.size() - 1);
@@ -121,10 +126,12 @@ public abstract class AbstractPreferencesPanel extends JPanel implements Prefere
 		}
 	}
 	
+        @Override
 	public void startAddSubContainer(Container c) {
 		containerStack.add(c);
 	}
 	
+        @Override
 	public void endAddSubContainer(Container c) {
 		containerStack.remove(containerStack.size() - 1);
 		AbstractPreferencesPanel.addSingleItemCentered((JComponent) c, getCurrentContainer());
@@ -132,18 +139,22 @@ public abstract class AbstractPreferencesPanel extends JPanel implements Prefere
 	
 	private ArrayList prefs = new ArrayList();
 	
+        @Override
 	public void addPreference(PreferencesGUITreeComponent pref) {
 		prefs.add(pref);
 	}
 	
+        @Override
 	public PreferencesGUITreeComponent getPreference(int i) {
 		return (PreferencesGUITreeComponent) prefs.get(i);
 	}
 	
+        @Override
 	public int getPreferenceListSize() {
 		return prefs.size();
 	}
 	
+        @Override
 	public void setToCurrent() {
 		for (int i = 0, limit = getPreferenceListSize(); i < limit; i++) {
 			PreferencesGUITreeComponent comp = getPreference(i);
@@ -200,6 +211,7 @@ public abstract class AbstractPreferencesPanel extends JPanel implements Prefere
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(PreferencesFrame.RESTORE_DEFAULTS)) {
 			try {

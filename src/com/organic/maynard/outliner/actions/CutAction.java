@@ -48,6 +48,7 @@ import javax.swing.*;
  
 public class CutAction extends AbstractAction {
 
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		//System.out.println("CutAction");
 		

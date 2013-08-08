@@ -52,6 +52,7 @@ public class PropertyFilterChainImpl implements PropertyFilterChain {
 	}
 	
 	// Cloneable Interface
+        @Override
 	public Object clone() {
 		PropertyFilterChainImpl cloned = new PropertyFilterChainImpl();
 		cloned.filters = (ArrayList) this.filters.clone();
@@ -60,10 +61,12 @@ public class PropertyFilterChainImpl implements PropertyFilterChain {
 	
 	
 	// PropertyFilterChain Interface
+        @Override
 	public int countFilters() {
 		return filters.size();
 	}
 	
+        @Override
 	public void addFilter(PropertyFilter filter) {
 		if (filter != null) {
 			filters.add(filter);
@@ -72,6 +75,7 @@ public class PropertyFilterChainImpl implements PropertyFilterChain {
 		}
 	}
 	
+        @Override
 	public void insertFilter(int index, PropertyFilter filter) throws IndexOutOfBoundsException {
 		if (filter != null) {
 			filters.add(index, filter);
@@ -80,10 +84,12 @@ public class PropertyFilterChainImpl implements PropertyFilterChain {
 		}
 	}
 	
+        @Override
 	public PropertyFilter getFilter(int index) throws IndexOutOfBoundsException {
 		return (PropertyFilter) filters.get(index);
 	}
 	
+        @Override
 	public PropertyFilter getFilterByName(String name) {
 		for (int i = 0; i < filters.size(); i++) {
 			PropertyFilter filter = (PropertyFilter) filters.get(i);
@@ -97,10 +103,12 @@ public class PropertyFilterChainImpl implements PropertyFilterChain {
 		return null;
 	}
 	
+        @Override
 	public PropertyFilter removeFilter(int index) throws IndexOutOfBoundsException {
 		return (PropertyFilter) filters.remove(index);
 	}
 	
+        @Override
 	public PropertyFilter removeFilterByName(String name) {
 		for (int i = 0; i < filters.size(); i++) {
 			PropertyFilter filter = (PropertyFilter) filters.get(i);
@@ -116,10 +124,12 @@ public class PropertyFilterChainImpl implements PropertyFilterChain {
 		return null;
 	}
 	
+        @Override
 	public void removeAllFilters() {
 		filters = new ArrayList();
 	}
 	
+        @Override
 	public Object applyFilters(PropertyContainer container, Object value) {
 		for (int i = 0; i < filters.size(); i++) {
 			PropertyFilter filter = (PropertyFilter) filters.get(i);

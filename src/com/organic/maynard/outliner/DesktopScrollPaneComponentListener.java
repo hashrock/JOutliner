@@ -39,12 +39,16 @@ import java.awt.event.*;
 public class DesktopScrollPaneComponentListener implements ComponentListener {
 	
 	// ComponentListener Interface
+        @Override
 	public void componentResized(ComponentEvent e) {
 		Outliner.jsp.getHorizontalScrollBar().revalidate();
 		Outliner.jsp.getVerticalScrollBar().revalidate();
 	}
 
+        @Override
 	public void componentMoved(ComponentEvent e) {}
+        @Override
 	public void componentShown(ComponentEvent e) {}
+        @Override
 	public void componentHidden(ComponentEvent e) {}
 }

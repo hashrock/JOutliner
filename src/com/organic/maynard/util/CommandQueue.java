@@ -50,6 +50,7 @@ public class CommandQueue extends Queue {
 		super(max_size);
 	}
 
+        @Override
 	public synchronized Object getNext() {
 		Object obj = super.getNext();
 		if (fileOpen) {

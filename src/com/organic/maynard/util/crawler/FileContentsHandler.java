@@ -119,6 +119,7 @@ public class FileContentsHandler implements FileHandler {
 	
 	
 	// FileHandler Interface
+        @Override
 	public void handleFile(File file) {
 		if (getProcessMode() == MODE_BIG_CHUNK) {
 			String contents = FileTools.readFileToString(file, getOpenEncoding(), lineEnding);

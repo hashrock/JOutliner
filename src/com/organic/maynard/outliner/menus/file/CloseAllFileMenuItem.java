@@ -49,11 +49,13 @@ import org.xml.sax.*;
 public class CloseAllFileMenuItem extends AbstractOutlinerMenuItem implements DocumentRepositoryListener, ActionListener, GUITreeComponent {
 
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {
 		// Enable menu since we've got at least one document now.
 		setEnabled(true);
 	}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {
 		if (e.getDocument().getDocumentRepository().openDocumentCount() <= 0) {
 			// Disable menu since no documents are open.
@@ -61,10 +63,12 @@ public class CloseAllFileMenuItem extends AbstractOutlinerMenuItem implements Do
 		}
 	}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {}
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -76,6 +80,7 @@ public class CloseAllFileMenuItem extends AbstractOutlinerMenuItem implements Do
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		closeAllOutlinerDocuments();
 	}

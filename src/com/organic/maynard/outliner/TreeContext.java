@@ -58,6 +58,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		resetStructure();
 	}
 	
+        @Override
 	public void destroy() {
 		visibleNodes = null;
 		selectedNodes = null;
@@ -69,6 +70,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		document = null;
 	}
 	
+        @Override
 	public void reset() {
 		document = null;
 		visibleNodes.clear();
@@ -97,21 +99,27 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	private boolean comment = false;
 	
 	// these two methods are part of JoeTree interface
+        @Override
 	public void setRootNodeCommentState(boolean comment) {this.comment = comment;}
+        @Override
 	public boolean getRootNodeCommentState() {return this.comment;}
 	
 	// Editablity
 	private boolean editable = true;
 	
 	// these two methods are part of JoeTree interface
+        @Override
 	public void setRootNodeEditableState(boolean editable) {this.editable = editable;}
+        @Override
 	public boolean getRootNodeEditableState() {return this.editable;}
 	
 	// Moveability
 	private boolean moveable = true;
 	
 	// these two methods are part of JoeTree interface
+        @Override
 	public void setRootNodeMoveableState(boolean moveable) {this.moveable = moveable;}
+        @Override
 	public boolean getRootNodeMoveableState() {return this.moveable;}
 	
 	
@@ -119,10 +127,12 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	private int lineCountKey = 0;
 	
 	
+        @Override
 	public int getLineCountKey() {
 		return lineCountKey;
 	}
 	
+        @Override
 	public void incrementLineCountKey() {
 		lineCountKey++;
 		
@@ -137,6 +147,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	// Accessors
 	
 	// Statistics
+        @Override
 	public int getLineCount() {
 		int total = 0;
 		for (int i = 0, limit = rootNode.numOfChildren(); i < limit; i++) {
@@ -146,6 +157,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		return total;
 	}
 	
+        @Override
 	public int getCharCount() {
 		return rootNode.getDecendantCharCount();
 	}
@@ -157,10 +169,12 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	private int cursorMarkPosition = 0;
 	private int componentFocus = OutlineLayoutManager.TEXT;
 	
+        @Override
 	public void setEditingNode(Node editingNode) {
 		setEditingNode(editingNode, true);
 	}
 	
+        @Override
 	public void setEditingNode(Node editingNode, boolean updateAttPanel) {
 		this.editingNode = editingNode;
 		
@@ -169,10 +183,12 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		}
 	}
 	
+        @Override
 	public Node getEditingNode() {
 		return editingNode;
 	}
 	
+        @Override
 	public void setCursorMarkPosition(int cursorMarkPosition) {
 		this.cursorMarkPosition = cursorMarkPosition;
 		
@@ -180,10 +196,12 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		Outliner.documents.fireSelectionChangedEvent(this, getComponentFocus());
 	}
 	
+        @Override
 	public int getCursorMarkPosition() {
 		return cursorMarkPosition;
 	}
 	
+        @Override
 	public void setComponentFocus(int componentFocus) {
 		this.componentFocus = componentFocus;
 		
@@ -191,14 +209,17 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		Outliner.documents.fireSelectionChangedEvent(this, componentFocus);
 	}
 	
+        @Override
 	public int getComponentFocus() {
 		return componentFocus;
 	}
 	
+        @Override
 	public void setCursorPosition(int cursorPosition) {
 		setCursorPosition(cursorPosition,true);
 	}
 	
+        @Override
 	public void setCursorPosition(int cursorPosition, boolean setMark) {
 		this.cursorPosition = cursorPosition;
 		if (setMark) {
@@ -209,6 +230,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		Outliner.documents.fireSelectionChangedEvent(this, getComponentFocus());
 	}
 	
+        @Override
 	public int getCursorPosition() {
 		return cursorPosition;
 	}
@@ -217,6 +239,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	
 	
 	// Tree Methods
+        @Override
 	public Node getPrevNode(Node existingNode) {
 		int prevNodeIndex = visibleNodes.indexOf(existingNode) - 1;
 		if (prevNodeIndex < 0) {
@@ -225,6 +248,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		return visibleNodes.get(prevNodeIndex);
 	}
 	
+        @Override
 	public Node getNextNode(Node existingNode) {
 		int nextNodeIndex = visibleNodes.indexOf(existingNode) + 1;
 		if (nextNodeIndex >= visibleNodes.size()) {
@@ -233,10 +257,12 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		return visibleNodes.get(nextNodeIndex);
 	}
 	
+        @Override
 	public void addNode(Node node) {
 		visibleNodes.add(node);
 	}
 	
+        @Override
 	public void removeNode(Node node) {
 		int index = visibleNodes.indexOf(node);
 		
@@ -246,6 +272,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		}
 	}
 	
+        @Override
 	public void insertNode(Node node) {
 		// Find the first Ancestor that is in the cache or Root
 		Node ancestor = TreeContext.getYoungestVisibleAncestor(node, this);
@@ -257,6 +284,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		insertChildrenIntoVisibleNodesCache(ancestor, this, visibleNodes.indexOf(ancestor));
 	}
 	
+        @Override
 	public int insertNodeAfter(Node existingNode, Node newNode) {
 		int nodeIndex = visibleNodes.indexOf(existingNode) + 1;
 		if (nodeIndex >= 0) {
@@ -265,10 +293,12 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		return nodeIndex;
 	}
 	
+        @Override
 	public void insertNode(Node node, int index) {
 		visibleNodes.add(index, node);
 	}
 	
+        @Override
 	public void insertNodeAndChildren(Node node, int index) {
 		visibleNodes.add(index, node);
 		
@@ -280,10 +310,12 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	private Node mostRecentNodeTouched = null;
 	private Node selectedNodesParent = null;
 	
+        @Override
 	public int getNumberOfSelectedNodes() {
 		return selectedNodes.size();
 	}
 	
+        @Override
 	public void setSelectedNodesParent(Node node) {
 		setSelectedNodesParent(node,true);
 	}
@@ -295,8 +327,10 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		this.selectedNodesParent = node;
 	}
 	
+        @Override
 	public Node getSelectedNodesParent() {return selectedNodesParent;}
 	
+        @Override
 	public void clearSelection() {
 		for (int i = selectedNodes.size() - 1; i >= 0; i--) {
 			selectedNodes.get(i).setSelected(false);
@@ -305,6 +339,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		selectedNodes.clear();
 	}
 	
+        @Override
 	public void addNodeToSelection(Node node) {
 		if (node.isSelected()) {
 			return; // Don't add a node if it is already selected.
@@ -333,6 +368,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		}
 	}
 	
+        @Override
 	public void removeNodeFromSelection(Node node) {
 		if (node.getParent() == getSelectedNodesParent()) {
 			node.setSelected(false);
@@ -343,6 +379,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		}	
 	}
 	
+        @Override
 	public void selectRangeFromMostRecentNodeTouched(Node node) {
 		if (node.getParent() == getSelectedNodesParent()) {
 			int indexA = mostRecentNodeTouched.currentIndex();
@@ -361,6 +398,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		}
 	}
 	
+        @Override
 	public Node getYoungestInSelection() {
 		try {
 			return selectedNodes.get(0);
@@ -369,6 +407,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		}
 	}
 	
+        @Override
 	public Node getOldestInSelection() {
 		try {
 			return selectedNodes.get(selectedNodes.size() - 1);
@@ -379,6 +418,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	
 	
 	// Tree Manipulation
+        @Override
 	public void promoteNode(Node currentNode, int currentNodeIndex) {
 		if (currentNode.getParent().isRoot()) {
 			// Our parent is root. Since we can't be promoted to root level, Abort.
@@ -400,6 +440,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		insertNode(currentNode);
 	}
 	
+        @Override
 	public void demoteNode(Node currentNode, Node targetNode, int currentNodeIndex) {
 		if (targetNode == currentNode) {
 			// We have no previous sibling, so Abort.
@@ -420,6 +461,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	
 	
 	// Misc Methods
+        @Override
 	public boolean isWholeDocumentSelected() {
 		if ((selectedNodesParent != null) &&
 			selectedNodesParent.isRoot() && 
@@ -431,6 +473,7 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 		}
 	}
 	
+        @Override
 	public boolean isDocumentEmpty() {
 		if ((rootNode.numOfChildren() == 1) &&
 			rootNode.getFirstChild().isLeaf() &&
@@ -444,31 +487,37 @@ public class TreeContext extends AttributeContainerImpl implements JoeTree {
 	
 	// ----------------------- JoeTree interface ------------------------
 	
+        @Override
 	public OutlinerDocument getDocument () {
 		return document;
 	}
 	
 	
+        @Override
 	public void setDocument (OutlinerDocument someDocument) {
 		document = someDocument;
 	}
 	
 	
+        @Override
 	public JoeNodeList getVisibleNodes() {
 		return visibleNodes;
 	}
 	
 	
+        @Override
 	public JoeNodeList getSelectedNodes() {
 		return selectedNodes;
 	}
 	
 	
+        @Override
 	public Node getRootNode () {
 		return rootNode ;
 	}
 	
 	
+        @Override
 	public void setRootNode(Node someNode) {
 		rootNode = someNode;
 		rootNode.setExpandedClean(true);

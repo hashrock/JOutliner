@@ -61,11 +61,13 @@ public class CompoundUndoablePropertyChange extends AbstractCompoundUndoable {
 	}
 	
 	// Undoable Interface
+        @Override
 	public void destroy() {
 		super.destroy();
 		tree = null;
 	}
 
+        @Override
 	public String getName() {
 		String name = super.getName();
 		if (name == null) {
@@ -75,6 +77,7 @@ public class CompoundUndoablePropertyChange extends AbstractCompoundUndoable {
 		}
 	}
 
+        @Override
 	public void undo() {
 		for (int i = primitives.size() - 1; i >= 0; i--) {
 			primitives.get(i).undo();
@@ -92,6 +95,7 @@ public class CompoundUndoablePropertyChange extends AbstractCompoundUndoable {
 		tree.getDocument().attPanel.update();
 	}
 	
+        @Override
 	public void redo() {
 		for (int i = 0, limit = primitives.size(); i < limit; i++) {
 			primitives.get(i).redo();

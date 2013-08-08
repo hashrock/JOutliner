@@ -53,6 +53,7 @@ public class UpAction extends AbstractAction {
 	public static final int LEFT = 3;
 	public static final int RIGHT = 4;
 
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		//System.out.println("UpAction");
 		

@@ -55,6 +55,7 @@ public class CompoundUndoableImpl extends AbstractCompoundUndoable {
 	}
 	
 	// Undoable Interface
+        @Override
 	public String getName() {
 		String name = super.getName();
 		if (name == null) {
@@ -64,12 +65,14 @@ public class CompoundUndoableImpl extends AbstractCompoundUndoable {
 		}
 	}
 
+        @Override
 	public void undo() {
 		for (int i = primitives.size() - 1; i >= 0; i--) {
 			primitives.get(i).undo();
 		}
 	}
 	
+        @Override
 	public void redo() {
 		for (int i = 0, limit = primitives.size(); i < limit; i++) {
 			primitives.get(i).redo();

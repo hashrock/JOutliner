@@ -127,10 +127,12 @@ public class GoToDialog extends AbstractGUITreeJDialog implements ActionListener
 
 		// This let's us actually set the focus in our modal dialog.
 		addWindowListener(new WindowAdapter() {
+                        @Override
 			public void windowActivated(WindowEvent e) {
 				lineNumberTextField.requestFocus();
 			}
 			
+                        @Override
 			public void windowOpened(WindowEvent e) {
 				lineNumberTextField.requestFocus();
 			}
@@ -178,6 +180,7 @@ public class GoToDialog extends AbstractGUITreeJDialog implements ActionListener
 	
 
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals(GO)) {
 			go(false);

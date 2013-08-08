@@ -51,6 +51,7 @@ import javax.swing.*;
  */
 public class OutlinerFocusManager extends DefaultFocusManager {
 
+        @Override
 	public void processKeyEvent(Component c, KeyEvent e) {
 		try {
 			if (c instanceof OutlinerCellRendererImpl) {

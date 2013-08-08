@@ -64,29 +64,41 @@ public class PreferenceColor extends AbstractPreference implements GUITreeCompon
 
 
 	// GUITreeComponent Interface
+        @Override
 	public void endSetup(Attributes atts) {
 		super.endSetup(atts);
 	}	
 
 
 	// Setters with Validation	
+        @Override
 	public void setDef(String value) {this.def = parseColor(value);}
+        @Override
 	public void setCur(String value) {this.cur = parseColor(value);}
+        @Override
 	public void setTmp(String value) {this.tmp = parseColor(value);}
 
 	
 	// Misc Methods
+        @Override
 	public String toString() {return ("" + cur.getRGB());}
 
 
 	// Preference Interface
+        @Override
 	public void restoreCurrentToDefault() {cur = new Color(def.getRGB());}
+        @Override
 	public void restoreTemporaryToDefault(){tmp = new Color(def.getRGB());}
+        @Override
 	public void restoreTemporaryToCurrent(){tmp = new Color(cur.getRGB());}
+        @Override
 	public void applyTemporaryToCurrent(){cur = new Color(tmp.getRGB());}
 
+        @Override
 	public String getCur() {return cur.toString();}
+        @Override
 	public String getDef() {return def.toString();}
+        @Override
 	public String getTmp() {return tmp.toString();}
 
 	// Class Methods

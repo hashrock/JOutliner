@@ -56,6 +56,7 @@ public class WindowMenu extends AbstractOutlinerMenu implements DocumentReposito
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {
 		// Enable menu since we've got at least one document now.
 		setEnabled(true);
@@ -67,6 +68,7 @@ public class WindowMenu extends AbstractOutlinerMenu implements DocumentReposito
 		add(item);
 	}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {
 		// Remove WindowMenuItem
 		OutlinerDocument document = (OutlinerDocument) e.getDocument();
@@ -81,6 +83,7 @@ public class WindowMenu extends AbstractOutlinerMenu implements DocumentReposito
 		}
 	}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		if(e.getDocument() != null) {
 			// DeSelect Old Window
@@ -109,6 +112,7 @@ public class WindowMenu extends AbstractOutlinerMenu implements DocumentReposito
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		Outliner.menuBar.windowMenu = this;
@@ -116,6 +120,7 @@ public class WindowMenu extends AbstractOutlinerMenu implements DocumentReposito
 		setEnabled(false);
 	}
 	
+        @Override
 	public void endSetup(Attributes atts) {
 		WINDOW_LIST_START = getItemCount();
 		
@@ -131,6 +136,7 @@ public class WindowMenu extends AbstractOutlinerMenu implements DocumentReposito
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		changeToWindow(((WindowMenuItem) e.getSource()).doc);
 	}

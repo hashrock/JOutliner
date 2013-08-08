@@ -63,6 +63,7 @@ public class PreferencesGUITreeTableComponent extends AbstractPreferencesGUITree
 	protected SimpleTableModel model = new SimpleTableModel();
 	protected TableColumnModel colModel = table.getColumnModel();
 
+        @Override
 	public void startSetup(Attributes atts) {
 		table.setModel(model);
 		
@@ -112,6 +113,7 @@ public class PreferencesGUITreeTableComponent extends AbstractPreferencesGUITree
 	}
 
 	// MouseListener Interface
+        @Override
 	public void mouseClicked(MouseEvent e) {
 		int col = table.getTableHeader().columnAtPoint(e.getPoint());
 		if (col == 0) {
@@ -122,13 +124,18 @@ public class PreferencesGUITreeTableComponent extends AbstractPreferencesGUITree
 		}
 	}
 
+        @Override
 	public void mouseEntered(MouseEvent e) {}
+        @Override
 	public void mouseExited(MouseEvent e) {}
+        @Override
 	public void mousePressed(MouseEvent e) {}
+        @Override
 	public void mouseReleased(MouseEvent e) {}
 }
 
 class SimpleTableModel extends DefaultTableModel {
+    @Override
     public void setValueAt(Object value, int row, int col) {
     	if (col != 0) {
     		super.setValueAt(value,row,col);
@@ -141,6 +148,7 @@ class RemoveColumnHeaderRenderer extends JButton implements TableCellRenderer {
 		super("New");
 	}
 
+        @Override
 	public Component getTableCellRendererComponent(
 		JTable table, 
 		Object value, 
@@ -162,6 +170,7 @@ class RemoveCellEditor extends ButtonCellEditor {
 		this.component = component;
 	}
 
+        @Override
 	protected void doEditing() {
 		if (this.col == 0) {
 			component.model.removeRow(this.row);

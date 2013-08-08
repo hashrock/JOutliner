@@ -75,6 +75,7 @@ public class WindowSizeManager implements ComponentListener {
 	
 	
 	// ComponentListener Interface
+        @Override
 	public void componentResized(ComponentEvent e) {
 		Component comp = e.getComponent();
 		
@@ -96,13 +97,16 @@ public class WindowSizeManager implements ComponentListener {
 		}
 	}
 	
+        @Override
 	public void componentMoved(ComponentEvent e) {}
 	
+        @Override
 	public void componentShown(ComponentEvent e) {
 		if (resizeOnShow) {
 			e.getComponent().setSize(initialWidth, initialHeight);
 		}
 	}
 	
+        @Override
 	public void componentHidden(ComponentEvent e) {}
 }

@@ -42,6 +42,7 @@ import org.xml.sax.*;
 
 public class PreferencesMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent {
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -49,6 +50,7 @@ public class PreferencesMenuItem extends AbstractOutlinerMenuItem implements Act
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		((PreferencesFrame) GUITreeLoader.reg.get(GUITreeComponentRegistry.PREFERENCES_FRAME)).show();
 	}

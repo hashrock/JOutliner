@@ -43,6 +43,7 @@ import org.xml.sax.*;
 public class NewFileMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -51,6 +52,7 @@ public class NewFileMenuItem extends AbstractOutlinerMenuItem implements ActionL
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		OutlinerDocument doc = new OutlinerDocument("");
 		Outliner.menuBar.windowMenu.changeToWindow(doc);

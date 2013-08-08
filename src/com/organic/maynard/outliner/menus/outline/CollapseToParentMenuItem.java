@@ -42,6 +42,7 @@ import org.xml.sax.*;
 
 public class CollapseToParentMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent {
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -49,6 +50,7 @@ public class CollapseToParentMenuItem extends AbstractOutlinerMenuItem implement
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		collapseToParent((OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched());
 	}

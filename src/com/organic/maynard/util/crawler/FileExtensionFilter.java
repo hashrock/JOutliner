@@ -78,6 +78,7 @@ public class FileExtensionFilter implements FileFilter {
 	
 	
 	// FileFilter Interface
+        @Override
 	public boolean isValid(File file) {
 	
 		// Get the extension of the file

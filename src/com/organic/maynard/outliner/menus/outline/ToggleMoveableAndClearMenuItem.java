@@ -49,6 +49,7 @@ import org.xml.sax.*;
 public class ToggleMoveableAndClearMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -56,6 +57,7 @@ public class ToggleMoveableAndClearMenuItem extends AbstractOutlinerMenuItem imp
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		OutlinerDocument doc = (OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched();
 		OutlinerCellRendererImpl textArea = doc.panel.layout.getUIComponent(doc.tree.getEditingNode());

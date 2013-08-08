@@ -56,6 +56,7 @@ public class LogFile {
 		fileWriter = new FileWriter(logfile.getPath(),true);
 	}
 	
+        @Override
 	public void finalize() throws IOException {
 		fileWriter.close();
 	}

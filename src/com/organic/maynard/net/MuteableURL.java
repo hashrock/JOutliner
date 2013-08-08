@@ -266,6 +266,7 @@ public class MuteableURL {
 	/**
 	 * Overrides the standard toString method from java.lang.Object.
 	 */
+        @Override
 	public String toString() {
 		return getURLString();
 	}

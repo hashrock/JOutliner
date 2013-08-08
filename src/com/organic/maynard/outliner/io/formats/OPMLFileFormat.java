@@ -93,16 +93,19 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 	
 	private String name = null;
 	
+        @Override
 	public String getName() {
 		return this.name;
 	}
 	
+        @Override
 	public void setName(String name) {
 		this.name = name;
 	}
 	
 	
 	// SaveFileFormat Interface
+        @Override
 	public byte[] save(JoeTree tree, DocumentInfo docInfo) {
 		StringBuffer buf = prepareFile(tree, docInfo);
 		
@@ -114,10 +117,15 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 		}
 	}
 	
+        @Override
 	public boolean supportsComments() {return true;}
+        @Override
 	public boolean supportsEditability() {return true;}
+        @Override
 	public boolean supportsMoveability() {return true;}	
+        @Override
 	public boolean supportsAttributes() {return true;}
+        @Override
 	public boolean supportsDocumentAttributes() {return true;}
 	
 	private StringBuffer prepareFile(JoeTree tree, DocumentInfo docInfo) {
@@ -270,6 +278,7 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 	private JoeTree tree = null;
 	private Node currentParent = null;
 	
+        @Override
 	public int open(JoeTree tree, DocumentInfo docInfo, InputStream stream) {
 		// Set the objects we are going to populate.
 		this.docInfo = docInfo;
@@ -309,6 +318,7 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 	}
 	
 	// Sax DocumentHandler Implementation
+        @Override
 	public void startDocument () {
 		this.currentParent = tree.getRootNode();
 		
@@ -318,8 +328,10 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 		}
 	}
 	
+        @Override
 	public void endDocument () {}
 	
+        @Override
 	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
 		if (qName.equals(ELEMENT_OUTLINE)) {
 			NodeImpl node = new NodeImpl(tree, "");
@@ -385,6 +397,7 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 		super.startElement(namespaceURI, localName, qName, atts);
 	}
 	
+        @Override
 	public void endElement(String namespaceURI, String localName, String qName) {
 		String elementName = (String) elements_stack.peek();
 		Attributes atts = (Attributes) attributes_stack.peek();
@@ -455,22 +468,26 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 		super.endElement(namespaceURI, localName, qName);
 	}
 	
+        @Override
 	public void characters(char ch[], int start, int length) throws SAXException {
 		super.characters(ch, start, length);
 	}
 	
 	
 	// ErrorHandler Interface
+        @Override
 	public void error(SAXParseException e) {
 		System.out.println("SAXParserException Error: " + e.getMessage());
 		this.errorOccurred = true;
 	}
 	
+        @Override
 	public void fatalError(SAXParseException e) {
 		System.out.println("SAXParserException Fatal Error: " + e.getMessage());
 		this.errorOccurred = true;
 	}
 	
+        @Override
 	public void warning(SAXParseException e) {
 		System.out.println("SAXParserException Warning: " + e.getMessage());
 		this.errorOccurred = true;
@@ -480,14 +497,17 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 	// File Extensions
 	private HashMap extensions = new HashMap();
 	
+        @Override
 	public void addExtension(String ext, boolean isDefault) {
 		extensions.put(ext, new Boolean(isDefault));
 	}
 	
+        @Override
 	public void removeExtension(String ext) {
 		extensions.remove(ext);
 	}
 	
+        @Override
 	public String getDefaultExtension() {
 		Iterator i = getExtensions();
 		while (i.hasNext()) {
@@ -502,10 +522,12 @@ public class OPMLFileFormat extends XMLProcessor implements SaveFileFormat, Open
 		return null;
 	}
 	
+        @Override
 	public Iterator getExtensions() {
 		return extensions.keySet().iterator();
 	}
 	
+        @Override
 	public boolean extensionExists(String ext) {
 		Iterator it = getExtensions();
 		while (it.hasNext()) {

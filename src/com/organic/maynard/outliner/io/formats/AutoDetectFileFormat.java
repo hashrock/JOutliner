@@ -53,12 +53,18 @@ public class AutoDetectFileFormat extends AbstractFileFormat implements OpenFile
 	
 	
 	// OpenFileFormat Interface
+        @Override
 	public boolean supportsComments() {return true;}
+        @Override
 	public boolean supportsEditability() {return true;}
+        @Override
 	public boolean supportsMoveability() {return true;}
+        @Override
 	public boolean supportsAttributes() {return true;}
+        @Override
 	public boolean supportsDocumentAttributes() {return true;}
 	
+        @Override
 	public int open(JoeTree tree, DocumentInfo docInfo, InputStream stream) {
 		FileFormatManager manager = Outliner.fileFormatManager;
 		

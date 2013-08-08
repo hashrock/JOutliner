@@ -55,6 +55,7 @@ import org.xml.sax.*;
 public class QuitMenuItem extends AbstractOutlinerMenuItem implements ActionListener, GUITreeComponent {
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -62,6 +63,7 @@ public class QuitMenuItem extends AbstractOutlinerMenuItem implements ActionList
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		quit();
 	}

@@ -218,13 +218,17 @@ public class Preferences implements GUITreeComponent {
 	
 	// GUITreeComponent interface
 	private String id = null;
+        @Override
 	public String getGUITreeComponentID() {return this.id;}
+        @Override
 	public void setGUITreeComponentID(String id) {this.id = id;}
 	
+        @Override
 	public void startSetup(Attributes atts) {
 		Outliner.loadPrefsFile(Outliner.PARSER, Outliner.CONFIG_FILE);	
 	}
 	
+        @Override
 	public void endSetup(Attributes atts) {}
 	
 	

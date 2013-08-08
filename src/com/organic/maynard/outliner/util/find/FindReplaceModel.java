@@ -543,9 +543,12 @@ public class FindReplaceModel extends XMLProcessor {
 	}
 	
 	// Sax DocumentHandler Implementation
+        @Override
 	public void startDocument () {}
+        @Override
 	public void endDocument () {}
 	
+        @Override
 	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
 		if (qName.equals(E_ITEM)) {
 			int size = getSize();
@@ -577,6 +580,8 @@ public class FindReplaceModel extends XMLProcessor {
 		}
 	}
 	
+        @Override
 	public void endElement(String namespaceURI, String localName, String qName) {}
+        @Override
 	public void characters(char ch[], int start, int length) throws SAXException {}
 }

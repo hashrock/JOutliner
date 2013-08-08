@@ -47,6 +47,7 @@ import javax.swing.*;
  
 public class MergeAction extends AbstractAction {
 
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		//System.out.println("MergeAction");
 		

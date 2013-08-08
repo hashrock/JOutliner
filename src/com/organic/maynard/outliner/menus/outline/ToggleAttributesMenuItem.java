@@ -70,25 +70,32 @@ public class ToggleAttributesMenuItem extends AbstractOutlinerMenuItem implement
 	
 	
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {}
 	
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {
 		calculateTextState(e.getDocument());
 	}
 	
 	// OutlinerDocumentListener Interface
+        @Override
 	public void modifiedStateChanged(DocumentEvent e) {}
 	
+        @Override
 	public void attributesVisibilityChanged(OutlinerDocumentEvent e) {
 		calculateTextState(e.getOutlinerDocument());
 	}
 	
+        @Override
 	public void hoistDepthChanged(OutlinerDocumentEvent e) {}
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -108,6 +115,7 @@ public class ToggleAttributesMenuItem extends AbstractOutlinerMenuItem implement
 	 * OutlinerDocument effected is the most recent document touched as determined
 	 * by checking with the DocumentRepository.
 	 */
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		OutlinerDocument doc = (OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched();
 		if (doc.isShowingAttributes()) {

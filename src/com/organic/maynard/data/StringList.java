@@ -56,6 +56,7 @@ public class StringList implements Serializable, Cloneable {
 
 
 	// Cloneable Interface
+        @Override
 	public Object clone() {
 		StringList newList = new StringList();
 		

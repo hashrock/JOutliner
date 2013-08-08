@@ -46,6 +46,7 @@ import javax.swing.*;
  
 public class ToggleExpansionAction extends AbstractAction {
 
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		//System.out.println("ToggleExpansionAction");
 		

@@ -68,6 +68,7 @@ public class DocumentManager implements DocumentRepositoryListener, JoeReturnCod
 
 
 	// DocumentRepositoryListener Interface
+        @Override
 	public void documentAdded(DocumentRepositoryEvent e) {
 		// local vars
 		int whichOne = isThisOneOfOurs(PropertyContainerUtil.getPropertyAsString(e.getDocument().getDocumentInfo(), DocumentInfo.KEY_PATH));
@@ -83,6 +84,7 @@ public class DocumentManager implements DocumentRepositoryListener, JoeReturnCod
 		ourDocsOpen ++ ;
 	}
 	
+        @Override
 	public void documentRemoved(DocumentRepositoryEvent e) {
 		// local vars
 		int whichOne = isThisOneOfOurs(PropertyContainerUtil.getPropertyAsString(e.getDocument().getDocumentInfo(), DocumentInfo.KEY_PATH));
@@ -105,6 +107,7 @@ public class DocumentManager implements DocumentRepositoryListener, JoeReturnCod
 	// no need for subclasses to call super
 	protected void docClosingChores(Document document) {}	
 
+        @Override
 	public void changedMostRecentDocumentTouched(DocumentRepositoryEvent e) {}
 
 

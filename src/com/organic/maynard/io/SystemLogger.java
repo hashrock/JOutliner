@@ -71,21 +71,25 @@ public class SystemLogger extends PrintStream {
 
 	
 	// Overridden Methods
+        @Override
 	public void close() {
 		super.close();
 		out.close();
 	}
 	
+        @Override
 	public void flush() {
 		super.flush();
 		out.flush();
 	}
 
+        @Override
 	public void write(byte[] buf, int off, int len) {
 		super.write(buf, off, len);
 		out.write(buf, off, len);
 	}
 
+        @Override
 	public void write(int x) {
 		super.write(x);
 		out.write(x);

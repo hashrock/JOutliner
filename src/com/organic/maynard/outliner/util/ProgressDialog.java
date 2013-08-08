@@ -68,6 +68,7 @@ public class ProgressDialog extends AbstractOutlinerJDialog implements com.organ
 		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		addWindowListener(
 			new WindowAdapter() {
+                                @Override
 				public void windowClosing(WindowEvent e) {
 					setCanceled(true);
 					close(); // Explicit close since the GUI might be stuck if an exception occured in the thread responsible for handling the cancel.
@@ -116,6 +117,7 @@ public class ProgressDialog extends AbstractOutlinerJDialog implements com.organ
 	}
 
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		// File Menu
 		if (e.getActionCommand().equals(CANCEL)) {
@@ -123,24 +125,29 @@ public class ProgressDialog extends AbstractOutlinerJDialog implements com.organ
 		}
 	}
 
+        @Override
 	public void show() {
 		setCanceled(false);
 		setMaximum(1);
 		super.show();
 	}
 
+        @Override
 	public void close() {
 		hide();
 	}
 
+        @Override
 	public void setCanceled(boolean isCanceled) {
 		this.isCanceled = isCanceled;
 	}
 
+        @Override
 	public boolean isCanceled() {
 		return isCanceled;
 	}
 
+        @Override
 	public void setNote(String text) {
 		note.setText(text);
 	}
@@ -148,6 +155,7 @@ public class ProgressDialog extends AbstractOutlinerJDialog implements com.organ
 	private int sleepCounter = 0;
 	private static final int SLEEP_LIMIT = 50;
 	
+        @Override
 	public void setProgress(int i) {
 		// Need to sleep since NT4.0 doesn't share so well with threads, and it's likely that this dialog
 		// is running in a different thread from the process updating things. Note: when setProgress is 
@@ -174,8 +182,11 @@ public class ProgressDialog extends AbstractOutlinerJDialog implements com.organ
 	}
 	public int getProgress() {return bar.getValue();}
 
+        @Override
 	public void setMinimum(int i) {bar.setMinimum(i);}
 	public int getMinimum() {return bar.getMinimum();}
+        @Override
 	public void setMaximum(int i) {bar.setMaximum(i);}
+        @Override
 	public int getMaximum() {return bar.getMaximum();}
 }

@@ -62,16 +62,19 @@ public class SimpleSAXErrorHandler extends DefaultHandler {
 	
 	
 	// DefaultHandler Overridden Methods
+        @Override
 	public void error(SAXParseException e) {
 		System.out.println(padding + "XML PARSER ERROR: Line: " + e.getLineNumber() + " Column: " + e.getColumnNumber());
 		System.out.println(padding + e.getMessage());
 	}
 	
+        @Override
 	public void fatalError(SAXParseException e) {
 		System.out.println(padding + "XML PARSER FATAL ERROR: Line: " + e.getLineNumber() + " Column: " + e.getColumnNumber());
 		System.out.println(padding + e.getMessage());
 	}
 	
+        @Override
 	public void warning(SAXParseException e) {
 		System.out.println(padding + "XML PARSER WARNING: Line: " + e.getLineNumber() + " Column: " + e.getColumnNumber());
 		System.out.println(padding + e.getMessage());

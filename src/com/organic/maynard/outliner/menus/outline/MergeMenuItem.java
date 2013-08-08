@@ -53,6 +53,7 @@ public class MergeMenuItem
 	implements ActionListener, TreeSelectionListener, GUITreeComponent 
 {
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		addActionListener(this);
@@ -63,6 +64,7 @@ public class MergeMenuItem
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		OutlinerDocument doc = (OutlinerDocument) Outliner.documents.getMostRecentDocumentTouched();
 		OutlinerCellRendererImpl textArea = doc.panel.layout.getUIComponent(doc.tree.getEditingNode());
@@ -82,6 +84,7 @@ public class MergeMenuItem
 	
 	
 	// TreeSelectionListener Interface
+        @Override
 	public void selectionChanged(TreeSelectionEvent e) {
 		calculateEnabledState(e.getTree());
 	}

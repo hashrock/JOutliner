@@ -74,11 +74,13 @@ public class CompoundUndoableReplace extends AbstractCompoundUndoable {
 
 
 	// Undoable Interface
+        @Override
 	public void destroy() {
 		super.destroy();
 		parent = null;
 	}
 
+        @Override
 	public String getName() {
 		String name = super.getName();
 		if (name == null) {
@@ -88,6 +90,7 @@ public class CompoundUndoableReplace extends AbstractCompoundUndoable {
 		}
 	}
 
+        @Override
 	public void undo() {		
 		// Shorthand
 		JoeTree tree = parent.getTree();
@@ -131,6 +134,7 @@ public class CompoundUndoableReplace extends AbstractCompoundUndoable {
 		layout.draw(newSelectedNode, OutlineLayoutManager.ICON);
 	}
 	
+        @Override
 	public void redo() {
 		// Shorthand
 		JoeTree tree = parent.getTree();

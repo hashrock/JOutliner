@@ -45,14 +45,18 @@ public abstract class AbstractUndoable implements Undoable {
 	private String name = null;
 	
 	// Undoable Interface
+        @Override
 	public String getName() {
 		return this.name;
 	}
 	
+        @Override
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+        @Override
 	public abstract void undo();
+        @Override
 	public abstract void redo();
 }

@@ -58,11 +58,13 @@ public class TextKeyListener implements KeyListener, MouseListener, FocusListene
 	
 	
 	// FocusListener Interface
+        @Override
 	public void focusGained(FocusEvent e) {
 		textArea = (OutlinerCellRendererImpl) e.getComponent();
 		textArea.hasFocus = true;
 	}
 	
+        @Override
 	public void focusLost(FocusEvent e) {
 		textArea = (OutlinerCellRendererImpl) e.getComponent();
 		textArea.hasFocus = false;
@@ -70,9 +72,12 @@ public class TextKeyListener implements KeyListener, MouseListener, FocusListene
 	
 	
 	// MouseListener Interface
+        @Override
  	public void mouseEntered(MouseEvent e) {}
+        @Override
  	public void mouseExited(MouseEvent e) {}
  	
+        @Override
  	public void mousePressed(MouseEvent e) {
  		textArea = (OutlinerCellRendererImpl) e.getComponent();
  		
@@ -127,6 +132,7 @@ public class TextKeyListener implements KeyListener, MouseListener, FocusListene
 		UndoableEdit.freezeUndoEdit(currentNode);
  	}
  	
+        @Override
  	public void mouseReleased(MouseEvent e) {
   		// Catch for Solaris/Mac if they did the popup trigger.
  		if (e.isConsumed()) {
@@ -150,6 +156,7 @@ public class TextKeyListener implements KeyListener, MouseListener, FocusListene
 		}
 	}
 	
+        @Override
  	public void mouseClicked(MouseEvent e) {
 		// Catch for Solaris/Mac if they did the popup trigger.
 		if (e.isConsumed()) {
@@ -176,8 +183,10 @@ public class TextKeyListener implements KeyListener, MouseListener, FocusListene
 	
 	
 	// KeyListener Interface
+        @Override
 	public void keyPressed(KeyEvent e) {}
 	
+        @Override
 	public void keyTyped(KeyEvent e) {
 		if (e.getKeyChar() == '\b') {
 			// Need to consume backspace here since the action we
@@ -186,6 +195,7 @@ public class TextKeyListener implements KeyListener, MouseListener, FocusListene
 		}
 	}
 	
+        @Override
 	public void keyReleased(KeyEvent e) {}
 	
 	

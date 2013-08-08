@@ -57,6 +57,7 @@ public class PropertyFilterImpl implements PropertyFilter {
 	}
 	
 	// Cloneable Interface
+        @Override
 	public Object clone() {
 		PropertyFilterImpl cloned = new PropertyFilterImpl(this.getName());
 		return cloned;
@@ -64,10 +65,12 @@ public class PropertyFilterImpl implements PropertyFilter {
 	
 	
 	// PropertyFilter Interface
+        @Override
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+        @Override
 	public String getName() {
 		return this.name;
 	}
@@ -76,6 +79,7 @@ public class PropertyFilterImpl implements PropertyFilter {
 	 * This default implementation just returns the value that was provided. This
 	 * method should be overriden to do much more interesting things with the value.
 	 */
+        @Override
 	public Object filter(PropertyContainer container, Object value) {
 		return value;
 	}

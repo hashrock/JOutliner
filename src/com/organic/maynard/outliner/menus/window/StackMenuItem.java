@@ -53,6 +53,7 @@ public class StackMenuItem extends AbstractOutlinerMenuItem implements ActionLis
 	
 	
 	// GUITreeComponent interface
+        @Override
 	public void startSetup(Attributes atts) {
 		super.startSetup(atts);
 		
@@ -61,6 +62,7 @@ public class StackMenuItem extends AbstractOutlinerMenuItem implements ActionLis
 	
 	
 	// ActionListener Interface
+        @Override
 	public void actionPerformed(ActionEvent e) {
 		if (!Outliner.desktop.isMaximized()) {
 			Point p = new Point(STACK_X_START,STACK_Y_START);

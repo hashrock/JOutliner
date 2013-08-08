@@ -78,23 +78,14 @@ import com.organic.maynard.outliner.io.LoadFileProtocolClassCommand;
 import com.organic.maynard.outliner.menus.OutlinerDesktopMenuBar;
 import com.organic.maynard.outliner.menus.file.FileMenu;
 import com.organic.maynard.outliner.menus.file.QuitMenuItem;
-import com.organic.maynard.outliner.menus.popup.MacroPopupMenu;
 import com.organic.maynard.outliner.model.DocumentInfo;
 import com.organic.maynard.outliner.model.propertycontainer.PropertyContainerUtil;
-import com.organic.maynard.outliner.scripting.macro.LoadMacroClassCommand;
-import com.organic.maynard.outliner.scripting.macro.LoadMacroCommand;
-import com.organic.maynard.outliner.scripting.macro.MacroManagerFrame;
-import com.organic.maynard.outliner.scripting.script.LoadScriptClassCommand;
-import com.organic.maynard.outliner.scripting.script.LoadScriptCommand;
-import com.organic.maynard.outliner.scripting.script.ScriptsManager;
-import com.organic.maynard.outliner.scripting.script.ScriptsManagerModel;
 import com.organic.maynard.outliner.util.find.FindReplaceFrame;
 import com.organic.maynard.outliner.util.find.FindReplaceResultsDialog;
 import com.organic.maynard.outliner.util.preferences.IntRangeValidator;
 import com.organic.maynard.outliner.util.preferences.PreferenceInt;
 import com.organic.maynard.outliner.util.preferences.Preferences;
 import com.organic.maynard.outliner.util.preferences.SetPrefCommand;
-import com.organic.maynard.outliner.util.spelling.SpellingCheckerWrapper;
 import com.organic.maynard.util.Command;
 import com.organic.maynard.util.CommandParser;
 import com.organic.maynard.util.UnknownCommandException;
@@ -163,8 +154,6 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 	public static String ADDED_WORDS_FILE = new StringBuffer().append(USER_PREFS_DIR).append("added_words.dict").toString();
 
 	// These dirs/files should always be under the apps prefs dir.
-	public static String MACRO_CLASSES_FILE = new StringBuffer().append(PREFS_DIR).append("macro_classes.txt").toString();
-	public static String SCRIPT_CLASSES_FILE = new StringBuffer().append(PREFS_DIR).append("script_classes.txt").toString();
 	public static String ENCODINGS_FILE = new StringBuffer().append(PREFS_DIR).append("encodings.txt").toString();
 	public static String FILE_FORMATS_FILE = new StringBuffer().append(PREFS_DIR).append("file_formats.txt").toString();
 
@@ -193,139 +182,8 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 			System.out.println("Created Macros Directory: " + macrosFile.getPath());
 		}
 
-		// Copy over any macros files that don't exist
-		// First, turn the macros.txt file into a hashtable of lines keyed by
-		// the macro name.
-		char[] delimiters = { '\n', '\r' };
-		Vector lines = StringTools.split(FileTools.readFileToString(new File(PREFS_DIR + "macros.txt")), '\\', delimiters);
-		Hashtable indexedLines = new Hashtable();
-		for (int i = 0; i < lines.size(); i++) {
-			String line = (String) lines.elementAt(i);
-			if (line.indexOf("|") != -1) {
-				int start = line.indexOf("|");
-				int end = line.indexOf("|", start + 1);
-				String key = line.substring(start + 1, end);
-				indexedLines.put(key, line);
-			}
-		}
-
 		// Second, copy macros that don't exist.
 		StringBuffer appendBuffer = new StringBuffer();
-
-		File fromMacrosFile = new File(PREFS_DIR + "macros");
-		File[] macrosFiles = fromMacrosFile.listFiles();
-
-		for (int i = 0; i < macrosFiles.length; i++) {
-			File fromFile = macrosFiles[i];
-			File toFile = new File(MACROS_DIR + fromFile.getName());
-
-			if (!toFile.exists()) {
-				try {
-					FileTools.copy(fromFile, toFile);
-					String line = (String) indexedLines.get(fromFile.getName());
-					if (line != null) {
-						appendBuffer.append(PlatformCompatibility.LINE_END_DEFAULT).append(line);
-					}
-					System.out.println("\tCopying macro: " + fromFile.getName());
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			} else {
-				macrosFiles[i] = null; // Set to null, so later we know what got
-										// copied.
-			}
-		}
-
-		// Third, either copy over entire macros.txt file if it doesn't exist,
-		// or append new lines to existing macros.txt file.
-		File userMacrosFile = new File(MACROS_FILE);
-		if (!userMacrosFile.exists()) {
-			System.out.println("Copying over macros config file: " + userMacrosFile.getPath());
-			try {
-				FileTools.copy(new File(PREFS_DIR + "macros.txt"), userMacrosFile);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
-			try {
-				FileWriter fw = new FileWriter(userMacrosFile.getPath(), true);
-				fw.write(appendBuffer.toString());
-				fw.flush();
-				fw.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-
-		// Create scripts directory it it doesn't exist.
-		File scriptsFile = new File(SCRIPTS_DIR);
-		isCreated = scriptsFile.mkdirs();
-		if (isCreated) {
-			System.out.println("Created Scripts Directory: " + scriptsFile.getPath());
-		}
-
-		// Copy over any scripts files that don't exist
-		// First, turn the scripts.txt file into a hashtable of lines keyed by
-		// the macro name.
-		lines = StringTools.split(FileTools.readFileToString(new File(PREFS_DIR + "scripts.txt")), '\\', delimiters);
-		indexedLines = new Hashtable();
-		for (int i = 0; i < lines.size(); i++) {
-			String line = (String) lines.elementAt(i);
-			if (line.indexOf("|") != -1) {
-				int start = line.indexOf("|");
-				int end = line.indexOf("|", start + 1);
-				String key = line.substring(start + 1, end);
-				indexedLines.put(key, line);
-			}
-		}
-
-		// Second, copy macros that don't exist.
-		appendBuffer = new StringBuffer();
-
-		File fromScriptsFile = new File(PREFS_DIR + "scripts");
-		File[] scriptsFiles = fromScriptsFile.listFiles();
-
-		for (int i = 0; i < scriptsFiles.length; i++) {
-			File fromFile = scriptsFiles[i];
-			File toFile = new File(SCRIPTS_DIR + fromFile.getName());
-
-			if (!toFile.exists()) {
-				try {
-					FileTools.copy(fromFile, toFile);
-					String line = (String) indexedLines.get(fromFile.getName());
-					if (line != null) {
-						appendBuffer.append(PlatformCompatibility.LINE_END_DEFAULT).append(line);
-					}
-					System.out.println("\tCopying script: " + fromFile.getName());
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			} else {
-				scriptsFiles[i] = null; // Set to null, so later we know what
-										// got copied.
-			}
-		}
-
-		// Third, either copy over entire macros.txt file if it doesn't exist,
-		// or append new lines to existing macros.txt file.
-		File userScriptsFile = new File(SCRIPTS_FILE);
-		if (!userScriptsFile.exists()) {
-			System.out.println("Copying over scripts config file: " + userScriptsFile.getPath());
-			try {
-				FileTools.copy(new File(PREFS_DIR + "scripts.txt"), userScriptsFile);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
-			try {
-				FileWriter fw = new FileWriter(userScriptsFile.getPath(), true);
-				fw.write(appendBuffer.toString());
-				fw.flush();
-				fw.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 
 		// Copy over find_replace.xml from installation directory if it doesn't
 		// exist in the user's home directory.
@@ -367,10 +225,6 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 	public static final String COMMAND_FILE_PROTOCOL = "file_protocol";
 
 	public static final Command SET_PREF_COMMAND = new SetPrefCommand(COMMAND_SET);
-	public static final Command LOAD_MACRO_CLASS_COMMAND = new LoadMacroClassCommand(COMMAND_MACRO_CLASS);
-	public static final Command LOAD_MACRO_COMMAND = new LoadMacroCommand(COMMAND_MACRO);
-	public static final Command LOAD_SCRIPT_CLASS_COMMAND = new LoadScriptClassCommand(COMMAND_SCRIPT_CLASS);
-	public static final Command LOAD_SCRIPT_COMMAND = new LoadScriptCommand(COMMAND_SCRIPT);
 	public static final Command LOAD_FILE_FORMAT_CLASS_COMMAND = new LoadFileFormatClassCommand(COMMAND_FILE_FORMAT);
 	public static final Command LOAD_FILE_PROTOCOL_CLASS_COMMAND = new LoadFileProtocolClassCommand(COMMAND_FILE_PROTOCOL);
 
@@ -378,10 +232,6 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 
 	static {
 		PARSER.addCommand(SET_PREF_COMMAND);
-		PARSER.addCommand(LOAD_MACRO_CLASS_COMMAND);
-		PARSER.addCommand(LOAD_MACRO_COMMAND);
-		PARSER.addCommand(LOAD_SCRIPT_CLASS_COMMAND);
-		PARSER.addCommand(LOAD_SCRIPT_COMMAND);
 		PARSER.addCommand(LOAD_FILE_FORMAT_CLASS_COMMAND);
 		PARSER.addCommand(LOAD_FILE_PROTOCOL_CLASS_COMMAND);
 	}
@@ -389,9 +239,6 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 	// GUI Objects
 	public static FindReplaceFrame findReplace = null;
 	public static FindReplaceResultsDialog findReplaceResultsDialog = null;
-	public static MacroManagerFrame macroManager = null;
-	public static ScriptsManager scriptsManager = null;
-	public static MacroPopupMenu macroPopup = null;
 	public static FileFormatManager fileFormatManager = null;
 	public static FileProtocolManager fileProtocolManager = null;
 	public static Preferences prefs = null;
@@ -407,9 +254,6 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 	public static OutlinerDesktopMenuBar menuBar = null;
 	public static DocumentStatistics statistics = null;
 	public static DocumentAttributesView documentAttributes = null;
-
-	// Spell Checking
-	public static final SpellingCheckerWrapper spellChecker = new SpellingCheckerWrapper();
 
 	// Main
 	public static void main(String args[]) {
@@ -475,9 +319,6 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 			}
 		}
 
-		// Run startup scripts. We're doing this just prior to opening any
-		// documents.
-		ScriptsManagerModel.runStartupScripts();
 
 		// Open documents from open documents list.
 		if (Preferences.getPreferenceBoolean(Preferences.OPEN_DOCS_ON_STARTUP).cur) {
@@ -639,15 +480,6 @@ public class Outliner extends JFrame implements ClipboardOwner, GUITreeComponent
 		// Initialize open/save_as/export/export_selection menus.
 		fileProtocolManager.synchronizeDefault();
 		fileProtocolManager.synchronizeMenus();
-
-		// Setup the MacroManager and the MacroPopupMenu
-		loadPrefsFile(PARSER, MACRO_CLASSES_FILE);
-		macroPopup = new MacroPopupMenu();
-		loadPrefsFile(PARSER, MACROS_FILE);
-
-		// Setup the ScriptManager
-		loadPrefsFile(PARSER, SCRIPT_CLASSES_FILE);
-		loadPrefsFile(PARSER, SCRIPTS_FILE);
 
 		// Setup the FindReplaceResultsDialog
 		findReplaceResultsDialog = new FindReplaceResultsDialog();

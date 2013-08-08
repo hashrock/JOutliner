@@ -41,16 +41,12 @@ import java.awt.Font;
 import java.awt.Insets;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileNotFoundException;
 
 import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.text.Keymap;
-
-import org.ho.yaml.Yaml;
 
 import com.organic.maynard.outliner.actions.BackspaceAction;
 import com.organic.maynard.outliner.actions.ChangeFocusAction;
@@ -192,14 +188,6 @@ public class OutlinerCellRendererImpl extends JTextArea implements OutlinerCellR
 	}
 	
 	private void setupMaps(InputMap input_map, ActionMap action_map) {
-		try {
-			Object object = Yaml.load(new File(Outliner.USER_PREFS_DIR + "keybind.yaml"));
-			System.out.println(object.toString());
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
 		input_map.put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0, false), "left");
 		input_map.put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, Event.SHIFT_MASK, false), "left");
 		input_map.put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, Event.CTRL_MASK, false), "left");

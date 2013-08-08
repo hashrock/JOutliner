@@ -41,7 +41,6 @@ import com.organic.maynard.outliner.menus.outline.OutlineMenu;
 import com.organic.maynard.outliner.menus.search.SearchMenu;
 import com.organic.maynard.outliner.menus.window.WindowMenu;
 import com.organic.maynard.outliner.menus.help.HelpMenu;
-import com.organic.maynard.outliner.menus.script.ScriptMenu;
 import com.organic.maynard.outliner.guitree.*;
 import javax.swing.JMenuBar;
 import org.xml.sax.*;
@@ -60,7 +59,6 @@ public class OutlinerDesktopMenuBar extends JMenuBar implements GUITreeComponent
 	public SearchMenu searchMenu = null;
 	public WindowMenu windowMenu = null;
 	public HelpMenu helpMenu = null;
-	public ScriptMenu scriptMenu = null;
 	
 	
 	// Constructor

@@ -35,7 +35,6 @@
 package com.organic.maynard.outliner.menus.file;
 
 import com.organic.maynard.outliner.dom.*;
-import com.organic.maynard.outliner.scripting.script.*;
 import com.organic.maynard.outliner.menus.*;
 import com.organic.maynard.outliner.*;
 import com.organic.maynard.outliner.guitree.*;
@@ -96,10 +95,6 @@ public class QuitMenuItem extends AbstractOutlinerMenuItem implements ActionList
 		if (Outliner.findReplace.isInitialized()) {
 			Outliner.findReplace.model.saveConfigFile();
 		}
-		LoadScriptCommand.saveConfigFile(new File(Outliner.SCRIPTS_FILE));
-		
-		// Run shutdown scripts. This is the last thing we do before quitting.
-		ScriptsManagerModel.runShutdownScripts();
 		
 		System.exit(0);
 	}

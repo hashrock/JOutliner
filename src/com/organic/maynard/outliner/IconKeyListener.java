@@ -146,7 +146,7 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 		
 		// This is detection for Solaris, I think mac does this too.
 		if (e.isPopupTrigger() && (currentNode.isAncestorSelected() || (tree.getEditingNode() == currentNode))) {
-			Outliner.macroPopup.show(e.getComponent(),e.getX(), e.getY());
+			//Outliner.macroPopup.show(e.getComponent(),e.getX(), e.getY());
 			e.consume();
 			return;
 		}
@@ -209,7 +209,7 @@ public class IconKeyListener implements KeyListener, MouseListener, FocusListene
 		
 		// This is detection for Windows
 		if (e.isPopupTrigger() && (currentNode.isAncestorSelected() || (tree.getEditingNode() == currentNode))) {
-			Outliner.macroPopup.show(e.getComponent(),e.getX(), e.getY());
+			//Outliner.macroPopup.show(e.getComponent(),e.getX(), e.getY());
 			return;
 		}
 	}
